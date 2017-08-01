@@ -23495,6 +23495,10 @@ var _Trip = __webpack_require__(231);
 
 var _Trip2 = _interopRequireDefault(_Trip);
 
+var _Location = __webpack_require__(258);
+
+var _Location2 = _interopRequireDefault(_Location);
+
 var _reactRouterDom = __webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26255,6 +26259,15 @@ var App = function (_React$Component) {
                 { role: 'presentation' },
                 _react2.default.createElement(
                   _reactRouterDom.Link,
+                  { to: '/trip' },
+                  'Create Trip'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { role: 'presentation' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
                   { to: '/about' },
                   'About'
                 )
@@ -26362,7 +26375,7 @@ var Trip = function (_React$Component) {
             _react2.default.createElement(
               "h4",
               null,
-              "request for custom quote"
+              "Enter You Trip Name:"
             ),
             _react2.default.createElement(
               "fieldset",
@@ -26370,9 +26383,14 @@ var Trip = function (_React$Component) {
               _react2.default.createElement("input", { id: "trip-name", placeholder: "Your trip name", type: "text", tabIndex: "1", required: true, autoFocus: true })
             ),
             _react2.default.createElement(
+              "h5",
+              null,
+              "Which Kind Of Traveler Are You?"
+            ),
+            _react2.default.createElement(
               "label",
               { className: "radio-inline" },
-              _react2.default.createElement("input", { required: true, type: "radio", name: "trip-type", value: "Couple" }),
+              _react2.default.createElement("input", { placeholder: "Trip Name``", required: true, type: "radio", name: "trip-type", value: "Couple" }),
               "Couple"
             ),
             _react2.default.createElement(
@@ -27960,6 +27978,12 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: C:/Users/Eliran/Desktop/ELEVATION/WEEK11/HACKATHON2/client/src/Routesss/common/Location.js: JSX attributes must only be assigned a non-empty expression (15:53)\n\n\u001b[0m \u001b[90m 13 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 14 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"center-block\"\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 | \u001b[39m          \u001b[33m<\u001b[39m\u001b[33mform\u001b[39m id\u001b[33m=\u001b[39m\u001b[32m\"add-location\"\u001b[39m action\u001b[33m=\u001b[39m\u001b[32m\"\"\u001b[39m onSubmit\u001b[33m=\u001b[39m{}\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\u001b[33mAdd\u001b[39m \u001b[33mYour\u001b[39m \u001b[33mLocation\u001b[39m\u001b[33m!\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 17 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mfieldset\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 18 | \u001b[39m              \u001b[33m<\u001b[39m\u001b[33minput\u001b[39m id\u001b[33m=\u001b[39m\u001b[32m\"trip-name\"\u001b[39m placeholder\u001b[33m=\u001b[39m\u001b[32m\"Your trip name\"\u001b[39m type\u001b[33m=\u001b[39m\u001b[32m\"text\"\u001b[39m tabIndex\u001b[33m=\u001b[39m\u001b[32m\"1\"\u001b[39m required autoFocus \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);

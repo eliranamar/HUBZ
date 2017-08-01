@@ -4,6 +4,7 @@ import Page404 from './Routesss/common/404';
 import About from './Routesss/common/About';
 import Contact from './Routesss/common/Contact';
 import Trip from './Routesss/common/Trip';
+import Location from './Routesss/common/Location';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
 
