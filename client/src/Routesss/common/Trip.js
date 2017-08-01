@@ -36,11 +36,14 @@ class Trip extends React.Component {
         <div className="center-block">
           <form id="add-trip" action="" onSubmit={this.getTripData}>
             <h3>Add Your Trip!</h3>
-            <h4>request for custom quote</h4>
+            <h4>Enter You Trip Name:</h4>
             <fieldset>
               <input id="trip-name" placeholder="Your trip name" type="text" tabIndex="1" required autoFocus />
             </fieldset>
-            <label className="radio-inline"><input required type="radio" name="trip-type" value="Couple" />Couple</label>
+            <h5>
+              Which Kind Of Traveler Are You?
+            </h5>
+            <label className="radio-inline"><input placeholder="Trip Name``" required type="radio" name="trip-type" value="Couple" />Couple</label>
             <label className="radio-inline"><input type="radio" name="trip-type" value="Friends" />Friends Group</label>
             <label className="radio-inline"><input type="radio" name="trip-type" value="Solo" />Solo Traveler</label>
             <br />
