@@ -18,7 +18,6 @@ class App extends React.Component {
             <ul className="nav navbar-nav">
               <li role="presentation"><Link to="/">Home</Link></li>
               <li role="presentation"><Link to="/about">About</Link></li>
-              <li role="presentation"><Link to="/deals">Deals</Link></li>
               <li role="presentation"><Link to="/contact">Contact</Link></li>
             </ul>
           </div>

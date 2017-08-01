@@ -1,22 +1,20 @@
 import React from 'react';
-import weatherApp from './weatherApp';
-import Page404 from './weatherApp/common/404';
-import About from './weatherApp/common/About';
-import Deals from './weatherApp/common/Deals';
-import Contact from './weatherApp/common/Contact';
+import Homepage from './Routesss';
+import Page404 from './Routesss/common/404';
+import About from './Routesss/common/About';
+import Contact from './Routesss/common/Contact';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
 
-const Routesss = () => (
+const Routes = () => (
     <div className="container">
         <Switch>
-            <Route name="home" exact path='/' component={weatherApp} />
+            <Route name="home" exact path='/' component={Homepage} />
             <Route name="about" exact path='/about' component={About} />
-            <Route name="deals" exact path='/deals' component={Deals} />
             <Route name="contact" exact path='/contact' component={Contact} />
             <Route path="*" component={Page404}/>
         </Switch>
     </div>
 )
 
-export default Routesss;
+export default Routes;
