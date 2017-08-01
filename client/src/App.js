@@ -5,13 +5,32 @@ import Routesss from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
 class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      trip: {
+        name: null,
+        type: null,
+        id: null
+      }
+    }
+
+    this.setTripState = this.setTripState.bind(this);
+  }
+
+  setTripState(trip) {
+		this.setState({ trip: trip });
+  }
+  
   render() {
     console.log('connected');
     return (
       <BrowserRouter>
         <div>
           <Header/>
-          <Routesss/>
+          <Routesss setTripState={this.setTripState}/>
         </div>
       </BrowserRouter>
 
