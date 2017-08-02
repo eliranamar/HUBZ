@@ -30780,6 +30780,10 @@ var _FindLocation = __webpack_require__(579);
 
 var _FindLocation2 = _interopRequireDefault(_FindLocation);
 
+var _FindTrip = __webpack_require__(580);
+
+var _FindTrip2 = _interopRequireDefault(_FindTrip);
+
 var _reactRouterDom = __webpack_require__(53);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -30794,7 +30798,8 @@ var Routes = function Routes(props) {
             _react2.default.createElement(_reactRouterDom.Route, { name: 'home', exact: true, path: '/', component: _Routesss2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { name: 'about', exact: true, path: '/about', component: _About2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { name: 'contact', exact: true, path: '/contact', component: _Contact2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { name: 'FindLocation', exact: true, path: '/FindLocation', component: _FindLocation2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'findlocation', exact: true, path: '/findlocation', component: _FindLocation2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'findtrip', exact: true, path: '/findtrip', component: _FindTrip2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { name: 'trip', exact: true, path: '/trip', render: function render() {
                     return _react2.default.createElement(_Trip2.default, { setTripState: props.setTripState });
                 } }),
@@ -40321,6 +40326,148 @@ var FindLocation = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = FindLocation;
+
+/***/ }),
+/* 580 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(174);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FindTrip = function (_React$Component) {
+  _inherits(FindTrip, _React$Component);
+
+  function FindTrip(props) {
+    _classCallCheck(this, FindTrip);
+
+    var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
+
+    _this.state = {
+      trip: props.trip
+      // console.log(this.state.trip);
+
+    };_this.getTripData = _this.getTripData.bind(_this);
+    return _this;
+  }
+
+  _createClass(FindTrip, [{
+    key: "getTripData",
+    value: function getTripData(e) {
+      e.preventDefault();
+      var that = this;
+      var data = {};
+      data.name = document.getElementById("trip-name").value;
+      data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+      console.log(data);
+      _axios2.default.post("/trip", data).then(function (response) {
+        // console.log('testttt');
+        console.log(response.data);
+        data.id = response.data.insertId;
+        that.setState({ trip: data });
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.trip) {
+        // console.log(this.state.trip);
+        // console.log(this.state.trip.id);
+        // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
+        return _react2.default.createElement(Location, { trip: this.state.trip });
+      } else {
+        return _react2.default.createElement(
+          "div",
+          { id: "trip-box" },
+          _react2.default.createElement(
+            "div",
+            { className: "center-block text-center" },
+            _react2.default.createElement(
+              "form",
+              { id: "add-trip", action: "", onSubmit: this.getTripData },
+              _react2.default.createElement(
+                "h3",
+                null,
+                "Add Your FindTrip!"
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "Enter You FindTrip Name:"
+              ),
+              _react2.default.createElement(
+                "fieldset",
+                null,
+                _react2.default.createElement("input", { id: "trip-name", placeholder: "Your trip name", type: "text", minLength: "3", tabIndex: "1", required: true, autoFocus: true })
+              ),
+              _react2.default.createElement(
+                "h5",
+                null,
+                "Which Kind Of Traveler Are You?"
+              ),
+              _react2.default.createElement(
+                "label",
+                { className: "radio-inline" },
+                _react2.default.createElement("input", { placeholder: "FindTrip Name``", required: true, type: "radio", name: "trip-type", value: "Couple" }),
+                "Couple"
+              ),
+              _react2.default.createElement(
+                "label",
+                { className: "radio-inline" },
+                _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Friends" }),
+                "Friends Group"
+              ),
+              _react2.default.createElement(
+                "label",
+                { className: "radio-inline" },
+                _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Solo" }),
+                "Solo Traveler"
+              ),
+              _react2.default.createElement("br", null),
+              _react2.default.createElement(
+                "fieldset",
+                null,
+                _react2.default.createElement(
+                  "button",
+                  { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
+                  "Submit"
+                )
+              )
+            )
+          ),
+          _react2.default.createElement("hr", null)
+        );
+      }
+    }
+  }]);
+
+  return FindTrip;
+}(_react2.default.Component);
+
+exports.default = FindTrip;
 
 /***/ })
 /******/ ]);
