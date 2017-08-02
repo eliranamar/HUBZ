@@ -31811,7 +31811,7 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
     _reactGoogleMaps.GoogleMap,
     {
       defaultZoom: 4,
-      defaultCenter: { lat: -25.363882, lng: 131.044922 }
+      defaultCenter: { lat: 34.0522346, lng: -118.2436829 }
     },
     ">",
     props.markers.map(function (marker, index) {
@@ -31839,7 +31839,7 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
     }),
     props.polyline.map(function (path, index) {
       return _react2.default.createElement(_Polyline2.default, {
-        options: { strokeColor: path.color, geodesic: true },
+        options: { strokeColor: "blue", geodesic: true },
         key: index,
         path: path.polyline
       });
@@ -31858,18 +31858,18 @@ var FindLocation = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
 
     _this.state = {
+      markersArr: [],
+
       center: {
-        lat: -25.363882,
-        lng: 131.044922
+        lat: 34.0522346,
+        lng: -118.2436829
       },
       // ,
 
       paths: [{
-        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }],
-        color: "blue"
+        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
       }, {
-        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }],
-        color: "red"
+        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
       }],
 
       markers: [{
@@ -31891,7 +31891,6 @@ var FindLocation = function (_React$Component) {
           viewBox: "0 0 16 16"
         })
       }]
-
     };
     _this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
     _this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
@@ -31899,6 +31898,78 @@ var FindLocation = function (_React$Component) {
   }
 
   _createClass(FindLocation, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var allLocations = [{
+        id: 3,
+        country: "United States",
+        name: "Los Angeles",
+        lng: 34.0522346,
+        lat: -118.2436829,
+        trip_id: 2
+      }, {
+        id: 4,
+        country: "United States",
+        name: "San Francisco",
+        lng: 37.774929,
+        lat: -122.4194183,
+        trip_id: 2
+      }, {
+        id: 5,
+        country: "United States",
+        name: "Seattle",
+        lng: 47.6062088,
+        lat: -122.3320694,
+        trip_id: 2
+      }];
+      var tempArr = [];
+
+      for (var i = 0; i < allLocations.length; i++) {
+        var lat = allLocations[i].lat;
+        var lng = allLocations[i].lng;
+
+        var obj = {
+          position: new google.maps.LatLng(lng, lat),
+          showInfo: false,
+          infoContent: "<p>" + allLocations[i].name + "</p>"
+        };
+        tempArr.push(obj);
+      }
+
+      function extend(obj, src) {
+        for (var key in src) {
+          if (src.hasOwnProperty(key)) obj[key] = src[key];
+        }
+        return obj;
+      }
+      var tempPoly = [{ polyline: [] }];
+
+      for (var z = 0; z < allLocations.length; z++) {
+        var lngA = { lat: allLocations[z].lng };
+        var latA = { lng: allLocations[z].lat };
+        var c = extend(latA, lngA);
+        tempPoly[0].polyline.push(c);
+      }
+      console.log(tempPoly);
+      this.setState({
+        paths: tempPoly
+      });
+
+      // paths: [
+      //         {
+      //           polyline: [
+      //             { lat: -27.363882, lng: 137.044922 },
+      //             { lat: -23.363882, lng: 129.044922 },
+      //             { lat: -20.5107991, lng: 131.9081663 }
+      //           ],
+      //           color: "blue"
+      //         },
+
+      this.setState({
+        markers: tempArr
+      });
+    }
+  }, {
     key: "handleMarkerClick",
     value: function handleMarkerClick(targetMarker) {
       console.log(targetMarker);
@@ -31963,7 +32034,6 @@ var FindLocation = function (_React$Component) {
             polyline: this.state.paths,
             onMarkerClick: this.handleMarkerClick,
             onMarkerClose: this.handleMarkerClose
-
           })
         )
       );
