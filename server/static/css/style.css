@@ -150,3 +150,17 @@ fieldset {
   color: #fff;
   background-color: gray;
 }
+
+#map {
+    height: 200px;
+    position: left;
+}
+
+.panel-primary {
+    border: none;
+}
+
+
+.mother {
+    height: 300px;
+}

@@ -12,7 +12,7 @@ class Location extends React.Component {
     return (
       <div>
         <div className="center-block">
-          <form id="add-location" action="" onSubmit={}>
+          <form id="add-location" action="">
             <h3>Add Your Location!</h3>
             <fieldset>
               <input id="trip-name" placeholder="Your trip name" type="text" tabIndex="1" required autoFocus />
