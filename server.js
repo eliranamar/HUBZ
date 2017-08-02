@@ -28,11 +28,35 @@ const connection = mysql.createConnection({
 
 // console.log(q.sql);
 
+app.get('/trip/:id', function (req, res) {
+  let where = {
+    trip_id: req.params.id
+  }
+
+  connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+});
+
+app.post('/trip/:trip_id/addlocation', function (req, res) {
+  console.log(req.body);
+  res.json(req.body)
+  // connection.query('INSERT INTO locations SET ?', where, function (err, result) {
+  //   if (err) throw err;
+  //   console.log(result);
+  //   res.send(result);
+  // });
+});
 
 app.post('/trip', function (req, res) {
   let trip = req.body;
   console.log(trip);
   // connection.connect();
+  if (!trip.name || !trip.type) {
+    res.send('Please fill trip data correctly');
+  }
 
   connection.query('INSERT INTO trips SET ?', trip, function (err, result) {
     if (err) throw err;
