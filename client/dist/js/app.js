@@ -28042,23 +28042,37 @@ var Location = function (_React$Component) {
         name: "amit",
         id: 3,
         type: 'Solo'
-      }
+      },
+      location: {}
       // let trip = {};
       // trip.name = "amit";
       // trip.id = 3;
       // trip.type = 'Solo';
-    };console.log(_this.state.trip);
+    };console.log("trip ", _this.state.trip);
     _this.addLocation = _this.addLocation.bind(_this);
+    _this.setLocationState = _this.setLocationState.bind(_this);
     return _this;
   }
 
   _createClass(Location, [{
+    key: "setLocationState",
+    value: function setLocationState(location) {
+      console.log(location);
+      this.setState({ location: location });
+    }
+  }, {
     key: "addLocation",
     value: function addLocation(e) {
       e.preventDefault();
-      // console.log('testLOC');
-      var location = {};
+      if (!this.state.location.name) {
+        alert('please choose location before submitting');
+        return;
+      }
+      var location = this.state.location; //TODO make this change state nicer
       location.trip_id = this.state.trip.id;
+      this.setState({ location: location });
+      // console.log(this.state.location);
+      // console.log('testLOC');
       // location.name = document.getElementById("location-name").value;
       _axios2.default.post("/trip/" + location.trip_id + "/addlocation", location).then(function (response) {
         console.log('server responded');
@@ -28072,29 +28086,39 @@ var Location = function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
+      // let that = this;
       var input = document.getElementById('searchInput');
       var autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.addListener('place_changed', function () {
 
         var place = autocomplete.getPlace();
-        console.log(place);
 
         if (place.address_components) {
+          var location = {};
           for (var i = 0; i < place.address_components.length; i++) {
-            if (place.address_components[i].types[0] == 'postal_code') {
-              document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
-            }
             if (place.address_components[i].types[0] == 'country') {
+              location.country = place.address_components[i].long_name;
               document.getElementById('country').innerHTML = place.address_components[i].long_name;
             }
             if (place.address_components[i].types[0] == "locality") {
+              location.name = place.address_components[i].long_name;
               document.getElementById('name').innerHTML = place.address_components[i].long_name;
             }
           }
+          if (place.name) {
+            document.getElementById('name').innerHTML = place.name;
+            location.name = place.name;
+          }
+          location.lat = place.geometry.location.lat();
+          location.lng = place.geometry.location.lng();
+          console.log(location);
           document.getElementById('location').innerHTML = place.formatted_address;
           // document.getElementById('location').innerHTML = place.formatted_address;
           document.getElementById('lat').innerHTML = place.geometry.location.lat();
           document.getElementById('lon').innerHTML = place.geometry.location.lng();
+          _this2.setState({ location: location });
         } else {
           alert('please choose location from google list');
         }
@@ -28152,12 +28176,6 @@ var Location = function (_React$Component) {
               null,
               "Name: ",
               _react2.default.createElement("span", { id: "name" })
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "Postal Code: ",
-              _react2.default.createElement("span", { id: "postal_code" })
             ),
             _react2.default.createElement(
               "li",
