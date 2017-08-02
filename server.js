@@ -33,6 +33,7 @@ app.get('/trip/:id', function (req, res) {
     trip_id: req.params.id
   }
 
+
   connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
     if (err) throw err;
     console.log(result);
@@ -42,16 +43,20 @@ app.get('/trip/:id', function (req, res) {
 
 app.post('/trip/:trip_id/addlocation', function (req, res) {
   console.log(req.body);
-  res.json(req.body)
-  // connection.query('INSERT INTO locations SET ?', where, function (err, result) {
-  //   if (err) throw err;
-  //   console.log(result);
-  //   res.send(result);
-  // });
+  // res.json(req.body);
+  let location = req.body;
+
+
+  connection.query('INSERT INTO locations SET ?', location, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
 });
 
 app.post('/trip', function (req, res) {
   let trip = req.body;
+
   console.log(trip);
   // connection.connect();
   if (!trip.name || !trip.type) {

@@ -27043,7 +27043,7 @@ var Trip = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.state.trip) {
+      if (this.state.trip) {
         // console.log(this.state.trip);
         // console.log(this.state.trip.id);
         // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
@@ -28034,15 +28034,12 @@ var Location = function (_React$Component) {
   function Location(props) {
     _classCallCheck(this, Location);
 
-    // let trip = this.props.trip;
     var _this = _possibleConstructorReturn(this, (Location.__proto__ || Object.getPrototypeOf(Location)).call(this, props));
 
+    var trip = _this.props.trip;
+    console.log(trip);
     _this.state = {
-      trip: {
-        name: "amit",
-        id: 3,
-        type: 'Solo'
-      },
+      trip: trip,
       location: {}
       // let trip = {};
       // trip.name = "amit";
@@ -28094,6 +28091,7 @@ var Location = function (_React$Component) {
       autocomplete.addListener('place_changed', function () {
 
         var place = autocomplete.getPlace();
+        console.log(place);
 
         if (place.address_components) {
           var location = {};
@@ -28114,7 +28112,7 @@ var Location = function (_React$Component) {
           location.lat = place.geometry.location.lat();
           location.lng = place.geometry.location.lng();
           console.log(location);
-          document.getElementById('location').innerHTML = place.formatted_address;
+          // document.getElementById('location').innerHTML = place.formatted_address;
           // document.getElementById('location').innerHTML = place.formatted_address;
           document.getElementById('lat').innerHTML = place.geometry.location.lat();
           document.getElementById('lon').innerHTML = place.geometry.location.lng();
@@ -28134,43 +28132,34 @@ var Location = function (_React$Component) {
           "div",
           { className: "center-block text-center" },
           _react2.default.createElement(
-            "form",
-            { id: "add-location", action: "", onSubmit: this.addLocation },
-            _react2.default.createElement(
-              "h3",
-              null,
-              "Add Your Location!"
-            ),
-            _react2.default.createElement(
-              "h4",
-              null,
-              "Please Search and choose from suggestions"
-            ),
-            _react2.default.createElement(
-              "fieldset",
-              null,
-              _react2.default.createElement("input", { required: true, id: "searchInput", className: "controls form-control", type: "text", placeholder: "Enter a location" })
-            ),
-            _react2.default.createElement("br", null),
-            _react2.default.createElement(
-              "fieldset",
-              null,
-              _react2.default.createElement(
-                "button",
-                { name: "submit", type: "submit", className: "btn btn-primary", id: "contact-submit", "data-submit": "...Sending" },
-                "Add Location To Trip !"
-              )
-            )
+            "h3",
+            null,
+            "Add Your Location!"
           ),
           _react2.default.createElement(
-            "ul",
-            { id: "geoData" },
+            "h4",
+            null,
+            "Please Search and choose from suggestions"
+          ),
+          _react2.default.createElement(
+            "fieldset",
+            null,
+            _react2.default.createElement("input", { required: true, id: "searchInput", className: "controls form-control", type: "text", placeholder: "Enter a location" })
+          ),
+          _react2.default.createElement("br", null),
+          _react2.default.createElement(
+            "fieldset",
+            null,
             _react2.default.createElement(
-              "li",
-              null,
-              "Full Address: ",
-              _react2.default.createElement("span", { id: "location" })
-            ),
+              "button",
+              { name: "submit", type: "submit", className: "btn btn-primary", onClick: this.addLocation, id: "contact-submit", "data-submit": "...Sending" },
+              "Add Location To Trip !"
+            )
+          ),
+          _react2.default.createElement("hr", null),
+          _react2.default.createElement(
+            "ul",
+            { id: "geoData", style: { listStyleType: 'none' } },
             _react2.default.createElement(
               "li",
               null,

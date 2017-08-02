@@ -6,20 +6,17 @@ import { Route, Redirect } from "react-router-dom";
 class Location extends React.Component {
   constructor(props) {
     super(props);
-    // let trip = this.props.trip;
+    let trip = this.props.trip;
+    console.log(trip);
     this.state = {
-      trip: {
-        name: "amit",
-        id: 3,
-        type: 'Solo'
-      },
+      trip: trip,
       location: {}
     }
     // let trip = {};
     // trip.name = "amit";
     // trip.id = 3;
     // trip.type = 'Solo';
-    console.log("trip ",this.state.trip);
+    console.log("trip ", this.state.trip);
     this.addLocation = this.addLocation.bind(this);
     this.setLocationState = this.setLocationState.bind(this);
   }
@@ -60,6 +57,7 @@ class Location extends React.Component {
     autocomplete.addListener('place_changed', () => {
 
       let place = autocomplete.getPlace();
+      console.log(place);
 
       if (place.address_components) {
         let location = {};
@@ -80,7 +78,7 @@ class Location extends React.Component {
         location.lat = place.geometry.location.lat();
         location.lng = place.geometry.location.lng();
         console.log(location);
-        document.getElementById('location').innerHTML = place.formatted_address;
+        // document.getElementById('location').innerHTML = place.formatted_address;
         // document.getElementById('location').innerHTML = place.formatted_address;
         document.getElementById('lat').innerHTML = place.geometry.location.lat();
         document.getElementById('lon').innerHTML = place.geometry.location.lng();
@@ -95,26 +93,27 @@ class Location extends React.Component {
     return (
       <div id="location-box">
         <div className="center-block text-center">
-          <form id="add-location" action="" onSubmit={this.addLocation}>
-            <h3>Add Your Location!</h3>
-            <h4>Please Search and choose from suggestions</h4>
-            <fieldset>
-              <input required id="searchInput" className="controls form-control" type="text" placeholder="Enter a location" />
-            </fieldset>
-            <br />
-            <fieldset>
-              <button name="submit" type="submit" className="btn btn-primary" id="contact-submit" data-submit="...Sending">Add Location To Trip !</button>
-            </fieldset>
-          </form>
-          <ul id="geoData">
-            <li>Full Address: <span id="location"></span></li>
+
+          <h3>Add Your Location!</h3>
+          <h4>Please Search and choose from suggestions</h4>
+          <fieldset>
+            <input required id="searchInput" className="controls form-control" type="text" placeholder="Enter a location" />
+          </fieldset>
+          <br />
+          <fieldset>
+            <button name="submit" type="submit" className="btn btn-primary" onClick={this.addLocation} id="contact-submit" data-submit="...Sending">Add Location To Trip !</button>
+          </fieldset>
+
+          <hr />
+          <ul id="geoData" style={{listStyleType: 'none'}}>
+            {/* <li>Full Address: <span id="location"></span></li> */}
             <li>Name: <span id="name"></span></li>
             <li>Country: <span id="country"></span></li>
             <li>Latitude: <span id="lat"></span></li>
             <li>Longitude: <span id="lon"></span></li>
           </ul>
         </div>
-      </div>
+      </div >
     );
   }
 }

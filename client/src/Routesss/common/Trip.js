@@ -35,7 +35,7 @@ class Trip extends React.Component {
   }
 
   render() {
-    if (!this.state.trip) {
+    if (this.state.trip) {
       // console.log(this.state.trip);
       // console.log(this.state.trip.id);
       // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
