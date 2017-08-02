@@ -1,7 +1,7 @@
 {
   "name": "demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Elevation react webpack",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.16.2",
@@ -40,5 +40,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliranamar/Routesss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eliranamar/Routesss/issues"
+  },
+  "homepage": "https://github.com/eliranamar/Routesss#readme"
 }
