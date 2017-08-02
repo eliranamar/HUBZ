@@ -24,7 +24,7 @@ class Trip extends React.Component {
     console.log(data);
     axios.post("/trip", data)
       .then(function (response) {
-        console.log('testttt');
+        // console.log('testttt');
         console.log(response.data);
         data.id = response.data.insertId;
         that.setState({ trip: data })
@@ -38,7 +38,7 @@ class Trip extends React.Component {
     if (!this.state.trip) {
       // console.log(this.state.trip);
       // console.log(this.state.trip.id);
-      history.pushState(null, null, '/trip/'+"3"+'/addlocation');
+      // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
       return (
         <Location trip={this.state.trip}></Location>
       )

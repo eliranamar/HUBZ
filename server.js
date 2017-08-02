@@ -69,22 +69,6 @@ app.post('/trip', function (req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Handle browser refresh by redirecting to index html
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './server/static/index.html'))
