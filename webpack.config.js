@@ -20,7 +20,8 @@ module.exports = {
         include: path.join(__dirname, '/client/src'),
         loader: 'babel-loader',
         query: {
-          presets: ["react", "es2015"]
+          presets: ["react", "es2015"],
+          plugins: ["transform-es2015-destructuring", "transform-object-rest-spread"]
         }
       }
     ]
