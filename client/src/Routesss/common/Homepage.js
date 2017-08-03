@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class Homepage extends React.Component {
   render() {
@@ -8,8 +10,7 @@ class Homepage extends React.Component {
 
           <div className="text-vcenter">
             <h1>HUBZ</h1>
-
-            <a href="#about" className="btn btn-default btn-lg">Where's the Hub?</a>
+            <button className="btn btn-success btn-square"><Link to="/findlocation">Where's the Hub?</Link></button>
 
           </div>
 

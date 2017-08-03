@@ -227,11 +227,13 @@ class FindLocation extends React.Component {
     return (
       <div className="row full-height" style={{ height: "100%" }}>
         <div className="col-md-6">
+          <a target="_blank" href="https://www.rome2rio.com/s/New-York/Boston?utm_source=widget">
           <img
-            src="http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg"
+            src="img/widget.jpg"
             className="img-responsive"
             alt=""
           />
+          </a>
         </div>
         <div className="col-md-6" style={{ height: "100%" }}>
           <GettingStartedGoogleMap
