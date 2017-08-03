@@ -40480,11 +40480,15 @@ var FindLocation = function (_React$Component) {
         _react2.default.createElement(
           "div",
           { className: "col-md-6" },
-          _react2.default.createElement("img", {
-            src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg",
-            className: "img-responsive",
-            alt: ""
-          })
+          _react2.default.createElement(
+            "a",
+            { target: "_blank", href: "https://www.rome2rio.com/s/New-York/Boston?utm_source=widget" },
+            _react2.default.createElement("img", {
+              src: "img/widget.jpg",
+              className: "img-responsive",
+              alt: ""
+            })
+          )
         ),
         _react2.default.createElement(
           "div",
@@ -40710,6 +40714,8 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(53);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40728,324 +40734,328 @@ var Homepage = function (_React$Component) {
   }
 
   _createClass(Homepage, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "homepage" },
+        'div',
+        { id: 'homepage' },
         _react2.default.createElement(
-          "div",
-          { id: "home", className: "home" },
+          'div',
+          { id: 'home', className: 'home' },
           _react2.default.createElement(
-            "div",
-            { className: "text-vcenter" },
+            'div',
+            { className: 'text-vcenter' },
             _react2.default.createElement(
-              "h1",
+              'h1',
               null,
-              "HUBZ"
+              'HUBZ'
             ),
             _react2.default.createElement(
-              "a",
-              { href: "#about", className: "btn btn-default btn-lg" },
-              "Where's the Hub?"
+              'button',
+              { className: 'btn btn-success btn-square' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/findlocation' },
+                'Where\'s the Hub?'
+              )
             )
           )
         ),
         _react2.default.createElement(
-          "div",
-          { id: "about", className: "pad-section" },
+          'div',
+          { id: 'about', className: 'pad-section' },
           _react2.default.createElement(
-            "div",
-            { className: "container" },
+            'div',
+            { className: 'container' },
             _react2.default.createElement(
-              "div",
-              { className: "row" },
+              'div',
+              { className: 'row' },
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-6" },
-                _react2.default.createElement("img", { src: "img/lglogo.jpg", alt: "" })
+                'div',
+                { className: 'col-sm-6' },
+                _react2.default.createElement('img', { src: 'img/lglogo.jpg', alt: '' })
               ),
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-6 text-center" },
+                'div',
+                { className: 'col-sm-6 text-center' },
                 _react2.default.createElement(
-                  "h2",
+                  'h2',
                   null,
-                  "What is Hubz ?"
+                  'What is Hubz ?'
                 ),
                 _react2.default.createElement(
-                  "p",
-                  { className: "lead" },
-                  "Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting activities along the way. ",
-                  _react2.default.createElement("br", null),
-                  " Save Hubz for future reference and share with friends!"
+                  'p',
+                  { className: 'lead' },
+                  'Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting activities along the way. ',
+                  _react2.default.createElement('br', null),
+                  ' Save Hubz for future reference and share with friends!'
                 )
               )
             )
           )
         ),
         _react2.default.createElement(
-          "div",
-          { id: "services", className: "pad-section" },
+          'div',
+          { id: 'services', className: 'pad-section' },
           _react2.default.createElement(
-            "div",
-            { className: "container" },
+            'div',
+            { className: 'container' },
             _react2.default.createElement(
-              "h2",
-              { className: "text-center" },
-              "How To"
+              'h2',
+              { className: 'text-center' },
+              'How To'
             ),
-            _react2.default.createElement("hr", null),
+            _react2.default.createElement('hr', null),
             _react2.default.createElement(
-              "div",
-              { className: "row text-center" },
+              'div',
+              { className: 'row text-center' },
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-3 col-xs-6" },
+                'div',
+                { className: 'col-sm-3 col-xs-6' },
                 _react2.default.createElement(
-                  "i",
-                  { className: "glyphicon glyphicon-map-marker" },
-                  " "
+                  'i',
+                  { className: 'glyphicon glyphicon-map-marker' },
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "h4",
+                  'h4',
                   null,
-                  "First"
+                  'First'
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  "We want to see what hubz are around you!"
+                  'We want to see what hubz are around you!'
                 )
               ),
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-3 col-xs-6" },
+                'div',
+                { className: 'col-sm-3 col-xs-6' },
                 _react2.default.createElement(
-                  "i",
-                  { className: "glyphicon glyphicon-road" },
-                  " "
+                  'i',
+                  { className: 'glyphicon glyphicon-road' },
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "h4",
+                  'h4',
                   null,
-                  "Second"
+                  'Second'
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  "How do we get there "
+                  'How do we get there '
                 )
               ),
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-3 col-xs-6" },
+                'div',
+                { className: 'col-sm-3 col-xs-6' },
                 _react2.default.createElement(
-                  "i",
-                  { className: "glyphicon glyphicon-pushpin" },
-                  " "
+                  'i',
+                  { className: 'glyphicon glyphicon-pushpin' },
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "h4",
+                  'h4',
                   null,
-                  "Next"
+                  'Next'
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  "Whats to do along the way "
+                  'Whats to do along the way '
                 )
               ),
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-3 col-xs-6" },
+                'div',
+                { className: 'col-sm-3 col-xs-6' },
                 _react2.default.createElement(
-                  "i",
-                  { className: "glyphicon glyphicon-tree-conifer" },
-                  " "
+                  'i',
+                  { className: 'glyphicon glyphicon-tree-conifer' },
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "h4",
+                  'h4',
                   null,
-                  "Lastly"
+                  'Lastly'
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  "Lay back and roll a j!"
+                  'Lay back and roll a j!'
                 )
               )
             )
           )
         ),
-        _react2.default.createElement("hr", null),
+        _react2.default.createElement('hr', null),
         _react2.default.createElement(
-          "h2",
-          { className: "text-center" },
-          " Our Partners "
+          'h2',
+          { className: 'text-center' },
+          ' Our Partners '
         ),
         _react2.default.createElement(
-          "div",
-          { id: "myCarousel", className: "carousel slide", "data-ride": "carousel" },
+          'div',
+          { id: 'myCarousel', className: 'carousel slide', 'data-ride': 'carousel' },
           _react2.default.createElement(
-            "ol",
-            { className: "carousel-indicators" },
-            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "0", className: "active" }),
-            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "1" }),
-            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "2" }),
-            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "3" })
+            'ol',
+            { className: 'carousel-indicators' },
+            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '0', className: 'active' }),
+            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '1' }),
+            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '2' }),
+            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '3' })
           ),
           _react2.default.createElement(
-            "div",
-            { className: "carousel-inner" },
+            'div',
+            { className: 'carousel-inner' },
             _react2.default.createElement(
-              "div",
-              { className: "item active" },
-              _react2.default.createElement("img", { src: "img/elal.jpg", alt: "El Al" })
+              'div',
+              { className: 'item active' },
+              _react2.default.createElement('img', { src: 'img/elal.jpg', alt: 'El Al' })
             ),
             _react2.default.createElement(
-              "div",
-              { className: "item" },
-              _react2.default.createElement("img", { src: "img/airbnb.jpg", alt: "Air BnB" })
+              'div',
+              { className: 'item' },
+              _react2.default.createElement('img', { src: 'img/airbnb.jpg', alt: 'Air BnB' })
             ),
             _react2.default.createElement(
-              "div",
-              { className: "item" },
-              _react2.default.createElement("img", { src: "img/tour.jpg", alt: "Ministry of Tourism" })
+              'div',
+              { className: 'item' },
+              _react2.default.createElement('img', { src: 'img/tour.jpg', alt: 'Ministry of Tourism' })
             ),
             _react2.default.createElement(
-              "div",
-              { className: "item" },
-              _react2.default.createElement("img", { src: "img/hi.jpg", alt: "Hilik" })
+              'div',
+              { className: 'item' },
+              _react2.default.createElement('img', { src: 'img/hi.jpg', alt: 'Hilik' })
             )
           ),
           _react2.default.createElement(
-            "a",
-            { className: "left carousel-control", href: "#myCarousel", "data-slide": "prev" },
-            _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-left" }),
+            'a',
+            { className: 'left carousel-control', href: '#myCarousel', 'data-slide': 'prev' },
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-left' }),
             _react2.default.createElement(
-              "span",
-              { className: "sr-only" },
-              "Previous"
+              'span',
+              { className: 'sr-only' },
+              'Previous'
             )
           ),
           _react2.default.createElement(
-            "a",
-            { className: "right carousel-control", href: "#myCarousel", "data-slide": "next" },
-            _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-right" }),
+            'a',
+            { className: 'right carousel-control', href: '#myCarousel', 'data-slide': 'next' },
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-right' }),
             _react2.default.createElement(
-              "span",
-              { className: "sr-only" },
-              "Next"
+              'span',
+              { className: 'sr-only' },
+              'Next'
             )
           )
         ),
         _react2.default.createElement(
-          "div",
-          { id: "information", className: "pad-section" },
+          'div',
+          { id: 'information', className: 'pad-section' },
           _react2.default.createElement(
-            "div",
-            { id: "testimonials", className: "container" },
+            'div',
+            { id: 'testimonials', className: 'container' },
             _react2.default.createElement(
-              "div",
-              { className: "row" },
+              'div',
+              { className: 'row' },
               _react2.default.createElement(
-                "div",
-                { className: "col-sm-12" },
+                'div',
+                { className: 'col-sm-12' },
                 _react2.default.createElement(
-                  "div",
-                  { className: "panel panel-default" },
+                  'div',
+                  { className: 'panel panel-default' },
                   _react2.default.createElement(
-                    "div",
-                    { className: "container bootstrap snippet" },
+                    'div',
+                    { className: 'container bootstrap snippet' },
                     _react2.default.createElement(
-                      "div",
-                      { className: "row" },
+                      'div',
+                      { className: 'row' },
                       _react2.default.createElement(
-                        "h2",
-                        { className: "text-center text-primary" },
-                        "What our clients said about us?"
+                        'h2',
+                        { className: 'text-center text-primary' },
+                        'What our clients said about us?'
                       ),
-                      _react2.default.createElement("hr", null),
+                      _react2.default.createElement('hr', null),
                       _react2.default.createElement(
-                        "div",
-                        { className: "col-md-10 col-md-offset-1" },
+                        'div',
+                        { className: 'col-md-10 col-md-offset-1' },
                         _react2.default.createElement(
-                          "div",
-                          { className: "row testimonials" },
+                          'div',
+                          { className: 'row testimonials' },
                           _react2.default.createElement(
-                            "div",
-                            { className: "col-sm-4" },
+                            'div',
+                            { className: 'col-sm-4' },
                             _react2.default.createElement(
-                              "blockquote",
+                              'blockquote',
                               null,
                               _react2.default.createElement(
-                                "p",
-                                { className: "clients-words" },
-                                "We were lost on our way to battle. HUBZ, couldn't have found us a better route!"
+                                'p',
+                                { className: 'clients-words' },
+                                'We were lost on our way to battle. HUBZ, couldn\'t have found us a better route!'
                               ),
                               _react2.default.createElement(
-                                "span",
-                                { className: "clients-name text-primary" },
-                                "\u2014 Steven Winston",
-                                _react2.default.createElement("br", null),
+                                'span',
+                                { className: 'clients-name text-primary' },
+                                '\u2014 Steven Winston',
+                                _react2.default.createElement('br', null),
                                 _react2.default.createElement(
-                                  "span",
+                                  'span',
                                   null,
-                                  "Boy Genius"
+                                  'Boy Genius'
                                 )
                               ),
-                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/steven.jpg" })
+                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/steven.jpg' })
                             )
                           ),
                           _react2.default.createElement(
-                            "div",
-                            { className: "col-sm-4" },
+                            'div',
+                            { className: 'col-sm-4' },
                             _react2.default.createElement(
-                              "blockquote",
+                              'blockquote',
                               null,
                               _react2.default.createElement(
-                                "p",
-                                { className: "clients-words" },
-                                "HUBZ is the best app of any cohort in our history and future!!"
+                                'p',
+                                { className: 'clients-words' },
+                                'HUBZ is the best app of any cohort in our history and future!!'
                               ),
                               _react2.default.createElement(
-                                "span",
-                                { className: "clients-name text-primary" },
-                                "\u2014 Avi Snir",
-                                _react2.default.createElement("br", null),
+                                'span',
+                                { className: 'clients-name text-primary' },
+                                '\u2014 Avi Snir',
+                                _react2.default.createElement('br', null),
                                 _react2.default.createElement(
-                                  "span",
+                                  'span',
                                   null,
-                                  "CEO Elevation Academy"
+                                  'CEO Elevation Academy'
                                 )
                               ),
-                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/avi.jpg" })
+                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/avi.jpg' })
                             )
                           ),
                           _react2.default.createElement(
-                            "div",
-                            { className: "col-sm-4" },
+                            'div',
+                            { className: 'col-sm-4' },
                             _react2.default.createElement(
-                              "blockquote",
+                              'blockquote',
                               null,
                               _react2.default.createElement(
-                                "p",
-                                { className: "clients-words" },
-                                "The HUBZ app is a must for all Israelis travelling across the globe!"
+                                'p',
+                                { className: 'clients-words' },
+                                'The HUBZ app is a must for all Israelis travelling across the globe!'
                               ),
                               _react2.default.createElement(
-                                "span",
-                                { className: "clients-name text-primary" },
-                                "\u2014 Yariv Levin",
-                                _react2.default.createElement("br", null),
+                                'span',
+                                { className: 'clients-name text-primary' },
+                                '\u2014 Yariv Levin',
+                                _react2.default.createElement('br', null),
                                 _react2.default.createElement(
-                                  "span",
+                                  'span',
                                   null,
-                                  "Minister of Tourism"
+                                  'Minister of Tourism'
                                 )
                               ),
-                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/noscrub.jpg" })
+                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/noscrub.jpg' })
                             )
                           )
                         )
@@ -41058,71 +41068,71 @@ var Homepage = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          "footer",
+          'footer',
           null,
           _react2.default.createElement(
-            "div",
-            { className: "container" },
+            'div',
+            { className: 'container' },
             _react2.default.createElement(
-              "div",
-              { className: "row" },
+              'div',
+              { className: 'row' },
               _react2.default.createElement(
-                "div",
-                { className: "col-md-5 col-sm-6 footerleft " },
+                'div',
+                { className: 'col-md-5 col-sm-6 footerleft ' },
                 _react2.default.createElement(
-                  "div",
-                  { className: "logofooter" },
-                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
+                  'div',
+                  { className: 'logofooter' },
+                  _react2.default.createElement('img', { className: 'img-circle img-thumbnail', src: 'img/ani1.gif' })
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                  'Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. '
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
-                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                  _react2.default.createElement('i', { className: 'fa fa-map-pin' }),
+                  ' WeWork HaZerem 10 | Tel-Aviv | Israel '
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  _react2.default.createElement("i", { className: "fa fa-phone" }),
-                  " 03-674-6999"
+                  _react2.default.createElement('i', { className: 'fa fa-phone' }),
+                  ' 03-674-6999'
                 ),
                 _react2.default.createElement(
-                  "p",
+                  'p',
                   null,
-                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
-                  " E-mail : contact@hubz.com"
+                  _react2.default.createElement('i', { className: 'fa fa-envelope' }),
+                  ' E-mail : contact@hubz.com'
                 )
               ),
               _react2.default.createElement(
-                "div",
-                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                'div',
+                { className: 'col-md-5 col-sm-6 paddingtop-bottom' },
                 _react2.default.createElement(
-                  "h3",
+                  'h3',
                   null,
-                  "Social Media Hubz"
+                  'Social Media Hubz'
                 ),
                 _react2.default.createElement(
-                  "a",
-                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
-                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
-                  " Hire through Linkedin"
+                  'a',
+                  { href: 'https://www.linkedin.com/in/eliranamar/', target: '_blank', className: 'sicons btn btn-block btn-social btn-linkedin' },
+                  _react2.default.createElement('span', { className: 'fa fa-linkedin' }),
+                  ' Hire through Linkedin'
                 ),
                 _react2.default.createElement(
-                  "a",
-                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
-                  _react2.default.createElement("span", { className: "fa fa-github" }),
-                  " Clone from github"
+                  'a',
+                  { href: 'https://github.com/eliranamar/Routesss', target: '_blank', className: 'sicons btn btn-block btn-social btn-github' },
+                  _react2.default.createElement('span', { className: 'fa fa-github' }),
+                  ' Clone from github'
                 ),
                 _react2.default.createElement(
-                  "a",
-                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
-                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
-                  " Follow us on Twitter"
+                  'a',
+                  { href: 'https://twitter.com/realDonaldTrump', target: '_blank', className: 'sicons btn btn-block btn-social btn-twitter' },
+                  _react2.default.createElement('span', { className: 'fa fa-twitter' }),
+                  ' Follow us on Twitter'
                 )
               )
             )
