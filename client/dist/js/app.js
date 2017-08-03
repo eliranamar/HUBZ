@@ -40755,7 +40755,7 @@ var Homepage = function (_React$Component) {
               { className: 'btn btn-success btn-square' },
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/findlocation' },
+                { to: '/findtrip' },
                 'Where\'s the Hub?'
               )
             )

@@ -10,7 +10,7 @@ class Homepage extends React.Component {
 
           <div className="text-vcenter">
             <h1>HUBZ</h1>
-            <button className="btn btn-success btn-square"><Link to="/findlocation">Where's the Hub?</Link></button>
+            <button className="btn btn-success btn-square"><Link to="/findtrip">Where's the Hub?</Link></button>
 
           </div>
 
