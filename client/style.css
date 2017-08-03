@@ -58,6 +58,7 @@ body {
 
 .lead {
     padding-top: 20px;
+    text-align: left;
 }
 
 .social {
@@ -167,8 +168,12 @@ body {
 #about {}
 
 #services {
-    background-color: darkgreen;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #FF5733;
+}
+
+h4 {
+    font-weight: bold;
 }
 
 #services .glyphicon {
@@ -200,8 +205,19 @@ body {
 }
 
 .item {
-    width: 100%;
-    height: 533px;
+    height: 100%;
+    position: relative;
+}
+
+
+/*testimonials*/
+
+.client-words {
+    color: black;
+}
+
+.text-primary {
+    color: darkgreen
 }
 
 
@@ -210,7 +226,7 @@ body {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
     background-color: #0c1a1e;
-    min-height: 350px;
+    min-height: 250px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -223,7 +239,9 @@ footer {
     margin-bottom: 10px;
     font-size: 25px;
     color: #fff;
-    font-weight: 700;
+    font-weight: 100;
+    height: 100px;
+    width: 100px;
 }
 
 .footerleft p {
@@ -239,7 +257,12 @@ footer {
 }
 
 .paddingtop-bottom {
-    margin-left: 50px;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+h3 {
+    color: white;
 }
 
 .footer-ul {
@@ -288,18 +311,6 @@ footer {
 .icon {
     float: left;
     margin-right: 5px;
-}
-
-.copyright {
-    min-height: 40px;
-    background-color: #000000;
-}
-
-.copyright p {
-    text-align: left;
-    color: #FFF;
-    padding: 10px 0;
-    margin-bottom: 0px;
 }
 
 .heading7 {
