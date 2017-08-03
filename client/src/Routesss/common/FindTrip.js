@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from "axios";
+import TripFindEngine from  './Routesss/common/TripFindEngine';
+
+
 
 class FindTrip extends React.Component {
   constructor(props) {
@@ -86,6 +89,8 @@ class FindTrip extends React.Component {
           </fieldset>
         </div>
         <hr />
+        <TripFindEngine
+          results={this.state.results}/>
       </div>
     );
   }
