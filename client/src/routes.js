@@ -11,7 +11,7 @@ import FindTrip from './Routesss/common/FindTrip';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 const Routes = (props) => (
-    <div className="container">
+    <div className="container-fluid full-height">
         <Switch>
             <Route name="home" exact path='/' component={Homepage} />
             <Route name="about" exact path='/about' component={About} />

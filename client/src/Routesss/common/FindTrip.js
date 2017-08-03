@@ -6,26 +6,43 @@ class FindTrip extends React.Component {
     super(props);
 
     this.state = {
-      trips: [],
-      currentHub: null
+      trips: {},
+      currentHub: {
+        hub: null
+      },
+      results: []
     }
     // console.log(this.state.trip);
 
     this.findTripFunc = this.findTripFunc.bind(this);
   }
 
+
+
+
   findTripFunc() { //! this func fetchs all trips that contains this location
     let that = this;
     let data = [];
+    // let listItems = this.props.trips.map(function (trip) {
+    //   return (
+    //     <li key={trip.name}>
+    //      
+    //     </li>
+    //   );
+    // });
+    // console.log(typeof(this.state.currentHub.hub));
     // data.name = document.getElementById("trip-name").value;
     // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-    // console.log(data);
-    axios.post("/getnexthub", that.state.currentHub)
+    console.log(this.state.currentHub);
+    if (!this.state.currentHub.hub) {
+      alert('please choose valid hub');
+      return;
+    }
+    axios.post("/getnexthub", this.state.currentHub)
       .then(function (response) {
         // console.log('testttt');
         console.log(response.data);
-        data.id = response.data.insertId;
-        that.setState({ trip: data })
+        that.setState({ trips: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -39,16 +56,16 @@ class FindTrip extends React.Component {
     autocomplete.addListener('place_changed', () => {
 
       let place = autocomplete.getPlace();
-      let hub = "";
+      let hub = {};
       console.log(place);
       for (let i = 0; i < place.address_components.length; i++) {
 
         if (place.address_components[i].types[0] == "locality") {
-          hub = place.address_components[i].long_name;
+          hub.hub = place.address_components[i].long_name;
         }
       }
       if (place.address_components) {
-        that.setState({currentHub:hub});
+        that.setState({ currentHub: hub });
       } else {
         alert('please choose location from google list');
       }
@@ -65,13 +82,12 @@ class FindTrip extends React.Component {
           </fieldset>
           <hr />
           <fieldset>
-            <button onClick={this.findTripFunc} className="btn btn-success" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            <button onClick={this.findTripFunc} className="btn btn-success btn-square" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
           </fieldset>
         </div>
         <hr />
       </div>
     );
-
   }
 }
 

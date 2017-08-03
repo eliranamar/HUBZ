@@ -41,10 +41,33 @@ app.get('/trip/:id', function (req, res) {
   });
 });
 
-app.post('/getnexthub', function(req,res){
+// for finding 
+app.post('/getnexthub', function (req, res) {
   console.log(req.body);
-  res.json(req.body);
+  // res.json(req.body);
+  if (!req.body.hub) {
+    res.send('no hub sent for search..')
+    return;
+  }
+  let where = {
+    name: req.body.hub
+  }
+  connection.query('SELECT * FROM locations WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    let obj = {};
+    for (let i = 0; i < result.length; i++) {
+      if (obj[result[i].trip_id]) {
+        obj[result[i].trip_id].push(result[i])
+      } else {
+        obj[result[i].trip_id] = [];
+        obj[result[i].trip_id].push(result[i]);
+      }
+    }
+    res.send(obj);
+  });
 })
+
 
 app.post('/trip/:trip_id/addlocation', function (req, res) {
   console.log(req.body);

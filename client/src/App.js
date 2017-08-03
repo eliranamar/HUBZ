@@ -28,7 +28,7 @@ class App extends React.Component {
     console.log('connected');
     return (
       <BrowserRouter>
-        <div>
+        <div id="root" style={{ height: "100%" }}>
           <Header/>
           <Routesss setTripState={this.setTripState}/>
         </div>

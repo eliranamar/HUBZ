@@ -27,6 +27,7 @@ class Location extends React.Component {
   // }
 
   addLocation(e) {
+    let that = this;
     e.preventDefault();
     if (!this.state.location.name) {
       alert('please choose location before submitting');
@@ -42,6 +43,8 @@ class Location extends React.Component {
       .then(function (response) {
         console.log('server responded');
         console.log(response.data);
+        document.getElementById('searchInput').value = "";
+        that.setState({location: {}})
         // data.id = response.data.insertId;
         // that.setState({ trip: data })
       })
