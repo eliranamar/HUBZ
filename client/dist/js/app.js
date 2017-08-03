@@ -30969,73 +30969,148 @@ var About = function (_React$Component) {
         null,
         _react2.default.createElement(
           "div",
-          { className: "row text-center" },
+          { className: "container" },
           _react2.default.createElement(
             "div",
-            null,
+            { className: "row text-center" },
             _react2.default.createElement(
-              "h1",
+              "div",
               null,
-              "About Us"
+              _react2.default.createElement(
+                "h1",
+                null,
+                "About Us"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
+              )
             ),
             _react2.default.createElement(
-              "p",
+              "div",
               null,
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
+              _react2.default.createElement(
+                "h2",
+                null,
+                "Our Team"
+              ),
+              _react2.default.createElement("br", null),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/tesla.jpg", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Tesla"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Full-Stack"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/einstein.jpeg", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Einstein"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Team Leader"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/elon.png", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Musk"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Designer"
+                )
+              )
             )
-          ),
+          )
+        ),
+        _react2.default.createElement(
+          "footer",
+          { id: "about-footer" },
           _react2.default.createElement(
             "div",
-            null,
-            _react2.default.createElement(
-              "h2",
-              null,
-              "Our Team"
-            ),
-            _react2.default.createElement("br", null),
+            { className: "container" },
             _react2.default.createElement(
               "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/tesla.jpg", alt: "" }),
+              { className: "row" },
               _react2.default.createElement(
-                "h4",
-                null,
-                "Tesla"
+                "div",
+                { className: "col-md-5 col-sm-6 footerleft " },
+                _react2.default.createElement(
+                  "div",
+                  { className: "logofooter" },
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
+                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-phone" }),
+                  " 03-674-6999"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
+                  " E-mail : contact@hubz.com"
+                )
               ),
               _react2.default.createElement(
-                "h6",
-                null,
-                "Full-Stack"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/einstein.jpeg", alt: "" }),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "Einstein"
-              ),
-              _react2.default.createElement(
-                "h6",
-                null,
-                "Team Leader"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/elon.png", alt: "" }),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "Musk"
-              ),
-              _react2.default.createElement(
-                "h6",
-                null,
-                "Designer"
+                "div",
+                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Social Media Hubz"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
+                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
+                  " Hire through Linkedin"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
+                  _react2.default.createElement("span", { className: "fa fa-github" }),
+                  " Clone from github"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
+                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
+                  " Follow us on Twitter"
+                )
               )
             )
           )
@@ -31088,62 +31163,147 @@ var Contact = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "center-block" },
+        null,
         _react2.default.createElement(
-          "form",
-          { id: "contact", action: "", method: "post" },
+          "div",
+          { className: "container" },
           _react2.default.createElement(
-            "h3",
-            null,
-            "Contact Us!"
-          ),
-          _react2.default.createElement(
-            "h4",
-            null,
-            "request for custom quote"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your name", type: "text", tabIndex: "1", required: true, autoFocus: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Email Address", type: "email", tabIndex: "2", required: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Phone Number (optional)", type: "tel", tabIndex: "3" })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Web Site (optional)", type: "url", tabIndex: "4" })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("textarea", { placeholder: "Type your message here....", tabIndex: "5", required: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
+            "div",
+            { className: "row" },
+            _react2.default.createElement("div", { className: "col-md-4 col-lg-4 col-xl-4" }),
             _react2.default.createElement(
-              "button",
-              { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
-              "Submit"
-            )
-          ),
+              "div",
+              { className: "col-md-4 col-lg-4 col-xl-4" },
+              _react2.default.createElement(
+                "form",
+                { id: "contact", action: "", method: "post" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Contact Us!"
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "request for custom quote"
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your name", type: "text", tabIndex: "1", required: true, autoFocus: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Email Address", type: "email", tabIndex: "2", required: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Phone Number (optional)", type: "tel", tabIndex: "3" })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Web Site (optional)", type: "url", tabIndex: "4" })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("textarea", { placeholder: "Type your message here....", tabIndex: "5", required: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement(
+                    "button",
+                    { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
+                    "Submit"
+                  )
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "copyright" },
+                  "Designed by ",
+                  _react2.default.createElement(
+                    "a",
+                    { href: "https://github.com/eliranamar", target: "_blank", title: "Colorlib" },
+                    "Eliran"
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement("div", { className: "col-md-4 col-lg-4 col-xl-4" })
+          )
+        ),
+        _react2.default.createElement(
+          "footer",
+          null,
           _react2.default.createElement(
-            "p",
-            { className: "copyright" },
-            "Designed by ",
+            "div",
+            { className: "container" },
             _react2.default.createElement(
-              "a",
-              { href: "https://github.com/eliranamar", target: "_blank", title: "Colorlib" },
-              "Eliran"
+              "div",
+              { className: "row" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 footerleft " },
+                _react2.default.createElement(
+                  "div",
+                  { className: "logofooter" },
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
+                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-phone" }),
+                  " 03-674-6999"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
+                  " E-mail : contact@hubz.com"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Social Media Hubz"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
+                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
+                  " Hire through Linkedin"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
+                  _react2.default.createElement("span", { className: "fa fa-github" }),
+                  " Clone from github"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
+                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
+                  " Follow us on Twitter"
+                )
+              )
             )
           )
         )
@@ -31236,7 +31396,7 @@ var Trip = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           "div",
-          { id: "trip-box" },
+          { id: "trip-box", className: "container" },
           _react2.default.createElement(
             "div",
             { className: "center-block text-center" },
@@ -40442,7 +40602,7 @@ var FindTrip = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'find-trip-box' },
+        { id: 'find-trip-box', className: 'container' },
         _react2.default.createElement(
           'div',
           { className: 'center-block text-center' },
@@ -40755,6 +40915,7 @@ var Homepage = function (_React$Component) {
                         { className: "text-center text-primary" },
                         "What our clients said about us?"
                       ),
+                      _react2.default.createElement("hr", null),
                       _react2.default.createElement(
                         "div",
                         { className: "col-md-10 col-md-offset-1" },

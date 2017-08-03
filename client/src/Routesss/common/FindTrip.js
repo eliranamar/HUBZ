@@ -73,7 +73,7 @@ class FindTrip extends React.Component {
   }
   render() {
     return (
-      <div id="find-trip-box">
+      <div id="find-trip-box" className="container">
         <div className="center-block text-center">
           <h3>What is your current location?</h3>
           <h4>Search for your next Hub :)</h4>

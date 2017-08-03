@@ -135,6 +135,7 @@ class Homepage extends React.Component {
                   <div className="container bootstrap snippet">
                     <div className="row">
                       <h2 className="text-center text-primary">What our clients said about us?</h2>
+                      <hr/>
                       <div className="col-md-10 col-md-offset-1">
                         <div className="row testimonials">
                           <div className="col-sm-4">
