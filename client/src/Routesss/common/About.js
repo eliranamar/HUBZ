@@ -38,7 +38,7 @@ class About extends React.Component {
             <div className="row">
               <div className="col-md-5 col-sm-6 footerleft ">
                 <div className="logofooter">
-                  <img className="img-circle img-thumbnail" src="img/smlogo.jpg" />
+                  <img className="img-circle img-thumbnail" src="img/ani1.gif" />
                 </div>
                 <p>Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with
                             peers. </p>

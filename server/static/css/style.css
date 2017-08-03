@@ -164,3 +164,7 @@ fieldset {
 #about-footer {
   margin-top: 50px;
 }
+
+button.btn.btn-square>a{
+  color: white;
+}

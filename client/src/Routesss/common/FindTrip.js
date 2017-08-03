@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from "axios";
+import TripFindEngine from './TripFindEngine';
+import { Link } from 'react-router-dom';
 
 class FindTrip extends React.Component {
   constructor(props) {
@@ -15,10 +17,19 @@ class FindTrip extends React.Component {
     // console.log(this.state.trip);
 
     this.findTripFunc = this.findTripFunc.bind(this);
+    // this.redirectToMap = this.redirectToMap.bind(this);
   }
 
 
-
+  // redirectToMap(e) {
+  //   debugger
+  //   e.preventDefault();
+  //   render(){
+  //     return (
+  //       <Redirect to="/findlocation" />
+  //     );
+  //   }
+  // }
 
   findTripFunc() { //! this func fetchs all trips that contains this location
     let that = this;
@@ -73,8 +84,8 @@ class FindTrip extends React.Component {
   }
   render() {
     return (
-      <div id="find-trip-box" className="container">
-        <div className="center-block text-center">
+      <div id="find-trip-box">
+        <div className="container center-block text-center">
           <h3>What is your current location?</h3>
           <h4>Search for your next Hub :)</h4>
           <fieldset>
@@ -86,6 +97,8 @@ class FindTrip extends React.Component {
           </fieldset>
         </div>
         <hr />
+        <TripFindEngine
+          trips={this.state.trips} redirectToMap={this.redirectToMap} />
       </div>
     );
   }

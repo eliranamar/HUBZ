@@ -54,11 +54,16 @@ body {
 
 .text-center {
   margin-top: 50px;
+  color: #FF5733;
+}
+.text-center p{
+  color: #0c1a1e;
 }
 
 .lead {
   padding-top: 20px;
   text-align: left;
+  color: #0c1a1e;
 }
 
 .social {
@@ -215,7 +220,7 @@ h4 {
 }
 
 .text-primary {
-  color: darkgreen
+  color: #FF5733
 }
 
 

@@ -31059,7 +31059,7 @@ var About = function (_React$Component) {
                 _react2.default.createElement(
                   "div",
                   { className: "logofooter" },
-                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
                 ),
                 _react2.default.createElement(
                   "p",
@@ -40267,7 +40267,7 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
     _reactGoogleMaps.GoogleMap,
     {
       defaultZoom: 4,
-      defaultCenter: { lat: 34.0522346, lng: -118.2436829 }
+      defaultCenter: { lat: 30.650589, lng: -80.437012 }
     },
     props.markers.map(function (marker, index) {
       return _react2.default.createElement(
@@ -40356,38 +40356,67 @@ var FindLocation = function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var allLocations = [{
-        id: 3,
+        id: 27,
+        country: "United States",
+        name: "New York",
+        lat: -74.0059433,
+        lng: 40.7127838,
+        trip_id: 31
+      }, {
+        id: 28,
+        country: "United States",
+        name: "Boston",
+        lat: -71.0588837,
+        lng: 42.3600807,
+        trip_id: 31
+      }, {
+        id: 29,
+        country: "United States",
+        name: "Philadelphia",
+        lat: -75.1652222,
+        lng: 39.9525833,
+        trip_id: 31
+      }, {
+        id: 30,
+        country: "United States",
+        name: "Miami",
+        lat: -80.1917877,
+        lng: 25.7616806,
+        trip_id: 31
+      }, {
+        id: 31,
         country: "United States",
         name: "Los Angeles",
-        lng: 34.0522346,
         lat: -118.2436829,
-        trip_id: 2
+        lng: 34.0522346,
+        trip_id: 31
       }, {
-        id: 4,
+        id: 32,
         country: "United States",
         name: "San Francisco",
-        lng: 37.774929,
         lat: -122.4194183,
-        trip_id: 2
+        lng: 37.774929,
+        trip_id: 31
       }, {
-        id: 5,
+        id: 33,
         country: "United States",
-        name: "Seattle",
-        lng: 47.6062088,
-        lat: -122.3320694,
-        trip_id: 2
+        name: "Las Vegas",
+        lat: -115.1398315,
+        lng: 36.1699409,
+        trip_id: 31
       }];
       var tempArr = [];
 
       for (var i = 0; i < allLocations.length; i++) {
         var lat = allLocations[i].lat;
         var lng = allLocations[i].lng;
-
+        console.log(lat);
         var obj = {
           position: new google.maps.LatLng(lng, lat),
           showInfo: false,
-          infoContent: "<p>" + allLocations[i].name + "</p>"
+          infoContent: allLocations[i].name
         };
+        console.log(obj);
         tempArr.push(obj);
       }
 
@@ -40451,7 +40480,11 @@ var FindLocation = function (_React$Component) {
         _react2.default.createElement(
           "div",
           { className: "col-md-6" },
-          _react2.default.createElement("img", { src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg", className: "img-responsive", alt: "" })
+          _react2.default.createElement("img", {
+            src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg",
+            className: "img-responsive",
+            alt: ""
+          })
         ),
         _react2.default.createElement(
           "div",
@@ -40477,7 +40510,6 @@ var FindLocation = function (_React$Component) {
                 bottom: 0
               }
             }),
-
             center: this.state.center,
             markers: this.state.markers,
             polyline: this.state.paths,
@@ -40515,6 +40547,12 @@ var _axios = __webpack_require__(107);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _TripFindEngine = __webpack_require__(582);
+
+var _TripFindEngine2 = _interopRequireDefault(_TripFindEngine);
+
+var _reactRouterDom = __webpack_require__(53);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40540,8 +40578,19 @@ var FindTrip = function (_React$Component) {
       // console.log(this.state.trip);
 
     };_this.findTripFunc = _this.findTripFunc.bind(_this);
+    // this.redirectToMap = this.redirectToMap.bind(this);
     return _this;
   }
+
+  // redirectToMap(e) {
+  //   debugger
+  //   e.preventDefault();
+  //   render(){
+  //     return (
+  //       <Redirect to="/findlocation" />
+  //     );
+  //   }
+  // }
 
   _createClass(FindTrip, [{
     key: 'findTripFunc',
@@ -40602,10 +40651,10 @@ var FindTrip = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'find-trip-box', className: 'container' },
+        { id: 'find-trip-box' },
         _react2.default.createElement(
           'div',
-          { className: 'center-block text-center' },
+          { className: 'container center-block text-center' },
           _react2.default.createElement(
             'h3',
             null,
@@ -40632,7 +40681,9 @@ var FindTrip = function (_React$Component) {
             )
           )
         ),
-        _react2.default.createElement('hr', null)
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_TripFindEngine2.default, {
+          trips: this.state.trips, redirectToMap: this.redirectToMap })
       );
     }
   }]);
@@ -40720,7 +40771,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   "h2",
                   null,
-                  "What is Hubz?"
+                  "What is Hubz ?"
                 ),
                 _react2.default.createElement(
                   "p",
@@ -41021,7 +41072,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   "div",
                   { className: "logofooter" },
-                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
                 ),
                 _react2.default.createElement(
                   "p",
@@ -41085,6 +41136,158 @@ var Homepage = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Homepage;
+
+/***/ }),
+/* 582 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TripBox = __webpack_require__(583);
+
+var _TripBox2 = _interopRequireDefault(_TripBox);
+
+var _reactRouterDom = __webpack_require__(53);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TripFindEngine = function TripFindEngine(props) {
+
+  var found = false;
+  var boxes = [];
+  if (props.trips.hasOwnProperty(31)) {
+    boxes = props.trips[31].map(function (item, index) {
+      return _react2.default.createElement(_TripBox2.default, {
+        key: index,
+        findThisTrip: props.findThisTrip,
+        item: item });
+    });
+    console.log(boxes);
+    found = true;
+  }
+  if (found) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'equalHeightWrap flexWrap text-center container' },
+      _react2.default.createElement(
+        'button',
+        { onClick: props.redirectToMap, className: 'btn btn-primary btn-square' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/findlocation' },
+          'Show Trip'
+        )
+      ),
+      _react2.default.createElement('hr', null),
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Trip Locations'
+      ),
+      boxes
+    );
+  } else {
+    return _react2.default.createElement('div', null);
+  }
+};
+
+exports.default = TripFindEngine;
+
+/***/ }),
+/* 583 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TripBox = function (_React$Component) {
+  _inherits(TripBox, _React$Component);
+
+  function TripBox(props) {
+    _classCallCheck(this, TripBox);
+
+    //bind this to functions
+    var _this = _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
+
+    _this.findThisTrip = _this.findThisTrip.bind(_this);
+    return _this;
+  }
+
+  _createClass(TripBox, [{
+    key: "findThisTrip",
+    value: function findThisTrip() {
+      console.log(this.props.findThisTrip(this.props.item)); //Using a function to call function in props
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var dataItem = this.props.item;
+      return _react2.default.createElement(
+        "div",
+        { className: "equalHMV eq" },
+        _react2.default.createElement(
+          "div",
+          { className: "media" },
+          _react2.default.createElement(
+            "div",
+            { className: "media-body" },
+            _react2.default.createElement(
+              "h4",
+              { className: "media-heading" },
+              dataItem.country
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              dataItem.name,
+              " - ",
+              dataItem.trip_id
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              dataItem.lng,
+              " - ",
+              dataItem.lat
+            )
+          )
+        ),
+        _react2.default.createElement("hr", null)
+      );
+    }
+  }]);
+
+  return TripBox;
+}(_react2.default.Component);
+
+exports.default = TripBox;
 
 /***/ })
 /******/ ]);
