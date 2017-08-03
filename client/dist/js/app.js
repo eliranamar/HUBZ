@@ -17071,7 +17071,7 @@ var App = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
+          { id: 'root', style: { height: "100%" } },
           _react2.default.createElement(_Header2.default, null),
           _react2.default.createElement(_Routes2.default, { setTripState: this.setTripState })
         )
@@ -30799,7 +30799,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Routes = function Routes(props) {
     return _react2.default.createElement(
         'div',
-        { className: 'container' },
+        { className: 'container-fluid full-height' },
         _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
@@ -40105,7 +40105,6 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
       defaultZoom: 4,
       defaultCenter: { lat: 34.0522346, lng: -118.2436829 }
     },
-    ">",
     props.markers.map(function (marker, index) {
       return _react2.default.createElement(
         _reactGoogleMaps.Marker,
@@ -40247,16 +40246,6 @@ var FindLocation = function (_React$Component) {
         paths: tempPoly
       });
 
-      // paths: [
-      //         {
-      //           polyline: [
-      //             { lat: -27.363882, lng: 137.044922 },
-      //             { lat: -23.363882, lng: 129.044922 },
-      //             { lat: -20.5107991, lng: 131.9081663 }
-      //           ],
-      //           color: "blue"
-      //         },
-
       this.setState({
         markers: tempArr
       });
@@ -40264,8 +40253,6 @@ var FindLocation = function (_React$Component) {
   }, {
     key: "handleMarkerClick",
     value: function handleMarkerClick(targetMarker) {
-      console.log(targetMarker);
-
       this.setState({
         markers: this.state.markers.map(function (marker) {
           if (marker === targetMarker) {
@@ -40296,10 +40283,15 @@ var FindLocation = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "row", style: { height: "100%" } },
+        { className: "row full-height", style: { height: "100%" } },
         _react2.default.createElement(
           "div",
-          { style: { height: "100%" } },
+          { className: "col-md-6" },
+          _react2.default.createElement("img", { src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg", className: "img-responsive", alt: "" })
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "col-md-6", style: { height: "100%" } },
           _react2.default.createElement(GettingStartedGoogleMap, {
             containerElement: _react2.default.createElement("div", {
               style: {
@@ -40321,6 +40313,7 @@ var FindLocation = function (_React$Component) {
                 bottom: 0
               }
             }),
+
             center: this.state.center,
             markers: this.state.markers,
             polyline: this.state.paths,

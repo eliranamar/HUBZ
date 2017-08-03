@@ -16,7 +16,6 @@ const GettingStartedGoogleMap = withGoogleMap(props =>
     defaultZoom={4}
     defaultCenter={{ lat: 34.0522346, lng: -118.2436829 }}
   >
-    >
     {props.markers.map((marker, index) =>
       <Marker
         key={index}
@@ -145,9 +144,7 @@ class FindLocation extends React.Component {
       }
       return obj;
     }
-    let tempPoly = [
-      {polyline: []}
-    ];
+    let tempPoly = [{ polyline: [] }];
 
     for (var z = 0; z < allLocations.length; z++) {
       let lngA = { lat: allLocations[z].lng };
@@ -155,21 +152,10 @@ class FindLocation extends React.Component {
       var c = extend(latA, lngA);
       tempPoly[0].polyline.push(c);
     }
-          console.log(tempPoly);
-          this.setState({
-            paths: tempPoly
-          })
-
-
-    // paths: [
-    //         {
-    //           polyline: [
-    //             { lat: -27.363882, lng: 137.044922 },
-    //             { lat: -23.363882, lng: 129.044922 },
-    //             { lat: -20.5107991, lng: 131.9081663 }
-    //           ],
-    //           color: "blue"
-    //         },
+    console.log(tempPoly);
+    this.setState({
+      paths: tempPoly
+    });
 
     this.setState({
       markers: tempArr
@@ -177,8 +163,6 @@ class FindLocation extends React.Component {
   }
 
   handleMarkerClick(targetMarker) {
-    console.log(targetMarker);
-
     this.setState({
       markers: this.state.markers.map(marker => {
         if (marker === targetMarker) {
@@ -208,41 +192,46 @@ class FindLocation extends React.Component {
 
   render() {
     return (
-      <div className="row" style={{ height: "100%" }}>
-        <div style={{ height: "100%" }}>
-          <GettingStartedGoogleMap
-            containerElement={
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  justifyContent: "flex-end",
-                  alignItems: "center"
-                }}
-              />
-            }
-            mapElement={
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0
-                }}
-              />
-            }
-            center={this.state.center}
-            markers={this.state.markers}
-            polyline={this.state.paths}
-            onMarkerClick={this.handleMarkerClick}
-            onMarkerClose={this.handleMarkerClose}
-          />
+        <div className="row full-height" style={{ height: "100%"}}>
+          <div className="col-md-6">
+              <img src="http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg" className="img-responsive" alt=""/>
+            </div>
+            <div className="col-md-6" style={{ height: "100%"}}>
+              <GettingStartedGoogleMap
+              containerElement={
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    justifyContent: "flex-end",
+                    alignItems: "center"
+                  }}
+                />
+              }
+              mapElement={
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0
+                  }}
+                />
+              }
+              
+              center={this.state.center}
+              markers={this.state.markers}
+              polyline={this.state.paths}
+              onMarkerClick={this.handleMarkerClick}
+              onMarkerClose={this.handleMarkerClose}
+            />
+            </div>
+            
         </div>
-      </div>
     );
   }
 }

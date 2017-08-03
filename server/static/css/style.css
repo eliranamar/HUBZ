@@ -10,7 +10,9 @@
   -o-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
+#react-app,#root, .full-height, body, html {
+    height: 100%;
+}
 
 /* body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -150,3 +152,21 @@ fieldset {
   color: #fff;
   background-color: gray;
 }
+
+ #map-canvas {
+        height: 90%;
+        margin: 0px;
+        padding: 0px;
+        float: left;
+      };
+
+      #sidebar{
+      background-color:grey;
+      width:50%;
+      height:100%;
+      float:left;
+      };
+
+
+
+  
