@@ -8,17 +8,28 @@ class FindTrip extends React.Component {
     this.state = {
       trips: {},
       currentHub: {
-        hub:null
-      }
+        hub: null
+      },
+      results: []
     }
     // console.log(this.state.trip);
 
     this.findTripFunc = this.findTripFunc.bind(this);
   }
 
+
+
+
   findTripFunc() { //! this func fetchs all trips that contains this location
     let that = this;
     let data = [];
+    // let listItems = this.props.trips.map(function (trip) {
+    //   return (
+    //     <li key={trip.name}>
+    //      
+    //     </li>
+    //   );
+    // });
     // console.log(typeof(this.state.currentHub.hub));
     // data.name = document.getElementById("trip-name").value;
     // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
@@ -31,7 +42,7 @@ class FindTrip extends React.Component {
       .then(function (response) {
         // console.log('testttt');
         console.log(response.data);
-        that.setState({trips:response.data});
+        that.setState({ trips: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -54,7 +65,7 @@ class FindTrip extends React.Component {
         }
       }
       if (place.address_components) {
-        that.setState({currentHub:hub});
+        that.setState({ currentHub: hub });
       } else {
         alert('please choose location from google list');
       }
@@ -77,7 +88,6 @@ class FindTrip extends React.Component {
         <hr />
       </div>
     );
-
   }
 }
 

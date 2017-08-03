@@ -11,7 +11,10 @@
   text-rendering: optimizeLegibility;
 }
 
-
+#react-app,#root, .full-height, body, html {
+   height: 100%;
+}
+  
 /* body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -153,3 +156,8 @@ fieldset {
 .btn.btn-square {
   border-radius: 0;
 }
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+

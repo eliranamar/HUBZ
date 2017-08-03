@@ -17074,7 +17074,7 @@ var App = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
+          { id: 'root', style: { height: "100%" } },
           _react2.default.createElement(_Header2.default, null),
           _react2.default.createElement(_Routes2.default, { setTripState: this.setTripState })
         )
@@ -30802,7 +30802,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Routes = function Routes(props) {
     return _react2.default.createElement(
         'div',
-        { className: 'container' },
+        { className: 'container-fluid full-height' },
         _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
@@ -30840,6 +30840,10 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Homepage = __webpack_require__(581);
+
+var _Homepage2 = _interopRequireDefault(_Homepage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30858,16 +30862,12 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
+        'div',
         null,
-        _react2.default.createElement("img", { style: { width: 300 },
-          src: "https://raw.githubusercontent.com/webpack-contrib/awesome-webpack/master/media/awesome_webpack_branding.png",
-          alt: "Webpack" }),
-        _react2.default.createElement("br", null),
-        "Hello world!!"
+        _react2.default.createElement(_Homepage2.default, null)
       );
     }
   }]);
@@ -40109,7 +40109,6 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
       defaultZoom: 4,
       defaultCenter: { lat: 34.0522346, lng: -118.2436829 }
     },
-    ">",
     props.markers.map(function (marker, index) {
       return _react2.default.createElement(
         _reactGoogleMaps.Marker,
@@ -40251,16 +40250,6 @@ var FindLocation = function (_React$Component) {
         paths: tempPoly
       });
 
-      // paths: [
-      //         {
-      //           polyline: [
-      //             { lat: -27.363882, lng: 137.044922 },
-      //             { lat: -23.363882, lng: 129.044922 },
-      //             { lat: -20.5107991, lng: 131.9081663 }
-      //           ],
-      //           color: "blue"
-      //         },
-
       this.setState({
         markers: tempArr
       });
@@ -40268,8 +40257,6 @@ var FindLocation = function (_React$Component) {
   }, {
     key: "handleMarkerClick",
     value: function handleMarkerClick(targetMarker) {
-      console.log(targetMarker);
-
       this.setState({
         markers: this.state.markers.map(function (marker) {
           if (marker === targetMarker) {
@@ -40300,10 +40287,15 @@ var FindLocation = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "row", style: { height: "100%" } },
+        { className: "row full-height", style: { height: "100%" } },
         _react2.default.createElement(
           "div",
-          { style: { height: "100%" } },
+          { className: "col-md-6" },
+          _react2.default.createElement("img", { src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg", className: "img-responsive", alt: "" })
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "col-md-6", style: { height: "100%" } },
           _react2.default.createElement(GettingStartedGoogleMap, {
             containerElement: _react2.default.createElement("div", {
               style: {
@@ -40325,6 +40317,7 @@ var FindLocation = function (_React$Component) {
                 bottom: 0
               }
             }),
+
             center: this.state.center,
             markers: this.state.markers,
             polyline: this.state.paths,
@@ -40382,7 +40375,8 @@ var FindTrip = function (_React$Component) {
       trips: {},
       currentHub: {
         hub: null
-      }
+      },
+      results: []
       // console.log(this.state.trip);
 
     };_this.findTripFunc = _this.findTripFunc.bind(_this);
@@ -40395,6 +40389,13 @@ var FindTrip = function (_React$Component) {
       //! this func fetchs all trips that contains this location
       var that = this;
       var data = [];
+      // let listItems = this.props.trips.map(function (trip) {
+      //   return (
+      //     <li key={trip.name}>
+      //      
+      //     </li>
+      //   );
+      // });
       // console.log(typeof(this.state.currentHub.hub));
       // data.name = document.getElementById("trip-name").value;
       // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
@@ -40480,6 +40481,449 @@ var FindTrip = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = FindTrip;
+
+/***/ }),
+/* 581 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Homepage = function (_React$Component) {
+  _inherits(Homepage, _React$Component);
+
+  function Homepage() {
+    _classCallCheck(this, Homepage);
+
+    return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).apply(this, arguments));
+  }
+
+  _createClass(Homepage, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { id: "homepage" },
+        _react2.default.createElement(
+          "div",
+          { id: "home", className: "home" },
+          _react2.default.createElement(
+            "div",
+            { className: "text-vcenter" },
+            _react2.default.createElement(
+              "h1",
+              null,
+              "HUBZ"
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "#about", className: "btn btn-default btn-lg" },
+              "Where's the Hub?"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { id: "about", className: "pad-section" },
+          _react2.default.createElement(
+            "div",
+            { className: "container" },
+            _react2.default.createElement(
+              "div",
+              { className: "row" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-6" },
+                _react2.default.createElement("img", { src: "img/lglogo.jpg", alt: "" })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-6 text-center" },
+                _react2.default.createElement(
+                  "h2",
+                  null,
+                  "What is Hubz?"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "lead" },
+                  "Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting activities along the way. ",
+                  _react2.default.createElement("br", null),
+                  " Save Hubz for future reference and share with friends!"
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { id: "services", className: "pad-section" },
+          _react2.default.createElement(
+            "div",
+            { className: "container" },
+            _react2.default.createElement(
+              "h2",
+              { className: "text-center" },
+              "How To"
+            ),
+            _react2.default.createElement("hr", null),
+            _react2.default.createElement(
+              "div",
+              { className: "row text-center" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-3 col-xs-6" },
+                _react2.default.createElement(
+                  "i",
+                  { className: "glyphicon glyphicon-map-marker" },
+                  " "
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "First"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "We want to see what hubz are around you!"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-3 col-xs-6" },
+                _react2.default.createElement(
+                  "i",
+                  { className: "glyphicon glyphicon-road" },
+                  " "
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Second"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "How do we get there "
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-3 col-xs-6" },
+                _react2.default.createElement(
+                  "i",
+                  { className: "glyphicon glyphicon-pushpin" },
+                  " "
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Next"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Whats to do along the way "
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-3 col-xs-6" },
+                _react2.default.createElement(
+                  "i",
+                  { className: "glyphicon glyphicon-tree-conifer" },
+                  " "
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Lastly"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Lay back and roll a j!"
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement("hr", null),
+        _react2.default.createElement(
+          "h2",
+          { className: "text-center" },
+          " Our Partners "
+        ),
+        _react2.default.createElement(
+          "div",
+          { id: "myCarousel", className: "carousel slide", "data-ride": "carousel" },
+          _react2.default.createElement(
+            "ol",
+            { className: "carousel-indicators" },
+            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "0", className: "active" }),
+            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "1" }),
+            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "2" }),
+            _react2.default.createElement("li", { "data-target": "#myCarousel", "data-slide-to": "3" })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "carousel-inner" },
+            _react2.default.createElement(
+              "div",
+              { className: "item active" },
+              _react2.default.createElement("img", { src: "img/elal.jpg", alt: "El Al" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "item" },
+              _react2.default.createElement("img", { src: "img/airbnb.jpg", alt: "Air BnB" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "item" },
+              _react2.default.createElement("img", { src: "img/tour.jpg", alt: "Ministry of Tourism" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "item" },
+              _react2.default.createElement("img", { src: "img/hi.jpg", alt: "Hilik" })
+            )
+          ),
+          _react2.default.createElement(
+            "a",
+            { className: "left carousel-control", href: "#myCarousel", "data-slide": "prev" },
+            _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-left" }),
+            _react2.default.createElement(
+              "span",
+              { className: "sr-only" },
+              "Previous"
+            )
+          ),
+          _react2.default.createElement(
+            "a",
+            { className: "right carousel-control", href: "#myCarousel", "data-slide": "next" },
+            _react2.default.createElement("span", { className: "glyphicon glyphicon-chevron-right" }),
+            _react2.default.createElement(
+              "span",
+              { className: "sr-only" },
+              "Next"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { id: "information", className: "pad-section" },
+          _react2.default.createElement(
+            "div",
+            { id: "testimonials", className: "container" },
+            _react2.default.createElement(
+              "div",
+              { className: "row" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-sm-12" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "panel panel-default" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "container bootstrap snippet" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "row" },
+                      _react2.default.createElement(
+                        "h2",
+                        { className: "text-center text-primary" },
+                        "What our clients said about us?"
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "col-md-10 col-md-offset-1" },
+                        _react2.default.createElement(
+                          "div",
+                          { className: "row testimonials" },
+                          _react2.default.createElement(
+                            "div",
+                            { className: "col-sm-4" },
+                            _react2.default.createElement(
+                              "blockquote",
+                              null,
+                              _react2.default.createElement(
+                                "p",
+                                { className: "clients-words" },
+                                "We were lost on our way to battle. HUBZ, couldn't have found us a better route!"
+                              ),
+                              _react2.default.createElement(
+                                "span",
+                                { className: "clients-name text-primary" },
+                                "\u2014 Steven Winston",
+                                _react2.default.createElement("br", null),
+                                _react2.default.createElement(
+                                  "span",
+                                  null,
+                                  "Boy Genius"
+                                )
+                              ),
+                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/steven.jpg" })
+                            )
+                          ),
+                          _react2.default.createElement(
+                            "div",
+                            { className: "col-sm-4" },
+                            _react2.default.createElement(
+                              "blockquote",
+                              null,
+                              _react2.default.createElement(
+                                "p",
+                                { className: "clients-words" },
+                                "HUBZ is the best app of any cohort in our history and future!!"
+                              ),
+                              _react2.default.createElement(
+                                "span",
+                                { className: "clients-name text-primary" },
+                                "\u2014 Avi Snir",
+                                _react2.default.createElement("br", null),
+                                _react2.default.createElement(
+                                  "span",
+                                  null,
+                                  "CEO Elevation Academy"
+                                )
+                              ),
+                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/avi.jpg" })
+                            )
+                          ),
+                          _react2.default.createElement(
+                            "div",
+                            { className: "col-sm-4" },
+                            _react2.default.createElement(
+                              "blockquote",
+                              null,
+                              _react2.default.createElement(
+                                "p",
+                                { className: "clients-words" },
+                                "The HUBZ app is a must for all Israelis travelling across the globe!"
+                              ),
+                              _react2.default.createElement(
+                                "span",
+                                { className: "clients-name text-primary" },
+                                "\u2014 Yariv Levin",
+                                _react2.default.createElement("br", null),
+                                _react2.default.createElement(
+                                  "span",
+                                  null,
+                                  "Minister of Tourism"
+                                )
+                              ),
+                              _react2.default.createElement("img", { className: "img-thumbnail img-circle", src: "img/noscrub.jpg" })
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "footer",
+          null,
+          _react2.default.createElement(
+            "div",
+            { className: "container" },
+            _react2.default.createElement(
+              "div",
+              { className: "row" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 footerleft " },
+                _react2.default.createElement(
+                  "div",
+                  { className: "logofooter" },
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
+                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-phone" }),
+                  " 03-674-6999"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
+                  " E-mail : contact@hubz.com"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Social Media Hubz"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
+                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
+                  " Hire through Linkedin"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
+                  _react2.default.createElement("span", { className: "fa fa-github" }),
+                  " Clone from github"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
+                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
+                  " Follow us on Twitter"
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Homepage;
+}(_react2.default.Component);
+
+exports.default = Homepage;
 
 /***/ })
 /******/ ]);
