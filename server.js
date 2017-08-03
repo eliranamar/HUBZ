@@ -41,6 +41,11 @@ app.get('/trip/:id', function (req, res) {
   });
 });
 
+app.post('/getnexthub', function(req,res){
+  console.log(req.body);
+  res.json(req.body);
+})
+
 app.post('/trip/:trip_id/addlocation', function (req, res) {
   console.log(req.body);
   // res.json(req.body);

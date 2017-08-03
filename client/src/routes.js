@@ -17,7 +17,7 @@ const Routes = (props) => (
             <Route name="about" exact path='/about' component={About} />
             <Route name="contact" exact path='/contact' component={Contact} />
             <Route name="findlocation" exact path='/findlocation' component={FindLocation} />
-            <Route name="findtrip" exact path='/findtrip' component={FindTrip} />
+            <Route name="findtrip" exact path='/findtrip' render={() => <FindTrip setTripState={props.setTripState} />} />
             <Route name="trip" exact path='/trip' render={() => <Trip setTripState={props.setTripState} />} />
             <Route path="*" component={Page404}/>
         </Switch>

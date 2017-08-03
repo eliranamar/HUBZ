@@ -18,13 +18,13 @@ class Location extends React.Component {
     // trip.type = 'Solo';
     console.log("trip ", this.state.trip);
     this.addLocation = this.addLocation.bind(this);
-    this.setLocationState = this.setLocationState.bind(this);
+    // this.setLocationState = this.setLocationState.bind(this);
   }
 
-  setLocationState(location) {
-    console.log(location);
-    this.setState({ location: location })
-  }
+  // setLocationState(location) {
+  //   console.log(location);
+  //   this.setState({ location: location })
+  // }
 
   addLocation(e) {
     e.preventDefault();

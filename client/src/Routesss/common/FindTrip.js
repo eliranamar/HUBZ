@@ -6,21 +6,21 @@ class FindTrip extends React.Component {
     super(props);
 
     this.state = {
-      trip: props.trip
+      trips: [],
+      currentHub: null
     }
     // console.log(this.state.trip);
 
-    this.getTripData = this.getTripData.bind(this);
+    this.findTripFunc = this.findTripFunc.bind(this);
   }
 
-  getTripData(e) {
-    e.preventDefault();
+  findTripFunc() { //! this func fetchs all trips that contains this location
     let that = this;
-    let data = {};
-    data.name = document.getElementById("trip-name").value;
-    data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-    console.log(data);
-    axios.post("/trip", data)
+    let data = [];
+    // data.name = document.getElementById("trip-name").value;
+    // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+    // console.log(data);
+    axios.post("/getnexthub", that.state.currentHub)
       .then(function (response) {
         // console.log('testttt');
         console.log(response.data);
@@ -32,41 +32,46 @@ class FindTrip extends React.Component {
       });
   }
 
+  componentDidMount() { //? after mount make input to auto complete
+    let that = this;
+    let input = document.getElementById('searchTripInput');
+    let autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.addListener('place_changed', () => {
+
+      let place = autocomplete.getPlace();
+      let hub = "";
+      console.log(place);
+      for (let i = 0; i < place.address_components.length; i++) {
+
+        if (place.address_components[i].types[0] == "locality") {
+          hub = place.address_components[i].long_name;
+        }
+      }
+      if (place.address_components) {
+        that.setState({currentHub:hub});
+      } else {
+        alert('please choose location from google list');
+      }
+    });
+  }
   render() {
-    if (this.state.trip) {
-      // console.log(this.state.trip);
-      // console.log(this.state.trip.id);
-      // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
-      return (
-        <Location trip={this.state.trip}></Location>
-      )
-    }
-    else {
-      return (
-        <div id="trip-box">
-          <div className="center-block text-center">
-            <form id="add-trip" action="" onSubmit={this.getTripData}>
-              <h3>Add Your FindTrip!</h3>
-              <h4>Enter You FindTrip Name:</h4>
-              <fieldset>
-                <input id="trip-name" placeholder="Your trip name" type="text" minLength="3" tabIndex="1" required autoFocus />
-              </fieldset>
-              <h5>
-                Which Kind Of Traveler Are You?
-            </h5>
-              <label className="radio-inline"><input placeholder="FindTrip Name``" required type="radio" name="trip-type" value="Couple" />Couple</label>
-              <label className="radio-inline"><input type="radio" name="trip-type" value="Friends" />Friends Group</label>
-              <label className="radio-inline"><input type="radio" name="trip-type" value="Solo" />Solo Traveler</label>
-              <br />
-              <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-              </fieldset>
-            </form>
-          </div>
+    return (
+      <div id="find-trip-box">
+        <div className="center-block text-center">
+          <h3>What is your current location?</h3>
+          <h4>Search for your next Hub :)</h4>
+          <fieldset>
+            <input required id="searchTripInput" className="controls form-control" type="text" placeholder="Enter Your Current Hub" />
+          </fieldset>
           <hr />
+          <fieldset>
+            <button onClick={this.findTripFunc} className="btn btn-success" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
         </div>
-      );
-    }
+        <hr />
+      </div>
+    );
+
   }
 }
 
