@@ -14787,6 +14787,7 @@ var Location = function (_React$Component) {
   _createClass(Location, [{
     key: "addLocation",
     value: function addLocation(e) {
+      var that = this;
       e.preventDefault();
       if (!this.state.location.name) {
         alert('please choose location before submitting');
@@ -14801,6 +14802,8 @@ var Location = function (_React$Component) {
       _axios2.default.post("/trip/" + location.trip_id + "/addlocation", location).then(function (response) {
         console.log('server responded');
         console.log(response.data);
+        document.getElementById('searchInput').value = "";
+        that.setState({ location: {} });
         // data.id = response.data.insertId;
         // that.setState({ trip: data })
       }).catch(function (error) {
@@ -31253,7 +31256,7 @@ var Trip = function (_React$Component) {
               _react2.default.createElement(
                 "fieldset",
                 null,
-                _react2.default.createElement("input", { id: "trip-name", placeholder: "Your trip name", type: "text", minLength: "3", tabIndex: "1", required: true, autoFocus: true })
+                _react2.default.createElement("input", { id: "trip-name", className: "form-control", placeholder: "Your trip name", type: "text", minLength: "3", tabIndex: "1", required: true, autoFocus: true })
               ),
               _react2.default.createElement(
                 "h5",
@@ -31279,12 +31282,13 @@ var Trip = function (_React$Component) {
                 "Solo Traveler"
               ),
               _react2.default.createElement("br", null),
+              _react2.default.createElement("hr", null),
               _react2.default.createElement(
                 "fieldset",
                 null,
                 _react2.default.createElement(
                   "button",
-                  { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
+                  { name: "submit", type: "submit", className: "btn btn-primary btn-square", id: "contact-submit", "data-submit": "...Sending" },
                   "Submit"
                 )
               )
@@ -40375,8 +40379,10 @@ var FindTrip = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
 
     _this.state = {
-      trips: [],
-      currentHub: null
+      trips: {},
+      currentHub: {
+        hub: null
+      }
       // console.log(this.state.trip);
 
     };_this.findTripFunc = _this.findTripFunc.bind(_this);
@@ -40384,25 +40390,29 @@ var FindTrip = function (_React$Component) {
   }
 
   _createClass(FindTrip, [{
-    key: "findTripFunc",
+    key: 'findTripFunc',
     value: function findTripFunc() {
       //! this func fetchs all trips that contains this location
       var that = this;
       var data = [];
+      // console.log(typeof(this.state.currentHub.hub));
       // data.name = document.getElementById("trip-name").value;
       // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-      // console.log(data);
-      _axios2.default.post("/getnexthub", that.state.currentHub).then(function (response) {
+      console.log(this.state.currentHub);
+      if (!this.state.currentHub.hub) {
+        alert('please choose valid hub');
+        return;
+      }
+      _axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
         // console.log('testttt');
         console.log(response.data);
-        data.id = response.data.insertId;
-        that.setState({ trip: data });
+        that.setState({ trips: response.data });
       }).catch(function (error) {
         console.log(error);
       });
     }
   }, {
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
       //? after mount make input to auto complete
       var that = this;
@@ -40411,12 +40421,12 @@ var FindTrip = function (_React$Component) {
       autocomplete.addListener('place_changed', function () {
 
         var place = autocomplete.getPlace();
-        var hub = "";
+        var hub = {};
         console.log(place);
         for (var i = 0; i < place.address_components.length; i++) {
 
           if (place.address_components[i].types[0] == "locality") {
-            hub = place.address_components[i].long_name;
+            hub.hub = place.address_components[i].long_name;
           }
         }
         if (place.address_components) {
@@ -40427,41 +40437,41 @@ var FindTrip = function (_React$Component) {
       });
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "find-trip-box" },
+        'div',
+        { id: 'find-trip-box' },
         _react2.default.createElement(
-          "div",
-          { className: "center-block text-center" },
+          'div',
+          { className: 'center-block text-center' },
           _react2.default.createElement(
-            "h3",
+            'h3',
             null,
-            "What is your current location?"
+            'What is your current location?'
           ),
           _react2.default.createElement(
-            "h4",
+            'h4',
             null,
-            "Search for your next Hub :)"
+            'Search for your next Hub :)'
           ),
           _react2.default.createElement(
-            "fieldset",
+            'fieldset',
             null,
-            _react2.default.createElement("input", { required: true, id: "searchTripInput", className: "controls form-control", type: "text", placeholder: "Enter Your Current Hub" })
+            _react2.default.createElement('input', { required: true, id: 'searchTripInput', className: 'controls form-control', type: 'text', placeholder: 'Enter Your Current Hub' })
           ),
-          _react2.default.createElement("hr", null),
+          _react2.default.createElement('hr', null),
           _react2.default.createElement(
-            "fieldset",
+            'fieldset',
             null,
             _react2.default.createElement(
-              "button",
-              { onClick: this.findTripFunc, className: "btn btn-success", name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
-              "Submit"
+              'button',
+              { onClick: this.findTripFunc, className: 'btn btn-success btn-square', name: 'submit', type: 'submit', id: 'contact-submit', 'data-submit': '...Sending' },
+              'Submit'
             )
           )
         ),
-        _react2.default.createElement("hr", null)
+        _react2.default.createElement('hr', null)
       );
     }
   }]);

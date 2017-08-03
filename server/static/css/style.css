@@ -150,3 +150,6 @@ fieldset {
   color: #fff;
   background-color: gray;
 }
+.btn.btn-square {
+  border-radius: 0;
+}

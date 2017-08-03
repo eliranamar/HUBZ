@@ -51,7 +51,7 @@ class Trip extends React.Component {
               <h3>Add Your Trip!</h3>
               <h4>Enter You Trip Name:</h4>
               <fieldset>
-                <input id="trip-name" placeholder="Your trip name" type="text" minLength="3" tabIndex="1" required autoFocus />
+                <input id="trip-name" className="form-control" placeholder="Your trip name" type="text" minLength="3" tabIndex="1" required autoFocus />
               </fieldset>
               <h5>
                 Which Kind Of Traveler Are You?
@@ -60,8 +60,9 @@ class Trip extends React.Component {
               <label className="radio-inline"><input type="radio" name="trip-type" value="Friends" />Friends Group</label>
               <label className="radio-inline"><input type="radio" name="trip-type" value="Solo" />Solo Traveler</label>
               <br />
+              <hr/>
               <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                <button name="submit" type="submit" className="btn btn-primary btn-square" id="contact-submit" data-submit="...Sending">Submit</button>
               </fieldset>
             </form>
           </div>
