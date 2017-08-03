@@ -21,7 +21,7 @@ class Homepage extends React.Component {
                 <img src="img/lglogo.jpg" alt="" />
               </div>
               <div className="col-sm-6 text-center">
-                <h2>What is Hubz?</h2>
+                <h2>What is Hubz ?</h2>
                 <p className="lead">Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting
                         activities along the way. <br /> Save Hubz for future reference and share with friends!</p>
               </div>
@@ -135,6 +135,7 @@ class Homepage extends React.Component {
                   <div className="container bootstrap snippet">
                     <div className="row">
                       <h2 className="text-center text-primary">What our clients said about us?</h2>
+                      <hr/>
                       <div className="col-md-10 col-md-offset-1">
                         <div className="row testimonials">
                           <div className="col-sm-4">
@@ -179,7 +180,7 @@ class Homepage extends React.Component {
             <div className="row">
               <div className="col-md-5 col-sm-6 footerleft ">
                 <div className="logofooter">
-                  <img className="img-circle img-thumbnail" src="img/smlogo.jpg" />
+                  <img className="img-circle img-thumbnail" src="img/ani1.gif" />
                 </div>
                 <p>Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with
                             peers. </p>

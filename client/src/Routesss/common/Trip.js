@@ -45,7 +45,7 @@ class Trip extends React.Component {
     }
     else {
       return (
-        <div id="trip-box">
+        <div id="trip-box" className="container">
           <div className="center-block text-center">
             <form id="add-trip" action="" onSubmit={this.getTripData}>
               <h3>Add Your Trip!</h3>

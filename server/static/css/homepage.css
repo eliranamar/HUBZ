@@ -54,11 +54,16 @@ body {
 
 .text-center {
   margin-top: 50px;
+  color: #FF5733;
+}
+.text-center p{
+  color: #0c1a1e;
 }
 
 .lead {
   padding-top: 20px;
   text-align: left;
+  color: #0c1a1e;
 }
 
 .social {
@@ -215,7 +220,7 @@ h4 {
 }
 
 .text-primary {
-  color: darkgreen
+  color: #FF5733
 }
 
 
@@ -259,7 +264,7 @@ footer {
   margin-top: 100px;
 }
 
-h3 {
+div.paddingtop-bottom>h3 {
   color: white;
 }
 
@@ -337,9 +342,16 @@ h3 {
 }
 
 div#testimonials {
-    margin-top: 110px;
+  margin-top: 110px;
 }
 
 .text-vcenter {
-    height: 830px;
+  height: 830px;
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }

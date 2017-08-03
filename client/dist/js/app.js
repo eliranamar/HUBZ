@@ -30969,73 +30969,148 @@ var About = function (_React$Component) {
         null,
         _react2.default.createElement(
           "div",
-          { className: "row text-center" },
+          { className: "container" },
           _react2.default.createElement(
             "div",
-            null,
+            { className: "row text-center" },
             _react2.default.createElement(
-              "h1",
+              "div",
               null,
-              "About Us"
+              _react2.default.createElement(
+                "h1",
+                null,
+                "About Us"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
+              )
             ),
             _react2.default.createElement(
-              "p",
+              "div",
               null,
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
+              _react2.default.createElement(
+                "h2",
+                null,
+                "Our Team"
+              ),
+              _react2.default.createElement("br", null),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/tesla.jpg", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Tesla"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Full-Stack"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/einstein.jpeg", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Einstein"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Team Leader"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/elon.png", alt: "" }),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "Musk"
+                ),
+                _react2.default.createElement(
+                  "h6",
+                  null,
+                  "Designer"
+                )
+              )
             )
-          ),
+          )
+        ),
+        _react2.default.createElement(
+          "footer",
+          { id: "about-footer" },
           _react2.default.createElement(
             "div",
-            null,
-            _react2.default.createElement(
-              "h2",
-              null,
-              "Our Team"
-            ),
-            _react2.default.createElement("br", null),
+            { className: "container" },
             _react2.default.createElement(
               "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/tesla.jpg", alt: "" }),
+              { className: "row" },
               _react2.default.createElement(
-                "h4",
-                null,
-                "Tesla"
+                "div",
+                { className: "col-md-5 col-sm-6 footerleft " },
+                _react2.default.createElement(
+                  "div",
+                  { className: "logofooter" },
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
+                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-phone" }),
+                  " 03-674-6999"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
+                  " E-mail : contact@hubz.com"
+                )
               ),
               _react2.default.createElement(
-                "h6",
-                null,
-                "Full-Stack"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/einstein.jpeg", alt: "" }),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "Einstein"
-              ),
-              _react2.default.createElement(
-                "h6",
-                null,
-                "Team Leader"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-              _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/elon.png", alt: "" }),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "Musk"
-              ),
-              _react2.default.createElement(
-                "h6",
-                null,
-                "Designer"
+                "div",
+                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Social Media Hubz"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
+                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
+                  " Hire through Linkedin"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
+                  _react2.default.createElement("span", { className: "fa fa-github" }),
+                  " Clone from github"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
+                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
+                  " Follow us on Twitter"
+                )
               )
             )
           )
@@ -31088,62 +31163,147 @@ var Contact = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "center-block" },
+        null,
         _react2.default.createElement(
-          "form",
-          { id: "contact", action: "", method: "post" },
+          "div",
+          { className: "container" },
           _react2.default.createElement(
-            "h3",
-            null,
-            "Contact Us!"
-          ),
-          _react2.default.createElement(
-            "h4",
-            null,
-            "request for custom quote"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your name", type: "text", tabIndex: "1", required: true, autoFocus: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Email Address", type: "email", tabIndex: "2", required: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Phone Number (optional)", type: "tel", tabIndex: "3" })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { placeholder: "Your Web Site (optional)", type: "url", tabIndex: "4" })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("textarea", { placeholder: "Type your message here....", tabIndex: "5", required: true })
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
+            "div",
+            { className: "row" },
+            _react2.default.createElement("div", { className: "col-md-4 col-lg-4 col-xl-4" }),
             _react2.default.createElement(
-              "button",
-              { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
-              "Submit"
-            )
-          ),
+              "div",
+              { className: "col-md-4 col-lg-4 col-xl-4" },
+              _react2.default.createElement(
+                "form",
+                { id: "contact", action: "", method: "post" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Contact Us!"
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  null,
+                  "request for custom quote"
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your name", type: "text", tabIndex: "1", required: true, autoFocus: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Email Address", type: "email", tabIndex: "2", required: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Phone Number (optional)", type: "tel", tabIndex: "3" })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("input", { placeholder: "Your Web Site (optional)", type: "url", tabIndex: "4" })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement("textarea", { placeholder: "Type your message here....", tabIndex: "5", required: true })
+                ),
+                _react2.default.createElement(
+                  "fieldset",
+                  null,
+                  _react2.default.createElement(
+                    "button",
+                    { name: "submit", type: "submit", id: "contact-submit", "data-submit": "...Sending" },
+                    "Submit"
+                  )
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "copyright" },
+                  "Designed by ",
+                  _react2.default.createElement(
+                    "a",
+                    { href: "https://github.com/eliranamar", target: "_blank", title: "Colorlib" },
+                    "Eliran"
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement("div", { className: "col-md-4 col-lg-4 col-xl-4" })
+          )
+        ),
+        _react2.default.createElement(
+          "footer",
+          null,
           _react2.default.createElement(
-            "p",
-            { className: "copyright" },
-            "Designed by ",
+            "div",
+            { className: "container" },
             _react2.default.createElement(
-              "a",
-              { href: "https://github.com/eliranamar", target: "_blank", title: "Colorlib" },
-              "Eliran"
+              "div",
+              { className: "row" },
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 footerleft " },
+                _react2.default.createElement(
+                  "div",
+                  { className: "logofooter" },
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
+                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-phone" }),
+                  " 03-674-6999"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
+                  " E-mail : contact@hubz.com"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Social Media Hubz"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
+                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
+                  " Hire through Linkedin"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
+                  _react2.default.createElement("span", { className: "fa fa-github" }),
+                  " Clone from github"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
+                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
+                  " Follow us on Twitter"
+                )
+              )
             )
           )
         )
@@ -31236,7 +31396,7 @@ var Trip = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           "div",
-          { id: "trip-box" },
+          { id: "trip-box", className: "container" },
           _react2.default.createElement(
             "div",
             { className: "center-block text-center" },
@@ -40107,7 +40267,7 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
     _reactGoogleMaps.GoogleMap,
     {
       defaultZoom: 4,
-      defaultCenter: { lat: 34.0522346, lng: -118.2436829 }
+      defaultCenter: { lat: 30.650589, lng: -80.437012 }
     },
     props.markers.map(function (marker, index) {
       return _react2.default.createElement(
@@ -40196,38 +40356,67 @@ var FindLocation = function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var allLocations = [{
-        id: 3,
+        id: 27,
+        country: "United States",
+        name: "New York",
+        lat: -74.0059433,
+        lng: 40.7127838,
+        trip_id: 31
+      }, {
+        id: 28,
+        country: "United States",
+        name: "Boston",
+        lat: -71.0588837,
+        lng: 42.3600807,
+        trip_id: 31
+      }, {
+        id: 29,
+        country: "United States",
+        name: "Philadelphia",
+        lat: -75.1652222,
+        lng: 39.9525833,
+        trip_id: 31
+      }, {
+        id: 30,
+        country: "United States",
+        name: "Miami",
+        lat: -80.1917877,
+        lng: 25.7616806,
+        trip_id: 31
+      }, {
+        id: 31,
         country: "United States",
         name: "Los Angeles",
-        lng: 34.0522346,
         lat: -118.2436829,
-        trip_id: 2
+        lng: 34.0522346,
+        trip_id: 31
       }, {
-        id: 4,
+        id: 32,
         country: "United States",
         name: "San Francisco",
-        lng: 37.774929,
         lat: -122.4194183,
-        trip_id: 2
+        lng: 37.774929,
+        trip_id: 31
       }, {
-        id: 5,
+        id: 33,
         country: "United States",
-        name: "Seattle",
-        lng: 47.6062088,
-        lat: -122.3320694,
-        trip_id: 2
+        name: "Las Vegas",
+        lat: -115.1398315,
+        lng: 36.1699409,
+        trip_id: 31
       }];
       var tempArr = [];
 
       for (var i = 0; i < allLocations.length; i++) {
         var lat = allLocations[i].lat;
         var lng = allLocations[i].lng;
-
+        console.log(lat);
         var obj = {
           position: new google.maps.LatLng(lng, lat),
           showInfo: false,
-          infoContent: "<p>" + allLocations[i].name + "</p>"
+          infoContent: allLocations[i].name
         };
+        console.log(obj);
         tempArr.push(obj);
       }
 
@@ -40291,7 +40480,11 @@ var FindLocation = function (_React$Component) {
         _react2.default.createElement(
           "div",
           { className: "col-md-6" },
-          _react2.default.createElement("img", { src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg", className: "img-responsive", alt: "" })
+          _react2.default.createElement("img", {
+            src: "http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg",
+            className: "img-responsive",
+            alt: ""
+          })
         ),
         _react2.default.createElement(
           "div",
@@ -40317,7 +40510,6 @@ var FindLocation = function (_React$Component) {
                 bottom: 0
               }
             }),
-
             center: this.state.center,
             markers: this.state.markers,
             polyline: this.state.paths,
@@ -40355,6 +40547,12 @@ var _axios = __webpack_require__(107);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _TripFindEngine = __webpack_require__(582);
+
+var _TripFindEngine2 = _interopRequireDefault(_TripFindEngine);
+
+var _reactRouterDom = __webpack_require__(53);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40380,8 +40578,19 @@ var FindTrip = function (_React$Component) {
       // console.log(this.state.trip);
 
     };_this.findTripFunc = _this.findTripFunc.bind(_this);
+    // this.redirectToMap = this.redirectToMap.bind(this);
     return _this;
   }
+
+  // redirectToMap(e) {
+  //   debugger
+  //   e.preventDefault();
+  //   render(){
+  //     return (
+  //       <Redirect to="/findlocation" />
+  //     );
+  //   }
+  // }
 
   _createClass(FindTrip, [{
     key: 'findTripFunc',
@@ -40445,7 +40654,7 @@ var FindTrip = function (_React$Component) {
         { id: 'find-trip-box' },
         _react2.default.createElement(
           'div',
-          { className: 'center-block text-center' },
+          { className: 'container center-block text-center' },
           _react2.default.createElement(
             'h3',
             null,
@@ -40472,7 +40681,9 @@ var FindTrip = function (_React$Component) {
             )
           )
         ),
-        _react2.default.createElement('hr', null)
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_TripFindEngine2.default, {
+          trips: this.state.trips, redirectToMap: this.redirectToMap })
       );
     }
   }]);
@@ -40560,7 +40771,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   "h2",
                   null,
-                  "What is Hubz?"
+                  "What is Hubz ?"
                 ),
                 _react2.default.createElement(
                   "p",
@@ -40755,6 +40966,7 @@ var Homepage = function (_React$Component) {
                         { className: "text-center text-primary" },
                         "What our clients said about us?"
                       ),
+                      _react2.default.createElement("hr", null),
                       _react2.default.createElement(
                         "div",
                         { className: "col-md-10 col-md-offset-1" },
@@ -40860,7 +41072,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   "div",
                   { className: "logofooter" },
-                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/smlogo.jpg" })
+                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
                 ),
                 _react2.default.createElement(
                   "p",
@@ -40924,6 +41136,158 @@ var Homepage = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Homepage;
+
+/***/ }),
+/* 582 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TripBox = __webpack_require__(583);
+
+var _TripBox2 = _interopRequireDefault(_TripBox);
+
+var _reactRouterDom = __webpack_require__(53);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TripFindEngine = function TripFindEngine(props) {
+
+  var found = false;
+  var boxes = [];
+  if (props.trips.hasOwnProperty(31)) {
+    boxes = props.trips[31].map(function (item, index) {
+      return _react2.default.createElement(_TripBox2.default, {
+        key: index,
+        findThisTrip: props.findThisTrip,
+        item: item });
+    });
+    console.log(boxes);
+    found = true;
+  }
+  if (found) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'equalHeightWrap flexWrap text-center container' },
+      _react2.default.createElement(
+        'button',
+        { onClick: props.redirectToMap, className: 'btn btn-primary btn-square' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/findlocation' },
+          'Show Trip'
+        )
+      ),
+      _react2.default.createElement('hr', null),
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Trip Locations'
+      ),
+      boxes
+    );
+  } else {
+    return _react2.default.createElement('div', null);
+  }
+};
+
+exports.default = TripFindEngine;
+
+/***/ }),
+/* 583 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TripBox = function (_React$Component) {
+  _inherits(TripBox, _React$Component);
+
+  function TripBox(props) {
+    _classCallCheck(this, TripBox);
+
+    //bind this to functions
+    var _this = _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
+
+    _this.findThisTrip = _this.findThisTrip.bind(_this);
+    return _this;
+  }
+
+  _createClass(TripBox, [{
+    key: "findThisTrip",
+    value: function findThisTrip() {
+      console.log(this.props.findThisTrip(this.props.item)); //Using a function to call function in props
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var dataItem = this.props.item;
+      return _react2.default.createElement(
+        "div",
+        { className: "equalHMV eq" },
+        _react2.default.createElement(
+          "div",
+          { className: "media" },
+          _react2.default.createElement(
+            "div",
+            { className: "media-body" },
+            _react2.default.createElement(
+              "h4",
+              { className: "media-heading" },
+              dataItem.country
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              dataItem.name,
+              " - ",
+              dataItem.trip_id
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              dataItem.lng,
+              " - ",
+              dataItem.lat
+            )
+          )
+        ),
+        _react2.default.createElement("hr", null)
+      );
+    }
+  }]);
+
+  return TripBox;
+}(_react2.default.Component);
+
+exports.default = TripBox;
 
 /***/ })
 /******/ ]);

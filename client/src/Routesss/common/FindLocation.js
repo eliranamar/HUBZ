@@ -14,7 +14,7 @@ import Polyline from "../../../../node_modules/react-google-maps/lib/Polyline";
 const GettingStartedGoogleMap = withGoogleMap(props =>
   <GoogleMap
     defaultZoom={4}
-    defaultCenter={{ lat: 34.0522346, lng: -118.2436829 }}
+    defaultCenter={{ lat: 30.650589, lng: -80.437012 }}
   >
     {props.markers.map((marker, index) =>
       <Marker
@@ -100,28 +100,60 @@ class FindLocation extends React.Component {
   componentDidMount() {
     const allLocations = [
       {
-        id: 3,
+        id: 27,
+        country: "United States",
+        name: `New York`,
+        lat: -74.0059433,
+        lng: 40.7127838,
+        trip_id: 31
+      },
+      {
+        id: 28,
+        country: "United States",
+        name: "Boston",
+        lat: -71.0588837,
+        lng: 42.3600807,
+        trip_id: 31
+      },
+      {
+        id: 29,
+        country: "United States",
+        name: "Philadelphia",
+        lat: -75.1652222,
+        lng: 39.9525833,
+        trip_id: 31
+      },
+      {
+        id: 30,
+        country: "United States",
+        name: "Miami",
+        lat: -80.1917877,
+        lng: 25.7616806,
+        trip_id: 31
+      },
+      {
+        id: 31,
         country: "United States",
         name: "Los Angeles",
-        lng: 34.0522346,
         lat: -118.2436829,
-        trip_id: 2
+        lng: 34.0522346,
+        trip_id: 31
       },
       {
-        id: 4,
+        id: 32,
         country: "United States",
         name: "San Francisco",
-        lng: 37.774929,
         lat: -122.4194183,
-        trip_id: 2
+        lng: 37.774929,
+        trip_id: 31
       },
       {
-        id: 5,
+        id: 33,
         country: "United States",
-        name: "Seattle",
-        lng: 47.6062088,
-        lat: -122.3320694,
-        trip_id: 2
+        name: "Las Vegas",
+        lat: -115.1398315,
+        lng: 36.1699409,
+        trip_id: 31
       }
     ];
     let tempArr = [];
@@ -129,12 +161,13 @@ class FindLocation extends React.Component {
     for (var i = 0; i < allLocations.length; i++) {
       let lat = allLocations[i].lat;
       let lng = allLocations[i].lng;
-
+      console.log(lat);
       let obj = {
         position: new google.maps.LatLng(lng, lat),
         showInfo: false,
-        infoContent: `<p>${allLocations[i].name}</p>`
+        infoContent: allLocations[i].name
       };
+      console.log(obj);
       tempArr.push(obj);
     }
 
@@ -192,46 +225,48 @@ class FindLocation extends React.Component {
 
   render() {
     return (
-        <div className="row full-height" style={{ height: "100%"}}>
-          <div className="col-md-6">
-              <img src="http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg" className="img-responsive" alt=""/>
-            </div>
-            <div className="col-md-6" style={{ height: "100%"}}>
-              <GettingStartedGoogleMap
-              containerElement={
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    justifyContent: "flex-end",
-                    alignItems: "center"
-                  }}
-                />
-              }
-              mapElement={
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0
-                  }}
-                />
-              }
-              
-              center={this.state.center}
-              markers={this.state.markers}
-              polyline={this.state.paths}
-              onMarkerClick={this.handleMarkerClick}
-              onMarkerClose={this.handleMarkerClose}
-            />
-            </div>
-            
+      <div className="row full-height" style={{ height: "100%" }}>
+        <div className="col-md-6">
+          <img
+            src="http://www.dumpaday.com/wp-content/uploads/2017/02/z-funny-pictures-3-2.jpg"
+            className="img-responsive"
+            alt=""
+          />
         </div>
+        <div className="col-md-6" style={{ height: "100%" }}>
+          <GettingStartedGoogleMap
+            containerElement={
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  justifyContent: "flex-end",
+                  alignItems: "center"
+                }}
+              />
+            }
+            mapElement={
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0
+                }}
+              />
+            }
+            center={this.state.center}
+            markers={this.state.markers}
+            polyline={this.state.paths}
+            onMarkerClick={this.handleMarkerClick}
+            onMarkerClose={this.handleMarkerClose}
+          />
+        </div>
+      </div>
     );
   }
 }
