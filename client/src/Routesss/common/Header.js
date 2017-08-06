@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      trip : props.trip
+    }
+  }
+
+  shouldComponentUpdate(){
+  return true;
+  }
+
   render() {
     return (
       <nav className="navbar navbar-inverse">
@@ -21,6 +33,7 @@ class App extends React.Component {
               <li role="presentation"><Link to="/trip">Create Trip</Link></li>
               <li role="presentation"><Link to="/about">About</Link></li>
               <li role="presentation"><Link to="/contact">Contact</Link></li>
+              { this.state.trip.id ? <li>Current Trip ID: {this.state.trip.id}</li> : null }
             </ul>
           </div>
         </div>

@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div id="root" style={{ height: "100%" }}>
-          <Header/>
+          <Header trip={this.state.trip}/>
           <Routesss setTripState={this.setTripState}/>
         </div>
       </BrowserRouter>

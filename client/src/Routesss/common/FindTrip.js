@@ -46,7 +46,7 @@ class FindTrip extends React.Component {
     // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
     console.log(this.state.currentHub);
     if (!this.state.currentHub.hub) {
-      alert('please choose valid hub');
+      alert('Please choose a valid hub');
       return;
     }
     axios.post("/getnexthub", this.state.currentHub)
@@ -70,9 +70,9 @@ class FindTrip extends React.Component {
       let hub = {};
       console.log(place);
       for (let i = 0; i < place.address_components.length; i++) {
-
         if (place.address_components[i].types[0] == "locality") {
           hub.hub = place.address_components[i].long_name;
+          break;
         }
       }
       if (place.address_components) {
