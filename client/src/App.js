@@ -25,12 +25,12 @@ class App extends React.Component {
   }
   
   render() {
-    console.log('connected');
+    // console.log('connected');
     return (
       <BrowserRouter>
         <div id="root" style={{ height: "100%" }}>
           <Header trip={this.state.trip}/>
-          <Routesss setTripState={this.setTripState}/>
+          <Routesss trip={this.state.trip} setTripState={this.setTripState}/>
         </div>
       </BrowserRouter>
 

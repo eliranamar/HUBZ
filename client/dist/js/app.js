@@ -17074,7 +17074,7 @@ var App = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log('connected');
+      // console.log('connected');
       return _react2.default.createElement(
         _reactRouterDom.BrowserRouter,
         null,
@@ -17082,7 +17082,7 @@ var App = function (_React$Component) {
           'div',
           { id: 'root', style: { height: "100%" } },
           _react2.default.createElement(_Header2.default, { trip: this.state.trip }),
-          _react2.default.createElement(_Routes2.default, { setTripState: this.setTripState })
+          _react2.default.createElement(_Routes2.default, { trip: this.state.trip, setTripState: this.setTripState })
         )
       );
     }
@@ -28351,13 +28351,24 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return true;
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      // console.log(nextProps);
+      this.setState({ trip: nextProps.trip });
     }
   }, {
     key: 'render',
     value: function render() {
+      var currentTrip = _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/trip' },
+          'Current Trip ID: ',
+          this.state.trip.id
+        )
+      );
       return _react2.default.createElement(
         'nav',
         { className: 'navbar navbar-inverse' },
@@ -28431,12 +28442,7 @@ var App = function (_React$Component) {
                   'Contact'
                 )
               ),
-              this.state.trip.id ? _react2.default.createElement(
-                'li',
-                null,
-                'Current Trip ID: ',
-                this.state.trip.id
-              ) : null
+              this.state.trip.id ? currentTrip : null
             )
           )
         )
@@ -30836,7 +30842,7 @@ var Routes = function Routes(props) {
                     return _react2.default.createElement(_FindTrip2.default, { setTripState: props.setTripState });
                 } }),
             _react2.default.createElement(_reactRouterDom.Route, { name: 'trip', exact: true, path: '/trip', render: function render() {
-                    return _react2.default.createElement(_Trip2.default, { setTripState: props.setTripState });
+                    return _react2.default.createElement(_Trip2.default, { trip: props.trip, setTripState: props.setTripState });
                 } }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
         )
@@ -31861,8 +31867,8 @@ var Trip = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.state.trip) {
-        // console.log(this.state.trip);
+      if (this.state.trip.id) {
+        console.log(this.state.trip);
         // console.log(this.state.trip.id);
         // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
         return _react2.default.createElement(_Location2.default, { trip: this.state.trip });
@@ -31919,7 +31925,6 @@ var Trip = function (_React$Component) {
               _react2.default.createElement(
                 "fieldset",
                 null,
-                "//! set the APP state with new trip details",
                 _react2.default.createElement(
                   "button",
                   { name: "submit", type: "submit", className: "btn btn-primary btn-square", id: "contact-submit", "data-submit": "...Sending" },
@@ -40698,311 +40703,9 @@ function unmountInputElementFromControlPositionOnMap(index, controlPosition, map
 
 /***/ }),
 /* 580 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactGoogleMaps = __webpack_require__(181);
-
-var _SearchBox = __webpack_require__(234);
-
-var _SearchBox2 = _interopRequireDefault(_SearchBox);
-
-var _Polyline = __webpack_require__(232);
-
-var _Polyline2 = _interopRequireDefault(_Polyline);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Wrap all `react-google-maps` components with `withGoogleMap` HOC
-// and name it GettingStartedGoogleMap
-
-var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (props) {
-  return _react2.default.createElement(
-    _reactGoogleMaps.GoogleMap,
-    {
-      defaultZoom: 4,
-      defaultCenter: { lat: 30.650589, lng: -80.437012 }
-    },
-    props.markers.map(function (marker, index) {
-      return _react2.default.createElement(
-        _reactGoogleMaps.Marker,
-        {
-          key: index,
-          position: marker.position,
-          onClick: function onClick() {
-            return props.onMarkerClick(marker);
-          }
-        },
-        marker.showInfo && _react2.default.createElement(
-          _reactGoogleMaps.InfoWindow,
-          { onCloseClick: function onCloseClick() {
-              return props.onMarkerClose(marker);
-            } },
-          _react2.default.createElement(
-            "div",
-            null,
-            marker.infoContent
-          )
-        )
-      );
-    }),
-    props.polyline.map(function (path, index) {
-      return _react2.default.createElement(_Polyline2.default, {
-        options: { strokeColor: "blue", geodesic: true },
-        key: index,
-        path: path.polyline
-      });
-    })
-  );
-});
-
-// Then, render it:
-
-var FindLocation = function (_React$Component) {
-  _inherits(FindLocation, _React$Component);
-
-  function FindLocation(props) {
-    _classCallCheck(this, FindLocation);
-
-    var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
-
-    _this.state = {
-      markersArr: [],
-
-      center: {
-        lat: 34.0522346,
-        lng: -118.2436829
-      },
-      // ,
-
-      paths: [{
-        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
-      }, {
-        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
-      }],
-
-      markers: [{
-        position: new google.maps.LatLng(-27.363882, 137.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement(
-          "p",
-          null,
-          "hey hey"
-        )
-      }, {
-        position: new google.maps.LatLng(-23.363882, 129.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement("svg", {
-          id: "Layer_1",
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 16 16"
-        })
-      }]
-    };
-    _this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
-    _this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
-    return _this;
-  }
-
-  _createClass(FindLocation, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var allLocations = [{
-        id: 27,
-        country: "United States",
-        name: "New York",
-        lat: -74.0059433,
-        lng: 40.7127838,
-        trip_id: 31
-      }, {
-        id: 28,
-        country: "United States",
-        name: "Boston",
-        lat: -71.0588837,
-        lng: 42.3600807,
-        trip_id: 31
-      }, {
-        id: 29,
-        country: "United States",
-        name: "Philadelphia",
-        lat: -75.1652222,
-        lng: 39.9525833,
-        trip_id: 31
-      }, {
-        id: 30,
-        country: "United States",
-        name: "Miami",
-        lat: -80.1917877,
-        lng: 25.7616806,
-        trip_id: 31
-      }, {
-        id: 31,
-        country: "United States",
-        name: "Los Angeles",
-        lat: -118.2436829,
-        lng: 34.0522346,
-        trip_id: 31
-      }, {
-        id: 32,
-        country: "United States",
-        name: "San Francisco",
-        lat: -122.4194183,
-        lng: 37.774929,
-        trip_id: 31
-      }, {
-        id: 33,
-        country: "United States",
-        name: "Las Vegas",
-        lat: -115.1398315,
-        lng: 36.1699409,
-        trip_id: 31
-      }];
-      var tempArr = [];
-
-      for (var i = 0; i < allLocations.length; i++) {
-        var lat = allLocations[i].lat;
-        var lng = allLocations[i].lng;
-        console.log(lat);
-        var obj = {
-          position: new google.maps.LatLng(lng, lat),
-          showInfo: false,
-          infoContent: allLocations[i].name
-        };
-        console.log(obj);
-        tempArr.push(obj);
-      }
-
-      function extend(obj, src) {
-        for (var key in src) {
-          if (src.hasOwnProperty(key)) obj[key] = src[key];
-        }
-        return obj;
-      }
-      var tempPoly = [{ polyline: [] }];
-
-      for (var z = 0; z < allLocations.length; z++) {
-        var lngA = { lat: allLocations[z].lng };
-        var latA = { lng: allLocations[z].lat };
-        var c = extend(latA, lngA);
-        tempPoly[0].polyline.push(c);
-      }
-      console.log(tempPoly);
-      this.setState({
-        paths: tempPoly
-      });
-
-      this.setState({
-        markers: tempArr
-      });
-    }
-  }, {
-    key: "handleMarkerClick",
-    value: function handleMarkerClick(targetMarker) {
-      this.setState({
-        markers: this.state.markers.map(function (marker) {
-          if (marker === targetMarker) {
-            return _extends({}, marker, {
-              showInfo: true
-            });
-          }
-          return marker;
-        })
-      });
-    }
-  }, {
-    key: "handleMarkerClose",
-    value: function handleMarkerClose(targetMarker) {
-      this.setState({
-        markers: this.state.markers.map(function (marker) {
-          if (marker === targetMarker) {
-            return _extends({}, marker, {
-              showInfo: false
-            });
-          }
-          return marker;
-        })
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "row full-height", style: { height: "100%" } },
-        _react2.default.createElement(
-          "div",
-          { className: "col-md-6" },
-          _react2.default.createElement(
-            "a",
-            { target: "_blank", href: "https://www.rome2rio.com/s/New-York/Boston?utm_source=widget" },
-            _react2.default.createElement("img", {
-              src: "img/widget.jpg",
-              className: "img-responsive",
-              alt: ""
-            })
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "col-md-6", style: { height: "100%" } },
-          _react2.default.createElement(GettingStartedGoogleMap, {
-            containerElement: _react2.default.createElement("div", {
-              style: {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                justifyContent: "flex-end",
-                alignItems: "center"
-              }
-            }),
-            mapElement: _react2.default.createElement("div", {
-              style: {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0
-              }
-            }),
-            center: this.state.center,
-            markers: this.state.markers,
-            polyline: this.state.paths,
-            onMarkerClick: this.handleMarkerClick,
-            onMarkerClose: this.handleMarkerClose
-          })
-        )
-      );
-    }
-  }]);
-
-  return FindLocation;
-}(_react2.default.Component);
-
-exports.default = FindLocation;
+throw new Error("Module build failed: SyntaxError: C:/Users/Eliran/Desktop/ELEVATION/WEEK11/HACKATHON2/client/src/Routesss/common/FindLocation.js: Only one default export allowed per module. (417:0)\n\n\u001b[0m \u001b[90m 415 | \u001b[39m}\n \u001b[90m 416 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 417 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[33mFindLocation\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m     | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 581 */
@@ -41053,9 +40756,10 @@ var FindTrip = function (_React$Component) {
         hub: null
       },
       results: []
-      // console.log(this.state.trip);
+    };
+    // console.log(this.state.trip);
 
-    };_this.findTripFunc = _this.findTripFunc.bind(_this);
+    _this.findTripFunc = _this.findTripFunc.bind(_this);
     // this.redirectToMap = this.redirectToMap.bind(this);
     return _this;
   }
@@ -41071,7 +40775,7 @@ var FindTrip = function (_React$Component) {
   // }
 
   _createClass(FindTrip, [{
-    key: 'findTripFunc',
+    key: "findTripFunc",
     value: function findTripFunc() {
       //! this func fetchs all trips that contains this location
       var that = this;
@@ -41079,7 +40783,7 @@ var FindTrip = function (_React$Component) {
       // let listItems = this.props.trips.map(function (trip) {
       //   return (
       //     <li key={trip.name}>
-      //      
+      //
       //     </li>
       //   );
       // });
@@ -41088,80 +40792,93 @@ var FindTrip = function (_React$Component) {
       // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
       console.log(this.state.currentHub);
       if (!this.state.currentHub.hub) {
-        alert('Please choose a valid hub');
+        alert("please choose valid hub");
         return;
       }
       _axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
         // console.log('testttt');
-        console.log(response.data);
+        // console.log(response.data);
         that.setState({ trips: response.data });
       }).catch(function (error) {
         console.log(error);
       });
     }
   }, {
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
       //? after mount make input to auto complete
       var that = this;
-      var input = document.getElementById('searchTripInput');
+      var input = document.getElementById("searchTripInput");
       var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.addListener('place_changed', function () {
-
+      autocomplete.addListener("place_changed", function () {
         var place = autocomplete.getPlace();
         var hub = {};
         console.log(place);
         for (var i = 0; i < place.address_components.length; i++) {
           if (place.address_components[i].types[0] == "locality") {
             hub.hub = place.address_components[i].long_name;
-            break;
           }
         }
         if (place.address_components) {
           that.setState({ currentHub: hub });
         } else {
-          alert('please choose location from google list');
+          alert("please choose location from google list");
         }
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { id: 'find-trip-box' },
+        "div",
+        { className: "container", id: "find-trip-box", style: { height: "100%" } },
         _react2.default.createElement(
-          'div',
-          { className: 'container center-block text-center' },
+          "div",
+          { className: "row text-center" },
           _react2.default.createElement(
-            'h3',
+            "h3",
             null,
-            'What is your current location?'
+            "What is your current location?"
           ),
           _react2.default.createElement(
-            'h4',
+            "h4",
             null,
-            'Search for your next Hub :)'
+            "Search for your next Hub :)"
           ),
           _react2.default.createElement(
-            'fieldset',
+            "fieldset",
             null,
-            _react2.default.createElement('input', { required: true, id: 'searchTripInput', className: 'controls form-control', type: 'text', placeholder: 'Enter Your Current Hub' })
+            _react2.default.createElement("input", {
+              required: true,
+              id: "searchTripInput",
+              className: "controls form-control",
+              type: "text",
+              placeholder: "Enter Your Current Hub"
+            })
           ),
-          _react2.default.createElement('hr', null),
+          _react2.default.createElement("hr", null),
           _react2.default.createElement(
-            'fieldset',
+            "fieldset",
             null,
             _react2.default.createElement(
-              'button',
-              { onClick: this.findTripFunc, className: 'btn btn-success btn-square', name: 'submit', type: 'submit', id: 'contact-submit', 'data-submit': '...Sending' },
-              'Submit'
+              "button",
+              {
+                onClick: this.findTripFunc,
+                className: "btn btn-success btn-square",
+                name: "submit",
+                type: "submit",
+                id: "contact-submit",
+                "data-submit": "...Sending"
+              },
+              "Submit"
             )
           )
         ),
-        _react2.default.createElement('hr', null),
+        _react2.default.createElement("hr", null),
         _react2.default.createElement(_TripFindEngine2.default, {
-          trips: this.state.trips, redirectToMap: this.redirectToMap })
+          trips: this.state.trips,
+          redirectToMap: this.redirectToMap
+        })
       );
     }
   }]);
@@ -41182,76 +40899,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TripBox = __webpack_require__(583);
-
-var _TripBox2 = _interopRequireDefault(_TripBox);
-
-var _reactRouterDom = __webpack_require__(28);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TripFindEngine = function TripFindEngine(props) {
-
-  var found = false;
-  var boxes = [];
-  if (props.trips.hasOwnProperty(31)) {
-    boxes = props.trips[31].map(function (item, index) {
-      return _react2.default.createElement(_TripBox2.default, {
-        key: index,
-        findThisTrip: props.findThisTrip,
-        item: item });
-    });
-    console.log(boxes);
-    found = true;
-  }
-  if (found) {
-    return _react2.default.createElement(
-      'div',
-      { className: 'equalHeightWrap flexWrap text-center container' },
-      _react2.default.createElement(
-        'button',
-        { onClick: props.redirectToMap, className: 'btn btn-primary btn-square' },
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/findlocation' },
-          'Show Trip'
-        )
-      ),
-      _react2.default.createElement('hr', null),
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Trip Locations'
-      ),
-      boxes
-    );
-  } else {
-    return _react2.default.createElement('div', null);
-  }
-};
-
-exports.default = TripFindEngine;
-
-/***/ }),
-/* 583 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(28);
+
+var _FindLocation = __webpack_require__(580);
+
+var _FindLocation2 = _interopRequireDefault(_FindLocation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41261,67 +40919,40 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TripBox = function (_React$Component) {
-  _inherits(TripBox, _React$Component);
+var TripFindEngine = function (_React$Component) {
+  _inherits(TripFindEngine, _React$Component);
 
-  function TripBox(props) {
-    _classCallCheck(this, TripBox);
+  function TripFindEngine(props) {
+    _classCallCheck(this, TripFindEngine);
 
-    //bind this to functions
-    var _this = _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (TripFindEngine.__proto__ || Object.getPrototypeOf(TripFindEngine)).call(this, props));
 
-    _this.findThisTrip = _this.findThisTrip.bind(_this);
+    _this.state = { paths: props.trips };
     return _this;
   }
 
-  _createClass(TripBox, [{
-    key: "findThisTrip",
-    value: function findThisTrip() {
-      console.log(this.props.findThisTrip(this.props.item)); //Using a function to call function in props
+  _createClass(TripFindEngine, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      // console.log(nextProps);
+      this.setState({ paths: nextProps.trips });
     }
   }, {
     key: "render",
     value: function render() {
-      var dataItem = this.props.item;
+
       return _react2.default.createElement(
         "div",
-        { className: "equalHMV eq" },
-        _react2.default.createElement(
-          "div",
-          { className: "media" },
-          _react2.default.createElement(
-            "div",
-            { className: "media-body" },
-            _react2.default.createElement(
-              "h4",
-              { className: "media-heading" },
-              dataItem.country
-            ),
-            _react2.default.createElement(
-              "p",
-              null,
-              dataItem.name,
-              " - ",
-              dataItem.trip_id
-            ),
-            _react2.default.createElement(
-              "p",
-              null,
-              dataItem.lng,
-              " - ",
-              dataItem.lat
-            )
-          )
-        ),
-        _react2.default.createElement("hr", null)
+        { style: { height: "100%" } },
+        _react2.default.createElement(_FindLocation2.default, { paths: this.props.trips })
       );
     }
   }]);
 
-  return TripBox;
+  return TripFindEngine;
 }(_react2.default.Component);
 
-exports.default = TripBox;
+exports.default = TripFindEngine;
 
 /***/ })
 /******/ ]);

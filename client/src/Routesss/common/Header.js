@@ -9,12 +9,14 @@ class App extends React.Component {
       trip : props.trip
     }
   }
+componentWillReceiveProps(nextProps){
+  // console.log(nextProps);
+  this.setState({trip:nextProps.trip})
+}
 
-  shouldComponentUpdate(){
-  return true;
-  }
 
   render() {
+    let currentTrip = <li><Link to="/trip">Current Trip ID: {this.state.trip.id}</Link></li>;
     return (
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
@@ -33,7 +35,7 @@ class App extends React.Component {
               <li role="presentation"><Link to="/trip">Create Trip</Link></li>
               <li role="presentation"><Link to="/about">About</Link></li>
               <li role="presentation"><Link to="/contact">Contact</Link></li>
-              { this.state.trip.id ? <li>Current Trip ID: {this.state.trip.id}</li> : null }
+              { this.state.trip.id ? currentTrip : null }
             </ul>
           </div>
         </div>

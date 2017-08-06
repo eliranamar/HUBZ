@@ -64,7 +64,12 @@ app.post('/getnexthub', function (req, res) {
         obj[result[i].trip_id].push(result[i]);
       }
     }
-    res.send(obj);
+    let arr = []
+    for (let id in obj) {
+      arr.push(obj[id])
+    }
+    console.log(arr)
+    res.send(arr);
   });
 })
 

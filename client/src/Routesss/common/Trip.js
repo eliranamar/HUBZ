@@ -15,7 +15,8 @@ class Trip extends React.Component {
     this.getTripData = this.getTripData.bind(this);
   }
 
-  getTripData(e) { 
+
+  getTripData(e) {
     e.preventDefault();
     let that = this;
     let data = {};
@@ -36,13 +37,13 @@ class Trip extends React.Component {
   }
 
   render() {
-    if (this.state.trip) {
-      // console.log(this.state.trip);
+    if (this.state.trip.id) {
+      console.log(this.state.trip);
       // console.log(this.state.trip.id);
       // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
       return (
         <Location trip={this.state.trip}></Location>
-      )
+      );
     }
     else {
       return (
@@ -63,7 +64,6 @@ class Trip extends React.Component {
               <br />
               <hr/>
               <fieldset>
-                //! set the APP state with new trip details
                 <button name="submit" type="submit" className="btn btn-primary btn-square" id="contact-submit" data-submit="...Sending">Submit</button>
               </fieldset>
             </form>
