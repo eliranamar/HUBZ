@@ -1,37 +1,26 @@
-import React from 'react';
-import TripBox from './TripBox';
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import FindLocation from "./FindLocation";
 
-const TripFindEngine = (props) => {
-
-  let found = false;
-  let boxes = [];
-  if (props.trips.hasOwnProperty(31)) {
-    boxes = props.trips[31]
-      .map((item, index) => <TripBox
-        key={index}
-        findThisTrip={props.findThisTrip}
-        item={item} />)
-    console.log(boxes);
-    found = true;
+class TripFindEngine extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { paths: props.trips };
   }
-  if (found) {
+
+componentWillReceiveProps(nextProps){
+ // console.log(nextProps);
+ this.setState({paths:nextProps.trips})
+}
+  render() {
+
     return (
-      <div className="equalHeightWrap flexWrap text-center container">
-        <button onClick={props.redirectToMap} className="btn btn-primary btn-square"><Link to="/findlocation">Show Trip</Link></button>
-        <hr/>
-        <h2>Trip Locations</h2>
-        {boxes}
+      <div style={{ height: "100%" }}>
+          <FindLocation paths={this.props.trips} />
       </div>
     );
-
-  } else {
-    return (
-      <div>
-      </div>
-    )
   }
-};
+}
 
 export default TripFindEngine;

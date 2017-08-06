@@ -97,102 +97,44 @@ class FindLocation extends React.Component {
     this.handleMarkerClose = this.handleMarkerClose.bind(this);
   }
 
-  componentDidMount() {
-    const allLocations = [
-      {
-        id: 27,
-        country: "United States",
-        name: `New York`,
-        lat: -74.0059433,
-        lng: 40.7127838,
-        trip_id: 31
-      },
-      {
-        id: 28,
-        country: "United States",
-        name: "Boston",
-        lat: -71.0588837,
-        lng: 42.3600807,
-        trip_id: 31
-      },
-      {
-        id: 29,
-        country: "United States",
-        name: "Philadelphia",
-        lat: -75.1652222,
-        lng: 39.9525833,
-        trip_id: 31
-      },
-      {
-        id: 30,
-        country: "United States",
-        name: "Miami",
-        lat: -80.1917877,
-        lng: 25.7616806,
-        trip_id: 31
-      },
-      {
-        id: 31,
-        country: "United States",
-        name: "Los Angeles",
-        lat: -118.2436829,
-        lng: 34.0522346,
-        trip_id: 31
-      },
-      {
-        id: 32,
-        country: "United States",
-        name: "San Francisco",
-        lat: -122.4194183,
-        lng: 37.774929,
-        trip_id: 31
-      },
-      {
-        id: 33,
-        country: "United States",
-        name: "Las Vegas",
-        lat: -115.1398315,
-        lng: 36.1699409,
-        trip_id: 31
+  componentWillReceiveProps(nextprops) {
+    if (this.props.paths !== nextprops.paths) {
+      let allLocations = nextprops.paths[4];
+      // const allLocations = nextprops.paths[4];
+      console.log(allLocations);
+
+      let tempArr = [];
+
+      for (var i = 0; i < allLocations.length; i++) {
+        let lng = allLocations[i].lat;
+        let lat = allLocations[i].lng;
+        console.log(lat);
+        let obj = {
+          position: new google.maps.LatLng(lng, lat),
+          showInfo: false,
+          infoContent: allLocations[i].name
+        };
+        tempArr.push(obj);
       }
-    ];
-    let tempArr = [];
 
-    for (var i = 0; i < allLocations.length; i++) {
-      let lat = allLocations[i].lat;
-      let lng = allLocations[i].lng;
-      console.log(lat);
-      let obj = {
-        position: new google.maps.LatLng(lng, lat),
-        showInfo: false,
-        infoContent: allLocations[i].name
-      };
-      console.log(obj);
-      tempArr.push(obj);
-    }
+       
+      let tempPoly = [{ polyline: [] },{ polyline: [] }];
 
-    function extend(obj, src) {
-      for (var key in src) {
-        if (src.hasOwnProperty(key)) obj[key] = src[key];
+      for (var z = 0; z < allLocations.length; z++) {
+        let c = { lat: allLocations[z].lat , lng: allLocations[z].lng };
+        let c1 = { lat: allLocations[z].lng , lng: allLocations[z].lat*(-1) };
+        tempPoly[0].polyline.push(c);
+        tempPoly[1].polyline.push(c1);
       }
-      return obj;
-    }
-    let tempPoly = [{ polyline: [] }];
 
-    for (var z = 0; z < allLocations.length; z++) {
-      let lngA = { lat: allLocations[z].lng };
-      let latA = { lng: allLocations[z].lat };
-      var c = extend(latA, lngA);
-      tempPoly[0].polyline.push(c);
-    }
-    console.log(tempPoly);
-    this.setState({
-      paths: tempPoly
-    });
+      this.setState({
+        paths: tempPoly
+      });
 
-    this.setState({
-      markers: tempArr
-    });
+      this.setState({
+        markers: tempArr
+      });
+    }
   }
 
   handleMarkerClick(targetMarker) {
@@ -226,16 +168,7 @@ class FindLocation extends React.Component {
   render() {
     return (
       <div className="row full-height" style={{ height: "100%" }}>
-        <div className="col-md-6">
-          <a target="_blank" href="https://www.rome2rio.com/s/New-York/Boston?utm_source=widget">
-          <img
-            src="img/widget.jpg"
-            className="img-responsive"
-            alt=""
-          />
-          </a>
-        </div>
-        <div className="col-md-6" style={{ height: "100%" }}>
+        <div className="col-md-12" style={{ height: "100%" }}>
           <GettingStartedGoogleMap
             containerElement={
               <div
