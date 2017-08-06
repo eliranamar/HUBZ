@@ -115,6 +115,7 @@ class FindTrip extends React.Component {
         <TripFindEngine
           trips={this.state.trips}
           redirectToMap={this.redirectToMap}
+          currentHub={this.state.currentHub}
         />
       </div>
     );

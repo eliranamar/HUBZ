@@ -14,7 +14,7 @@ import Polyline from "../../../../node_modules/react-google-maps/lib/Polyline";
 const GettingStartedGoogleMap = withGoogleMap(props =>
   <GoogleMap
     defaultZoom={4}
-    defaultCenter={{ lat: 30.650589, lng: -80.437012 }}
+    defaultCenter={props.center}
   >
     {props.markers.map((marker, index) =>
       <Marker
@@ -48,11 +48,8 @@ class FindLocation extends React.Component {
 
     this.state = {
       markersArr: [],
-
-      center: {
-        lat: 34.0522346,
-        lng: -118.2436829
-      },
+      currentHub: {},
+      // center: (99.0522346, 101.2436829),
       // ,
 
       paths: [
@@ -96,43 +93,52 @@ class FindLocation extends React.Component {
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
     this.handleMarkerClose = this.handleMarkerClose.bind(this);
   }
+  componentDidMount(){
+    this.setState({
+      center: new google.maps.LatLng(34.0522346, 20.2436829)
+    })
+
+  }
 
   componentWillReceiveProps(nextprops) {
     if (this.props.paths !== nextprops.paths) {
-      let allLocations = nextprops.paths[4];
-      // const allLocations = nextprops.paths[4];
-      console.log(allLocations);
 
-      let tempArr = [];
+      let allLocations = nextprops.paths;
+      let fullpoly = [];
 
       for (var i = 0; i < allLocations.length; i++) {
-        let lng = allLocations[i].lat;
-        let lat = allLocations[i].lng;
-        console.log(lat);
-        let obj = {
-          position: new google.maps.LatLng(lng, lat),
-          showInfo: false,
-          infoContent: allLocations[i].name
-        };
-        tempArr.push(obj);
-      }
+        let tempPoly = { polyline: [] };
 
-       
-      let tempPoly = [{ polyline: [] },{ polyline: [] }];
-
-      for (var z = 0; z < allLocations.length; z++) {
-        let c = { lat: allLocations[z].lat , lng: allLocations[z].lng };
-        let c1 = { lat: allLocations[z].lng , lng: allLocations[z].lat*(-1) };
-        tempPoly[0].polyline.push(c);
-        tempPoly[1].polyline.push(c1);
+        for (var z = 0; z < allLocations[i].length; z++) {
+          let c = { lat: allLocations[i][z].lat, lng: allLocations[i][z].lng };
+          tempPoly.polyline.push(c);
+          fullpoly.push(tempPoly);
+        }
       }
 
       this.setState({
-        paths: tempPoly
+        paths: fullpoly,
+         currentHub:nextprops.currentHub
+
       });
 
+      let fullMarker = [];
+
+      for (var t = 0; t < allLocations.length; t++) {
+        for (var r = 0; r < allLocations[t].length; r++) {
+          let lng = allLocations[t][r].lat;
+          let lat = allLocations[t][r].lng;
+          let tempMarker = {
+            position: new google.maps.LatLng(lng, lat),
+            showInfo: false,
+            infoContent: allLocations[t][r].name
+          };
+          fullMarker.push(tempMarker);
+        }
+      }
+
       this.setState({
-        markers: tempArr
+        markers: fullMarker
       });
     }
   }
