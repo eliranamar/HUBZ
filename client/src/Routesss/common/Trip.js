@@ -15,6 +15,7 @@ class Trip extends React.Component {
     this.getTripData = this.getTripData.bind(this);
   }
 
+
   getTripData(e) {
     e.preventDefault();
     let that = this;
@@ -27,7 +28,8 @@ class Trip extends React.Component {
         // console.log('testttt');
         console.log(response.data);
         data.id = response.data.insertId;
-        that.setState({ trip: data })
+        that.setState({ trip: data });
+        that.props.setTripState(data);
       })
       .catch(function (error) {
         console.log(error);
@@ -35,13 +37,13 @@ class Trip extends React.Component {
   }
 
   render() {
-    if (this.state.trip) {
-      // console.log(this.state.trip);
+    if (this.state.trip.id) {
+      console.log(this.state.trip);
       // console.log(this.state.trip.id);
       // history.pushState(null, null, '/trip/'+"3"+'/addlocation');
       return (
         <Location trip={this.state.trip}></Location>
-      )
+      );
     }
     else {
       return (

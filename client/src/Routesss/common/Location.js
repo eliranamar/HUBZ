@@ -7,7 +7,7 @@ class Location extends React.Component {
   constructor(props) {
     super(props);
     let trip = this.props.trip;
-    console.log(trip);
+    // console.log(trip);
     this.state = {
       trip: trip,
       location: {}
@@ -94,9 +94,9 @@ class Location extends React.Component {
 
   render() {
     return (
-      <div id="location-box">
+      <div className="container" id="location-box">
         <div className="center-block text-center">
-
+          <h2>Your trip id is: {this.state.trip.id}</h2>
           <h3>Add Your Location!</h3>
           <h4>Please Search and choose from suggestions</h4>
           <fieldset>

@@ -2,7 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      trip : props.trip
+    }
+  }
+componentWillReceiveProps(nextProps){
+  // console.log(nextProps);
+  this.setState({trip:nextProps.trip})
+}
+
+
   render() {
+    let currentTrip = <li><Link to="/trip">Current Trip ID: {this.state.trip.id}</Link></li>;
     return (
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
@@ -21,6 +35,7 @@ class App extends React.Component {
               <li role="presentation"><Link to="/trip">Create Trip</Link></li>
               <li role="presentation"><Link to="/about">About</Link></li>
               <li role="presentation"><Link to="/contact">Contact</Link></li>
+              { this.state.trip.id ? currentTrip : null }
             </ul>
           </div>
         </div>
