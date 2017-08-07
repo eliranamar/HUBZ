@@ -17289,6 +17289,10 @@ var _reactDom = __webpack_require__(63);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _axios = __webpack_require__(107);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 var _Header = __webpack_require__(335);
 
 var _Header2 = _interopRequireDefault(_Header);
@@ -17308,51 +17312,69 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+	_inherits(App, _React$Component);
 
-  function App(props) {
-    _classCallCheck(this, App);
+	function App(props) {
+		_classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.state = {
-      trip: {
-        name: null,
-        type: null,
-        id: null
-      }
-    };
+		_this.state = {
+			trip: {
+				name: null,
+				type: null,
+				id: null
+			},
+			user: {}
+		};
+		console.log(_this.state.user);
+		_this.setTripState = _this.setTripState.bind(_this);
+		return _this;
+	}
 
-    _this.setTripState = _this.setTripState.bind(_this);
-    return _this;
-  }
+	_createClass(App, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var that = this;
+			(function () {
+				var user = JSON.parse(localStorage.getItem("user"));
+				if (user.token) {
+					that.setState({ user: user });
+					_axios2.default.defaults.headers.common["Authorization"] = "Bearer " + user.token;
+				} else {
+					_axios2.default.defaults.headers.common["Authorization"] = null;
+					/*if setting null does not remove `Authorization` header then try     
+            delete axios.defaults.headers.common['Authorization'];
+          */
+				}
+			})();
+		}
+	}, {
+		key: "setTripState",
+		value: function setTripState(trip) {
+			this.setState({ trip: trip });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			// console.log('connected');
+			return _react2.default.createElement(
+				_reactRouterDom.BrowserRouter,
+				null,
+				_react2.default.createElement(
+					"div",
+					{ id: "root", style: { height: "100%" } },
+					_react2.default.createElement(_Header2.default, { trip: this.state.trip }),
+					_react2.default.createElement(_Routes2.default, { trip: this.state.trip, setTripState: this.setTripState })
+				)
+			);
+		}
+	}]);
 
-  _createClass(App, [{
-    key: 'setTripState',
-    value: function setTripState(trip) {
-      this.setState({ trip: trip });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      // console.log('connected');
-      return _react2.default.createElement(
-        _reactRouterDom.BrowserRouter,
-        null,
-        _react2.default.createElement(
-          'div',
-          { id: 'root', style: { height: "100%" } },
-          _react2.default.createElement(_Header2.default, { trip: this.state.trip }),
-          _react2.default.createElement(_Routes2.default, { trip: this.state.trip, setTripState: this.setTripState })
-        )
-      );
-    }
-  }]);
-
-  return App;
+	return App;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('react-app'));
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("react-app"));
 
 /***/ }),
 /* 237 */
@@ -28578,7 +28600,7 @@ module.exports = ReactDOMInvalidARIAHook;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28598,120 +28620,134 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+	_inherits(App, _React$Component);
 
-  function App(props) {
-    _classCallCheck(this, App);
+	function App(props) {
+		_classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.state = {
-      trip: props.trip
-    };
-    return _this;
-  }
+		_this.state = {
+			trip: props.trip
+		};
+		return _this;
+	}
 
-  _createClass(App, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      // console.log(nextProps);
-      this.setState({ trip: nextProps.trip });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var currentTrip = _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/trip' },
-          'Current Trip ID: ',
-          this.state.trip.id
-        )
-      );
-      return _react2.default.createElement(
-        'nav',
-        { className: 'navbar navbar-inverse' },
-        _react2.default.createElement(
-          'div',
-          { className: 'container-fluid' },
-          _react2.default.createElement(
-            'div',
-            { className: 'navbar-header' },
-            _react2.default.createElement(
-              'button',
-              { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
-              _react2.default.createElement('span', { className: 'icon-bar' }),
-              _react2.default.createElement('span', { className: 'icon-bar' }),
-              _react2.default.createElement('span', { className: 'icon-bar' })
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'navbar-brand', to: '/' },
-              'React-Website'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'collapse navbar-collapse', id: 'myNavbar' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'nav navbar-nav' },
-              _react2.default.createElement(
-                'li',
-                { role: 'presentation' },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/' },
-                  'Home'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { role: 'presentation' },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/findtrip' },
-                  'Find Trip'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { role: 'presentation' },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/trip' },
-                  'Create Trip'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { role: 'presentation' },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/about' },
-                  'About'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { role: 'presentation' },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/contact' },
-                  'Contact'
-                )
-              ),
-              this.state.trip.id ? currentTrip : null
-            )
-          )
-        )
-      );
-    }
-  }]);
+	_createClass(App, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			// console.log(nextProps);
+			this.setState({ trip: nextProps.trip });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var currentTrip = _react2.default.createElement(
+				"li",
+				null,
+				_react2.default.createElement(
+					_reactRouterDom.Link,
+					{ to: "/trip" },
+					"Current Trip ID: ",
+					this.state.trip.id
+				)
+			);
+			return _react2.default.createElement(
+				"nav",
+				{ className: "navbar navbar-inverse" },
+				_react2.default.createElement(
+					"div",
+					{ className: "container-fluid" },
+					_react2.default.createElement(
+						"div",
+						{ className: "navbar-header" },
+						_react2.default.createElement(
+							"button",
+							{
+								type: "button",
+								className: "navbar-toggle",
+								"data-toggle": "collapse",
+								"data-target": "#myNavbar"
+							},
+							_react2.default.createElement("span", { className: "icon-bar" }),
+							_react2.default.createElement("span", { className: "icon-bar" }),
+							_react2.default.createElement("span", { className: "icon-bar" })
+						),
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: "navbar-brand", to: "/" },
+							"React-Website"
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "collapse navbar-collapse", id: "myNavbar" },
+						_react2.default.createElement(
+							"ul",
+							{ className: "nav navbar-nav" },
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: "/" },
+									"Home"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: "/findtrip" },
+									"Find Trip"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: "/trip" },
+									"Create Trip"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: "/about" },
+									"About"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: "/contact" },
+									"Contact"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ target: "_self", href: "/auth/facebook" },
+									"Facebook Login"
+								)
+							),
+							this.state.trip.id ? currentTrip : null
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return App;
+	return App;
 }(_react2.default.Component);
 
 exports.default = App;
@@ -31084,6 +31120,10 @@ var _FindTrip = __webpack_require__(581);
 
 var _FindTrip2 = _interopRequireDefault(_FindTrip);
 
+var _Authentication = __webpack_require__(584);
+
+var _Authentication2 = _interopRequireDefault(_Authentication);
+
 var _reactRouterDom = __webpack_require__(28);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31105,6 +31145,7 @@ var Routes = function Routes(props) {
             _react2.default.createElement(_reactRouterDom.Route, { name: 'trip', exact: true, path: '/trip', render: function render() {
                     return _react2.default.createElement(_Trip2.default, { trip: props.trip, setTripState: props.setTripState });
                 } }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'authentication', path: '/authorization/:token/:name', component: _Authentication2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
         )
     );
@@ -32116,9 +32157,9 @@ var Trip = function (_React$Component) {
 			data.name = document.getElementById("trip-name").value;
 			data.type = document.querySelector('input[name = "trip-type"]:checked').value;
 			console.log(data);
-			_axios2.default.post("/trip", data).then(function (response) {
+			_axios2.default.post("/trip/addtrip", data).then(function (response) {
 				// console.log('testttt');
-				console.log(response.data);
+				// console.log(response.data);
 				data.id = response.data.insertId;
 				that.setState({ trip: data });
 				that.props.setTripState(data);
@@ -32130,7 +32171,7 @@ var Trip = function (_React$Component) {
 		key: "render",
 		value: function render() {
 			if (this.state.trip.id) {
-				console.log(this.state.trip);
+				// console.log(this.state.trip);
 				// console.log(this.state.trip.id);
 				// history.pushState(null, null, '/trip/'+"3"+'/addlocation');
 				return _react2.default.createElement(_Location2.default, { trip: this.state.trip });
@@ -41243,6 +41284,79 @@ var TripFindEngine = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = TripFindEngine;
+
+/***/ }),
+/* 583 */,
+/* 584 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(28);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Authentication = function (_React$Component) {
+	_inherits(Authentication, _React$Component);
+
+	function Authentication(props) {
+		_classCallCheck(this, Authentication);
+
+		var _this = _possibleConstructorReturn(this, (Authentication.__proto__ || Object.getPrototypeOf(Authentication)).call(this, props));
+
+		_this.connected = _this.connected.bind(_this);
+		_this.state = {
+			name: _this.props.match.params.name,
+			token: _this.props.match.params.token
+		};
+		console.log('from authenticaton.js');
+		console.log(_this.state);
+		return _this;
+	}
+	//  Save the token and the name of connected user to local storage
+
+
+	_createClass(Authentication, [{
+		key: "connected",
+		value: function connected() {
+			console.log('from connected()');
+			console.log(this.props);
+			var User = this.state;
+			localStorage.setItem("user", JSON.stringify(User));
+		}
+	}, {
+		key: "componentWillMount",
+		value: function componentWillMount() {
+			this.connected();
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(_reactRouterDom.Redirect, { to: "/" });
+		}
+	}]);
+
+	return Authentication;
+}(_react2.default.Component);
+
+exports.default = Authentication;
 
 /***/ })
 /******/ ]);

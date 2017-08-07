@@ -25,10 +25,10 @@ class Trip extends React.Component {
 		).value;
 		console.log(data);
 		axios
-			.post("/trip", data)
+			.post("/trip/addtrip", data)
 			.then(function(response) {
 				// console.log('testttt');
-				console.log(response.data);
+				// console.log(response.data);
 				data.id = response.data.insertId;
 				that.setState({ trip: data });
 				that.props.setTripState(data);
@@ -40,7 +40,7 @@ class Trip extends React.Component {
 
 	render() {
 		if (this.state.trip.id) {
-			console.log(this.state.trip);
+			// console.log(this.state.trip);
 			// console.log(this.state.trip.id);
 			// history.pushState(null, null, '/trip/'+"3"+'/addlocation');
 			return <Location trip={this.state.trip} />;

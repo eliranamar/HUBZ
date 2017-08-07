@@ -1,8 +1,15 @@
 const express = require('express');
-var bodyParser = require('body-parser')
+let bodyParser = require('body-parser')
 let path = require('path');
 const app = express();
-let mysql = require('mysql')
+let mysql = require('mysql');
+let passport = require('./server/models/passport');
+
+let authRoutes = require('./routes/authRoutes');
+let tripRoutes = require('./routes/tripRoutes');
+
+let expressJWT = require('express-jwt');
+let ensureAuthenticated = expressJWT({ secret: 'Elirans$uperC0mpl3xKey1337' });
 
 // tell the app to look for static files in these directories
 app.use(express.static('./server/static/'));
@@ -10,9 +17,13 @@ app.use(express.static('./client/dist/'));
 app.use(bodyParser.urlencoded({
   extended: false
 }))
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+// FACEBOOK
+// passport initialize
 
-const connection = mysql.createConnection({
+app.use(passport.initialize());
+
+const connection = mysql.createConnection({ 
   host: "localhost",
   user: "root",
   password: "aS908116",
@@ -28,18 +39,18 @@ const connection = mysql.createConnection({
 
 // console.log(q.sql);
 
-app.get('/trip/:id', function (req, res) {
-  let where = {
-    trip_id: req.params.id
-  }
-
-
-  connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});
+app.use('/auth', authRoutes);
+app.use('/trip', tripRoutes);
+// app.get('/trip/:id', function (req, res) {
+//   let where = {
+//     trip_id: req.params.id
+//   }
+//   connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send(result);
+//   });
+// });
 
 // for finding 
 app.post('/getnexthub', function (req, res) {
@@ -74,36 +85,36 @@ app.post('/getnexthub', function (req, res) {
 })
 
 
-app.post('/trip/:trip_id/addlocation', function (req, res) {
-  console.log(req.body);
-  // res.json(req.body);
-  let location = req.body;
+// app.post('/trip/:trip_id/addlocation', function (req, res) {
+//   console.log(req.body);
+//   // res.json(req.body);
+//   let location = req.body;
 
 
-  connection.query('INSERT INTO locations SET ?', location, function (err, result) {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});
+//   connection.query('INSERT INTO locations SET ?', location, function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send(result);
+//   });
+// });
 
-app.post('/trip', function (req, res) {
-  let trip = req.body;
+// app.post('/trip', function (req, res) {
+//   let trip = req.body;
 
-  console.log(trip);
-  // connection.connect();
-  if (!trip.name || !trip.type) {
-    res.send('Please fill trip data correctly');
-  }
+//   console.log(trip);
+//   // connection.connect();
+//   if (!trip.name || !trip.type) {
+//     res.send('Please fill trip data correctly');
+//   }
 
-  connection.query('INSERT INTO trips SET ?', trip, function (err, result) {
-    if (err) throw err;
-    console.log("id: ", result.insertId);
+//   connection.query('INSERT INTO trips SET ?', trip, function (err, result) {
+//     if (err) throw err;
+//     console.log("id: ", result.insertId);
 
-    // connection.end();
-    res.send(result);
-  });
-})
+//     // connection.end();
+//     res.send(result);
+//   });
+// })
 
 
 
