@@ -22,6 +22,7 @@ class TripFindEngine extends React.Component {
 				<FindLocation
 					paths={this.props.trips}
 					currentHub={this.state.currentHub}
+          place={this.props.place}
 				/>
 			</div>
 		);
