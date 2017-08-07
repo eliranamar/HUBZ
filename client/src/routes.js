@@ -7,6 +7,7 @@ import Trip from './Routesss/common/Trip';
 import Location from './Routesss/common/Location';
 import FindLocation from './Routesss/common/FindLocation';
 import FindTrip from './Routesss/common/FindTrip';
+import Login from './Routesss/common/Login';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
 
@@ -19,6 +20,8 @@ const Routes = (props) => (
             <Route name="findlocation" exact path='/findlocation' component={FindLocation} />
             <Route name="findtrip" exact path='/findtrip' render={() => <FindTrip setTripState={props.setTripState} />} />
             <Route name="trip" exact path='/trip' render={() => <Trip trip={props.trip} setTripState={props.setTripState} />} />
+                        <Route name="Login" exact path='/Login' component={Login} />
+
             <Route path="*" component={Page404}/>
         </Switch>
     </div>
