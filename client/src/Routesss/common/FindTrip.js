@@ -95,6 +95,7 @@ class FindTrip extends React.Component {
               className="controls form-control"
               type="text"
               placeholder="Enter Your Current Hub"
+              autoFocus
             />
           </fieldset>
           <hr />
@@ -115,6 +116,7 @@ class FindTrip extends React.Component {
         <TripFindEngine
           trips={this.state.trips}
           redirectToMap={this.redirectToMap}
+          currentHub={this.state.currentHub}
         />
       </div>
     );
