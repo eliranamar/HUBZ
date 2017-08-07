@@ -17019,10 +17019,12 @@ exports.default = (0, _flowRight3.default)(_createReactClass2.default, (0, _enha
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17052,213 +17054,220 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // and name it GettingStartedGoogleMap
 
 var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (props) {
-  return _react2.default.createElement(
-    _reactGoogleMaps.GoogleMap,
-    {
-      defaultZoom: 4,
-      defaultCenter: props.center
-    },
-    props.markers.map(function (marker, index) {
-      return _react2.default.createElement(
-        _reactGoogleMaps.Marker,
-        {
-          key: index,
-          position: marker.position,
-          onClick: function onClick() {
-            return props.onMarkerClick(marker);
-          }
-        },
-        marker.showInfo && _react2.default.createElement(
-          _reactGoogleMaps.InfoWindow,
-          { onCloseClick: function onCloseClick() {
-              return props.onMarkerClose(marker);
-            } },
-          _react2.default.createElement(
-            "div",
-            null,
-            marker.infoContent
-          )
-        )
-      );
-    }),
-    props.polyline.map(function (path, index) {
-      return _react2.default.createElement(_Polyline2.default, {
-        options: { strokeColor: "blue", geodesic: true },
-        key: index,
-        path: path.polyline
-      });
-    })
-  );
+	return _react2.default.createElement(
+		_reactGoogleMaps.GoogleMap,
+		{ defaultZoom: 6, center: props.center },
+		props.markers.map(function (marker, index) {
+			return _react2.default.createElement(
+				_reactGoogleMaps.Marker,
+				{
+					key: index,
+					position: marker.position,
+					onClick: function onClick() {
+						return props.onMarkerClick(marker);
+					}
+				},
+				marker.showInfo && _react2.default.createElement(
+					_reactGoogleMaps.InfoWindow,
+					{ onCloseClick: function onCloseClick() {
+							return props.onMarkerClose(marker);
+						} },
+					_react2.default.createElement(
+						"div",
+						null,
+						marker.infoContent
+					)
+				)
+			);
+		}),
+		props.polyline.map(function (path, index) {
+			return _react2.default.createElement(_Polyline2.default, {
+				options: { strokeColor: "blue", geodesic: true },
+				key: index,
+				path: path.polyline
+			});
+		})
+	);
 });
 
 // Then, render it:
 
 var FindLocation = function (_React$Component) {
-  _inherits(FindLocation, _React$Component);
+	_inherits(FindLocation, _React$Component);
 
-  function FindLocation(props) {
-    _classCallCheck(this, FindLocation);
+	function FindLocation(props) {
+		_classCallCheck(this, FindLocation);
 
-    var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
 
-    _this.state = {
-      markersArr: [],
-      currentHub: {},
-      // center: (99.0522346, 101.2436829),
-      // ,
+		_this.state = {
+			markersArr: [],
+			place: props.place, // == object
+			currentHub: {},
+			// center: (99.0522346, 101.2436829),
+			// ,
 
-      paths: [{
-        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
-      }, {
-        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
-      }],
+			paths: [{
+				polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
+			}, {
+				polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
+			}],
 
-      markers: [{
-        position: new google.maps.LatLng(-27.363882, 137.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement(
-          "p",
-          null,
-          "hey hey"
-        )
-      }, {
-        position: new google.maps.LatLng(-23.363882, 129.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement("svg", {
-          id: "Layer_1",
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 16 16"
-        })
-      }]
-    };
-    _this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
-    _this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
-    return _this;
-  }
+			markers: [{
+				position: new google.maps.LatLng(-27.363882, 137.044922),
+				showInfo: false,
+				infoContent: _react2.default.createElement(
+					"p",
+					null,
+					"hey hey"
+				)
+			}, {
+				position: new google.maps.LatLng(-23.363882, 129.044922),
+				showInfo: false,
+				infoContent: _react2.default.createElement("svg", {
+					id: "Layer_1",
+					xmlns: "http://www.w3.org/2000/svg",
+					width: "16",
+					height: "16",
+					viewBox: "0 0 16 16"
+				})
+			}]
+		};
+		_this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
+		_this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
+		return _this;
+	}
 
-  _createClass(FindLocation, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.setState({
-        center: new google.maps.LatLng(34.0522346, 20.2436829)
-      });
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextprops) {
-      if (this.props.paths !== nextprops.paths) {
+	_createClass(FindLocation, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.setState({
+				center: new google.maps.LatLng(34.0522346, 20.2436829)
+			});
+		}
+	}, {
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextprops) {
+			console.log(nextprops);
+			var templat = nextprops.place.geometry.location.lat();
+			var templng = nextprops.place.geometry.location.lng();
+			console.log(templat);
+			console.log(typeof templat === "undefined" ? "undefined" : _typeof(templat));
+			console.log(templng);
+			console.log(typeof templng === "undefined" ? "undefined" : _typeof(templng));
+			// debugger
+			this.setState({
+				center: new google.maps.LatLng(templat, templng)
+			});
+			if (this.props.paths !== nextprops.paths) {
+				var allLocations = nextprops.paths;
+				var fullpoly = [];
 
-        var allLocations = nextprops.paths;
-        var fullpoly = [];
+				for (var i = 0; i < allLocations.length; i++) {
+					var tempPoly = { polyline: [] };
 
-        for (var i = 0; i < allLocations.length; i++) {
-          var tempPoly = { polyline: [] };
+					for (var z = 0; z < allLocations[i].length; z++) {
+						var c = { lat: allLocations[i][z].lat, lng: allLocations[i][z].lng };
+						tempPoly.polyline.push(c);
+						fullpoly.push(tempPoly);
+					}
+				}
 
-          for (var z = 0; z < allLocations[i].length; z++) {
-            var c = { lat: allLocations[i][z].lat, lng: allLocations[i][z].lng };
-            tempPoly.polyline.push(c);
-            fullpoly.push(tempPoly);
-          }
-        }
+				this.setState({
+					paths: fullpoly,
+					currentHub: nextprops.currentHub
+				});
 
-        this.setState({
-          paths: fullpoly,
-          currentHub: nextprops.currentHub
+				var fullMarker = [];
 
-        });
+				for (var t = 0; t < allLocations.length; t++) {
+					for (var r = 0; r < allLocations[t].length; r++) {
+						var lng = allLocations[t][r].lat;
+						var lat = allLocations[t][r].lng;
+						var tempMarker = {
+							position: new google.maps.LatLng(lng, lat),
+							showInfo: false,
+							infoContent: allLocations[t][r].name
+						};
+						fullMarker.push(tempMarker);
+					}
+				}
 
-        var fullMarker = [];
+				this.setState({
+					markers: fullMarker
+				});
+			}
+		}
+	}, {
+		key: "handleMarkerClick",
+		value: function handleMarkerClick(targetMarker) {
+			this.setState({
+				markers: this.state.markers.map(function (marker) {
+					if (marker === targetMarker) {
+						return _extends({}, marker, {
+							showInfo: true
+						});
+					}
+					return marker;
+				})
+			});
+		}
+	}, {
+		key: "handleMarkerClose",
+		value: function handleMarkerClose(targetMarker) {
+			this.setState({
+				markers: this.state.markers.map(function (marker) {
+					if (marker === targetMarker) {
+						return _extends({}, marker, {
+							showInfo: false
+						});
+					}
+					return marker;
+				})
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "row full-height", style: { height: "100%" } },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-md-12", style: { height: "100%" } },
+					_react2.default.createElement(GettingStartedGoogleMap, {
+						containerElement: _react2.default.createElement("div", {
+							style: {
+								position: "absolute",
+								top: 0,
+								left: 0,
+								right: 0,
+								bottom: 0,
+								justifyContent: "flex-end",
+								alignItems: "center"
+							}
+						}),
+						mapElement: _react2.default.createElement("div", {
+							style: {
+								position: "absolute",
+								top: 0,
+								left: 0,
+								right: 0,
+								bottom: 0
+							}
+						}),
+						center: this.state.center,
+						markers: this.state.markers,
+						polyline: this.state.paths,
+						onMarkerClick: this.handleMarkerClick,
+						onMarkerClose: this.handleMarkerClose
+					})
+				)
+			);
+		}
+	}]);
 
-        for (var t = 0; t < allLocations.length; t++) {
-          for (var r = 0; r < allLocations[t].length; r++) {
-            var lng = allLocations[t][r].lat;
-            var lat = allLocations[t][r].lng;
-            var tempMarker = {
-              position: new google.maps.LatLng(lng, lat),
-              showInfo: false,
-              infoContent: allLocations[t][r].name
-            };
-            fullMarker.push(tempMarker);
-          }
-        }
-
-        this.setState({
-          markers: fullMarker
-        });
-      }
-    }
-  }, {
-    key: "handleMarkerClick",
-    value: function handleMarkerClick(targetMarker) {
-      this.setState({
-        markers: this.state.markers.map(function (marker) {
-          if (marker === targetMarker) {
-            return _extends({}, marker, {
-              showInfo: true
-            });
-          }
-          return marker;
-        })
-      });
-    }
-  }, {
-    key: "handleMarkerClose",
-    value: function handleMarkerClose(targetMarker) {
-      this.setState({
-        markers: this.state.markers.map(function (marker) {
-          if (marker === targetMarker) {
-            return _extends({}, marker, {
-              showInfo: false
-            });
-          }
-          return marker;
-        })
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "row full-height", style: { height: "100%" } },
-        _react2.default.createElement(
-          "div",
-          { className: "col-md-12", style: { height: "100%" } },
-          _react2.default.createElement(GettingStartedGoogleMap, {
-            containerElement: _react2.default.createElement("div", {
-              style: {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                justifyContent: "flex-end",
-                alignItems: "center"
-              }
-            }),
-            mapElement: _react2.default.createElement("div", {
-              style: {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0
-              }
-            }),
-            center: this.state.center,
-            markers: this.state.markers,
-            polyline: this.state.paths,
-            onMarkerClick: this.handleMarkerClick,
-            onMarkerClose: this.handleMarkerClose
-          })
-        )
-      );
-    }
-  }]);
-
-  return FindLocation;
+	return FindLocation;
 }(_react2.default.Component);
 
 exports.default = FindLocation;
@@ -40983,7 +40992,7 @@ function unmountInputElementFromControlPositionOnMap(index, controlPosition, map
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -41011,149 +41020,154 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FindTrip = function (_React$Component) {
-  _inherits(FindTrip, _React$Component);
+	_inherits(FindTrip, _React$Component);
 
-  function FindTrip(props) {
-    _classCallCheck(this, FindTrip);
+	function FindTrip(props) {
+		_classCallCheck(this, FindTrip);
 
-    var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
 
-    _this.state = {
-      trips: {},
-      currentHub: {
-        hub: null
-      },
-      results: []
-    };
-    // console.log(this.state.trip);
+		_this.state = {
+			trips: {},
+			currentHub: {
+				hub: null
+			},
+			results: [],
+			place: {}
+		};
+		// console.log(this.state.trip);
 
-    _this.findTripFunc = _this.findTripFunc.bind(_this);
-    // this.redirectToMap = this.redirectToMap.bind(this);
-    return _this;
-  }
+		_this.findTripFunc = _this.findTripFunc.bind(_this);
+		// this.redirectToMap = this.redirectToMap.bind(this);
+		return _this;
+	}
 
-  // redirectToMap(e) {
-  //   debugger
-  //   e.preventDefault();
-  //   render(){
-  //     return (
-  //       <Redirect to="/findlocation" />
-  //     );
-  //   }
-  // }
+	// redirectToMap(e) {
+	//   debugger
+	//   e.preventDefault();
+	//   render(){
+	//     return (
+	//       <Redirect to="/findlocation" />
+	//     );
+	//   }
+	// }
 
-  _createClass(FindTrip, [{
-    key: "findTripFunc",
-    value: function findTripFunc() {
-      //! this func fetchs all trips that contains this location
-      var that = this;
-      var data = [];
-      // let listItems = this.props.trips.map(function (trip) {
-      //   return (
-      //     <li key={trip.name}>
-      //
-      //     </li>
-      //   );
-      // });
-      // console.log(typeof(this.state.currentHub.hub));
-      // data.name = document.getElementById("trip-name").value;
-      // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-      console.log(this.state.currentHub);
-      if (!this.state.currentHub.hub) {
-        alert("please choose valid hub");
-        return;
-      }
-      _axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
-        // console.log('testttt');
-        // console.log(response.data);
-        that.setState({ trips: response.data });
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      //? after mount make input to auto complete
-      var that = this;
-      var input = document.getElementById("searchTripInput");
-      var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.addListener("place_changed", function () {
-        var place = autocomplete.getPlace();
-        var hub = {};
-        console.log(place);
-        for (var i = 0; i < place.address_components.length; i++) {
-          if (place.address_components[i].types[0] == "locality") {
-            hub.hub = place.address_components[i].long_name;
-          }
-        }
-        if (place.address_components) {
-          that.setState({ currentHub: hub });
-        } else {
-          alert("please choose location from google list");
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "container", id: "find-trip-box", style: { height: "100%" } },
-        _react2.default.createElement(
-          "div",
-          { className: "row text-center" },
-          _react2.default.createElement(
-            "h3",
-            null,
-            "What is your current location?"
-          ),
-          _react2.default.createElement(
-            "h4",
-            null,
-            "Search for your next Hub :)"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", {
-              required: true,
-              id: "searchTripInput",
-              className: "controls form-control",
-              type: "text",
-              placeholder: "Enter Your Current Hub",
-              autoFocus: true
-            })
-          ),
-          _react2.default.createElement("hr", null),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "button",
-              {
-                onClick: this.findTripFunc,
-                className: "btn btn-success btn-square",
-                name: "submit",
-                type: "submit",
-                id: "contact-submit",
-                "data-submit": "...Sending"
-              },
-              "Submit"
-            )
-          )
-        ),
-        _react2.default.createElement("hr", null),
-        _react2.default.createElement(_TripFindEngine2.default, {
-          trips: this.state.trips,
-          redirectToMap: this.redirectToMap,
-          currentHub: this.state.currentHub
-        })
-      );
-    }
-  }]);
+	_createClass(FindTrip, [{
+		key: "findTripFunc",
+		value: function findTripFunc() {
+			//! this func fetchs all trips that contains this location
+			var that = this;
+			var data = [];
+			// let listItems = this.props.trips.map(function (trip) {
+			//   return (
+			//     <li key={trip.name}>
+			//
+			//     </li>
+			//   );
+			// });
+			// console.log(typeof(this.state.currentHub.hub));
+			// data.name = document.getElementById("trip-name").value;
+			// data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+			console.log(this.state.currentHub);
+			if (!this.state.currentHub.hub) {
+				alert("please choose valid hub");
+				return;
+			}
+			_axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
+				// console.log('testttt');
+				// console.log(response.data);
+				that.setState({ trips: response.data });
+			}).catch(function (error) {
+				console.log(error);
+			});
+		}
+	}, {
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
 
-  return FindTrip;
+			// after mount make input to auto complete
+			var that = this;
+			var input = document.getElementById("searchTripInput");
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			autocomplete.addListener("place_changed", function () {
+				var place = autocomplete.getPlace();
+				_this2.setState({ place: place });
+				var hub = {};
+				console.log(place);
+				for (var i = 0; i < place.address_components.length; i++) {
+					if (place.address_components[i].types[0] == "locality") {
+						hub.hub = place.address_components[i].long_name;
+					}
+				}
+				if (place.address_components) {
+					that.setState({ currentHub: hub });
+				} else {
+					alert("please choose location from google list");
+				}
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "container", id: "find-trip-box", style: { height: "100%" } },
+				_react2.default.createElement(
+					"div",
+					{ className: "row text-center" },
+					_react2.default.createElement(
+						"h3",
+						null,
+						"What is your current location?"
+					),
+					_react2.default.createElement(
+						"h4",
+						null,
+						"Search for your next Hub :)"
+					),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement("input", {
+							required: true,
+							id: "searchTripInput",
+							className: "controls form-control",
+							type: "text",
+							placeholder: "Enter Your Current Hub",
+							autoFocus: true
+						})
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"button",
+							{
+								onClick: this.findTripFunc,
+								className: "btn btn-success btn-square",
+								name: "submit",
+								type: "submit",
+								id: "contact-submit",
+								"data-submit": "...Sending"
+							},
+							"Submit"
+						)
+					)
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(_TripFindEngine2.default, {
+					place: this.state.place,
+					trips: this.state.trips,
+					redirectToMap: this.redirectToMap,
+					currentHub: this.state.currentHub
+				})
+			);
+		}
+	}]);
+
+	return FindTrip;
 }(_react2.default.Component);
 
 exports.default = FindTrip;
@@ -41218,7 +41232,8 @@ var TripFindEngine = function (_React$Component) {
 				{ style: { height: "100%" } },
 				_react2.default.createElement(_FindLocation2.default, {
 					paths: this.props.trips,
-					currentHub: this.state.currentHub
+					currentHub: this.state.currentHub,
+					place: this.props.place
 				})
 			);
 		}
