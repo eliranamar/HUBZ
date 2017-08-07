@@ -49,7 +49,7 @@ class FindLocation extends React.Component {
     this.state = {
       markersArr: [],
       currentHub: {},
-      // center: (99.0522346, 101.2436829),
+            // center: (99.0522346, 101.2436829),
       // ,
 
       paths: [
@@ -118,8 +118,7 @@ class FindLocation extends React.Component {
 
       this.setState({
         paths: fullpoly,
-         currentHub:nextprops.currentHub
-
+         currentHub:nextprops.currentHub,
       });
 
       let fullMarker = [];

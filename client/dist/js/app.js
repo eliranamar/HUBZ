@@ -17160,7 +17160,6 @@ var FindLocation = function (_React$Component) {
         this.setState({
           paths: fullpoly,
           currentHub: nextprops.currentHub
-
         });
 
         var fullMarker = [];
