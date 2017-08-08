@@ -8,7 +8,8 @@ class Trip extends React.Component {
 		super(props);
 
 		this.state = {
-			trip: props.trip
+			trip: props.trip,
+			user: props.user
 		};
 		// console.log(this.state.trip);
 
@@ -23,13 +24,14 @@ class Trip extends React.Component {
 		data.type = document.querySelector(
 			'input[name = "trip-type"]:checked'
 		).value;
+		data.user_id = that.props.user.id;
 		console.log(data);
 		axios
 			.post("/trip/addtrip", data)
 			.then(function(response) {
 				// console.log('testttt');
-				// console.log(response.data);
-				data.id = response.data.insertId;
+				console.log(response.data);
+				data.trip_id = response.data.insertId;
 				that.setState({ trip: data });
 				that.props.setTripState(data);
 			})
@@ -44,7 +46,7 @@ class Trip extends React.Component {
 	}
 
 	render() {
-		if (this.state.trip.id) {
+		if (this.state.trip.trip_id) {
 			// console.log(this.state.trip);
 			// console.log(this.state.trip.id);
 			// history.pushState(null, null, '/trip/'+"3"+'/addlocation');

@@ -12,7 +12,6 @@ const connection = mysql.createConnection({
 	password: "aS908116",
 	database: "routesss"
 });
-console.log("in trip routes");
 
 //TODO : need to add user id into trip database.
 router.post("/addtrip", ensureAuthenticated, function(req, res) {
@@ -49,6 +48,7 @@ router.post("/:trip_id/addlocation", ensureAuthenticated, function(req, res) {
 	});
 });
 
+//get trip by id
 router.get("/trips/:trip_id", ensureAuthenticated, function(req, res) {
 	let where = {
 		trip_id: req.params.trip_id
@@ -66,15 +66,27 @@ router.get("/trips/:trip_id", ensureAuthenticated, function(req, res) {
 //TODO get all the user trips by his id... and add component for user trips
 router.get("/usertrips/:user_id", ensureAuthenticated, function(req, res) {
 	console.log(req.params.user_id);
-	// let where = {
-	// 	user_id: req.params.user_id
-	// };
-	// connection.query("SELECT * FROM trips WHERE ?", where, function(err, result) {
-	// 	if (err) throw err;
-	// 	console.log(result);
-	// 	res.send(result);
-	// });
-	res.send('ok from usertrips');
+	let where = {
+		user_id: req.params.user_id
+	};
+	connection.query("SELECT country,    locations.id,    locations.name,    lat,    lng,    trip_id,    trips.name AS trip_name FROM  locations        INNER JOIN    trips ON trips.id = locations.trip_id WHERE ?", where, function(err, result) {
+		if (err) throw err;
+   let obj  = {};
+   for (let i = 0; i < result.length; i++) {
+     if (obj[result[i].trip_id]) {
+       obj[result[i].trip_id].locations.push(result[i]);
+     } else {
+       obj[result[i].trip_id] = {name: result[i].trip_name, locations: []};
+       obj[result[i].trip_id].locations.push(result[i])
+     }
+   }
+   let arr = []
+   for (let id in obj) {
+     arr.push(obj[id])
+   }
+   console.log(arr)
+   res.send(arr);
+	});
 });
 
 module.exports = router;

@@ -8,12 +8,12 @@ import { BrowserRouter } from "react-router-dom";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			trip: {
 				name: null,
 				type: null,
-				id: null
+				id: null,
+				user_id: null
 			},
 			user: {
 				name: null,
@@ -25,7 +25,7 @@ class App extends React.Component {
 		this.setTripState = this.setTripState.bind(this);
 		this.setUserState = this.setUserState.bind(this);
 	}
-	componentDidMount() {
+	componentWillMount() {
 		let that = this;
 		(function() {
 			let user = JSON.parse(localStorage.getItem("user"));

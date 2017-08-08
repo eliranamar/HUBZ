@@ -36,34 +36,34 @@ app.use('/trip', tripRoutes);
 
 // for finding 
 app.post('/getnexthub', function (req, res) {
-  console.log(req.body);
-  // res.json(req.body);
-  if (!req.body.hub) {
-    res.send('no hub sent for search..')
-    return;
-  }
-  let where = {
-    name: req.body.hub
-  }
-  connection.query('SELECT * FROM locations WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
-    if (err) throw err;
-    console.log(result);
-    let obj = {};
-    for (let i = 0; i < result.length; i++) {
-      if (obj[result[i].trip_id]) {
-        obj[result[i].trip_id].push(result[i])
-      } else {
-        obj[result[i].trip_id] = [];
-        obj[result[i].trip_id].push(result[i]);
-      }
-    }
-    let arr = []
-    for (let id in obj) {
-      arr.push(obj[id])
-    }
-    console.log(arr)
-    res.send(arr);
-  });
+ console.log(req.body);
+ // res.json(req.body);
+ if (!req.body.hub) {
+   res.send('no hub sent for search..')
+   return;
+ }
+ let where = {
+   name: req.body.hub
+ }
+ connection.query('SELECT country, locations.id, locations.name,lat,lng,trip_id,trips.name as trip_name FROM locations inner join trips on trips.id = locations.trip_id WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
+   if (err) throw err;
+   console.log(result);
+   let obj  = {};
+   for (let i = 0; i < result.length; i++) {
+     if (obj[result[i].trip_id]) {
+       obj[result[i].trip_id].locations.push(result[i]);
+     } else {
+       obj[result[i].trip_id] = {name: result[i].trip_name, locations: []};
+       obj[result[i].trip_id].locations.push(result[i])
+     }
+   }
+   let arr = []
+   for (let id in obj) {
+     arr.push(obj[id])
+   }
+   console.log(arr)
+   res.send(arr);
+ });
 })
 
 

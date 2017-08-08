@@ -23,7 +23,7 @@ const Routes = (props) => (
             <Route name="findlocation" exact path='/findlocation' component={FindLocation} />
             <Route name="findtrip" exact path='/findtrip' render={() => <FindTrip setTripState={props.setTripState} />} />
             <Route name="usertrips" exact path='/usertrips' render={() => <UserTrips user={props.user} />} />
-            <Route name="trip" exact path='/trip' render={() => <Trip trip={props.trip} setTripState={props.setTripState} />} />
+            <Route name="trip" exact path='/trip' render={() => <Trip user={props.user} trip={props.trip} setTripState={props.setTripState} />} />
             <Route name="authentication"  path='/authorization/:token/:name/:id'  component={Authentication} />
             <Route path="*" component={Page404}/>
         </Switch>
