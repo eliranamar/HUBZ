@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "aS908116",
+  password: "1234",
   database: "routesss"
 });
 
@@ -52,16 +52,16 @@ app.post('/getnexthub', function (req, res) {
   let where = {
     name: req.body.hub
   }
-  connection.query('SELECT * FROM locations WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
+  connection.query('SELECT country, locations.id, locations.name,lat,lng,trip_id,trips.name as trip_name FROM locations inner join trips on trips.id = locations.trip_id WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
     if (err) throw err;
     console.log(result);
-    let obj = {};
+    let obj  = {};
     for (let i = 0; i < result.length; i++) {
       if (obj[result[i].trip_id]) {
-        obj[result[i].trip_id].push(result[i])
+        obj[result[i].trip_id].locations.push(result[i]);
       } else {
-        obj[result[i].trip_id] = [];
-        obj[result[i].trip_id].push(result[i]);
+        obj[result[i].trip_id] = {name: result[i].trip_name, locations: []};
+        obj[result[i].trip_id].locations.push(result[i])
       }
     }
     let arr = []

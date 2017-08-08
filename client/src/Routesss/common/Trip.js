@@ -94,6 +94,7 @@ class Trip extends React.Component {
 									Submit
 								</button>
 							</fieldset>
+
 						</form>
 					</div>
 					<hr />

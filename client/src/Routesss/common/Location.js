@@ -53,6 +53,10 @@ class Location extends React.Component {
       });
   }
 
+  endTrip(){
+    
+  }
+
   componentDidMount() {
     // let that = this;
     let input = document.getElementById('searchInput');
@@ -106,7 +110,9 @@ class Location extends React.Component {
           <fieldset>
             <button name="submit" type="submit" className="btn btn-primary" onClick={this.addLocation} id="contact-submit" data-submit="...Sending">Add Location To Trip !</button>
           </fieldset>
-
+          {/*/////////*/}
+						<button className="btn btn-danger btn-square" type="submit" onClick={this.endTrip} >End Trip</button>
+            {/*//////*/}
           <hr />
           <ul id="geoData" style={{listStyleType: 'none'}}>
             {/* <li>Full Address: <span id="location"></span></li> */}

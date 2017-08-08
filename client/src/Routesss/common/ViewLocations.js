@@ -1,31 +1,21 @@
 import React from "react";
+import TripBox from "./TripBox";
 
 class ViewLocations extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentHub: {
-        hub: null
-      }
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log("bbb");
-    console.log(nextProps);
-    this.setState({
-      currentHub: nextProps.currentHub
-    });
+  listTrips() {
+    if (this.props.trips.length > 0) {
+      return this.props.trips.map(function(item, id) {
+        return <TripBox key={id} item={item} />;
+      });
+    } else return <p>Select something</p>;
   }
 
   render() {
     return (
-      <div>
+      <div className="row">
         <hr />
-        <h2>Find Your Next Hub</h2>
-        <h3>
-        {this.state.currentHub.hub}
-        </h3>
+        <h2>Hubz and Routes by Other Travellers</h2>
+        {this.listTrips()}
       </div>
     );
   }

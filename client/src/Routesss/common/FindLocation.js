@@ -117,9 +117,9 @@ class FindLocation extends React.Component {
       let allLocations = nextprops.paths;
       let fullpoly = [];
       for (var i = 0; i < allLocations.length; i++) {
-        let tempPoly = { polyline: [], color: this.getRandomColor(), strokeWeight: ((Math.random()+0.3)*3) };
-        for (var z = 0; z < allLocations[i].length; z++) {
-          let c = { lat: allLocations[i][z].lat, lng: allLocations[i][z].lng };
+        let tempPoly = { polyline: [], color: this.getRandomColor(), strokeWeight: ((Math.random()+0.5)*2) };
+        for (var z = 0; z < allLocations[i].locations.length; z++) {
+          let c = { lat: allLocations[i].locations[z].lat, lng: allLocations[i].locations[z].lng };
           tempPoly.polyline.push(c);
         }
         fullpoly.push(tempPoly);
@@ -133,13 +133,13 @@ class FindLocation extends React.Component {
       let fullMarker = [];
 
       for (var t = 0; t < allLocations.length; t++) {
-        for (var r = 0; r < allLocations[t].length; r++) {
-          let lng = allLocations[t][r].lat;
-          let lat = allLocations[t][r].lng;
+        for (var r = 0; r < allLocations[t].locations.length; r++) {
+          let lng = allLocations[t].locations[r].lat;
+          let lat = allLocations[t].locations[r].lng;
           let tempMarker = {
             position: new google.maps.LatLng(lng, lat),
             showInfo: false,
-            infoContent: allLocations[t][r].name
+            infoContent: allLocations[t].locations[r].name + " https://www.tripadvisor.com/"
           };
           fullMarker.push(tempMarker);
         }

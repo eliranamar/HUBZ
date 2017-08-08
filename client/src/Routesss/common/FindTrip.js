@@ -54,8 +54,6 @@ class FindTrip extends React.Component {
     axios
       .post("/getnexthub", this.state.currentHub)
       .then(function(response) {
-        // console.log('testttt');
-        // console.log(response.data);
         that.setState({ trips: response.data });
       })
       .catch(function(error) {
@@ -89,9 +87,31 @@ class FindTrip extends React.Component {
     return (
       <div className="container" id="find-trip-box" style={{ height: "100%" }}>
         <div className="row text-center">
-          <h3>What is your current location?</h3>
-          <h4>Search for your next Hub :)</h4>
+          <h1>Find Your Next Hub!</h1>
+          <h3 style={{ color: "black" }}>
+            Add your current or future location and choose between thousends of
+            trips made by other travellers
+          </h3>
           <fieldset>
+            <p>Who are you Travelling with?</p>
+            <label className="radio-inline">
+              <input
+                placeholder="Trip Name``"
+                required
+                type="radio"
+                name="trip-type"
+                value="Couple"
+              />Couple
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="trip-type" value="Friends" />Friends
+              Group
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="trip-type" value="Solo" />Solo Traveler
+            </label>
+            <hr />
+
             <input
               required
               id="searchTripInput"
@@ -105,7 +125,7 @@ class FindTrip extends React.Component {
           <fieldset>
             <button
               onClick={this.findTripFunc}
-              className="btn btn-success btn-square"
+              className="btn btn-warning btn-square btn-lg btn-block"
               name="submit"
               type="submit"
               id="contact-submit"
