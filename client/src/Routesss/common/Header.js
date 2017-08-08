@@ -20,17 +20,20 @@ class App extends React.Component {
 		let showLogin = (
 			<li>
 				<a target="_self" href="/auth/facebook">
-					Facebook Login
+					{" "}<span className="glyphicon glyphicon-log-in"> </span>
+					| Login
 				</a>
 			</li>
 		);
 		let showUser = (
 			<li role="presentation">
-				<Link to="/logout">Logout({this.state.user.name})</Link>
+				<Link to="/logout">
+					Logout({this.state.user.name})
+				</Link>
 			</li>
 		);
 		return (
-			<nav className="navbar navbar-inverse">
+			<nav className="navbar">
 				<div className="container-fluid">
 					<div className="navbar-header">
 						<button
@@ -44,7 +47,7 @@ class App extends React.Component {
 							<span className="icon-bar" />
 						</button>
 						<Link className="navbar-brand" to="/">
-							React-Website
+							HUBZ
 						</Link>
 					</div>
 					<div className="collapse navbar-collapse" id="myNavbar">
@@ -52,7 +55,7 @@ class App extends React.Component {
 							<li role="presentation">
 								<Link to="/">Home</Link>
 							</li>
-							<li role="presentation">
+							{/* <li role="presentation">
 								<Link to="/findtrip">Find Trip</Link>
 							</li>
 							<li role="presentation">
@@ -60,7 +63,26 @@ class App extends React.Component {
 							</li>
 							<li role="presentation">
 								<Link to="/usertrips">My Trips</Link>
+							</li> */}
+
+							<li className="dropdown">
+								<a className="dropdown-toggle" data-toggle="dropdown" href="#">
+									Trips
+									<span className="caret" />
+								</a>
+								<ul className="dropdown-menu">
+									<li role="presentation">
+										<Link to="/findtrip">Find Trip</Link>
+									</li>
+									<li role="presentation">
+										<Link to="/trip">Create Trip</Link>
+									</li>
+									<li role="presentation">
+										<Link to="/usertrips">My Trips</Link>
+									</li>
+								</ul>
 							</li>
+
 							<li role="presentation">
 								<Link to="/about">About</Link>
 							</li>
@@ -68,7 +90,10 @@ class App extends React.Component {
 								<Link to="/contact">Contact</Link>
 							</li>
 							{/* if user is logged in show logout button */}
-							 {this.state.user.name ? showUser : showLogin} 
+						</ul>
+
+						<ul className="nav navbar-nav navbar-right">
+							{this.state.user.name ? showUser : showLogin}
 						</ul>
 					</div>
 				</div>

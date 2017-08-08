@@ -29531,7 +29531,13 @@ var App = function (_React$Component) {
 				_react2.default.createElement(
 					"a",
 					{ target: "_self", href: "/auth/facebook" },
-					"Facebook Login"
+					" ",
+					_react2.default.createElement(
+						"span",
+						{ className: "glyphicon glyphicon-log-in" },
+						" "
+					),
+					"| Login"
 				)
 			);
 			var showUser = _react2.default.createElement(
@@ -29547,7 +29553,7 @@ var App = function (_React$Component) {
 			);
 			return _react2.default.createElement(
 				"nav",
-				{ className: "navbar navbar-inverse" },
+				{ className: "navbar" },
 				_react2.default.createElement(
 					"div",
 					{ className: "container-fluid" },
@@ -29569,7 +29575,7 @@ var App = function (_React$Component) {
 						_react2.default.createElement(
 							_reactRouterDom.Link,
 							{ className: "navbar-brand", to: "/" },
-							"React-Website"
+							"HUBZ"
 						)
 					),
 					_react2.default.createElement(
@@ -29589,29 +29595,43 @@ var App = function (_React$Component) {
 							),
 							_react2.default.createElement(
 								"li",
-								{ role: "presentation" },
+								{ className: "dropdown" },
 								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: "/findtrip" },
-									"Find Trip"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ role: "presentation" },
+									"a",
+									{ className: "dropdown-toggle", "data-toggle": "dropdown", href: "#" },
+									"Trips",
+									_react2.default.createElement("span", { className: "caret" })
+								),
 								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: "/trip" },
-									"Create Trip"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ role: "presentation" },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: "/usertrips" },
-									"My Trips"
+									"ul",
+									{ className: "dropdown-menu" },
+									_react2.default.createElement(
+										"li",
+										{ role: "presentation" },
+										_react2.default.createElement(
+											_reactRouterDom.Link,
+											{ to: "/findtrip" },
+											"Find Trip"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ role: "presentation" },
+										_react2.default.createElement(
+											_reactRouterDom.Link,
+											{ to: "/trip" },
+											"Create Trip"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ role: "presentation" },
+										_react2.default.createElement(
+											_reactRouterDom.Link,
+											{ to: "/usertrips" },
+											"My Trips"
+										)
+									)
 								)
 							),
 							_react2.default.createElement(
@@ -29631,7 +29651,11 @@ var App = function (_React$Component) {
 									{ to: "/contact" },
 									"Contact"
 								)
-							),
+							)
+						),
+						_react2.default.createElement(
+							"ul",
+							{ className: "nav navbar-nav navbar-right" },
 							this.state.user.name ? showUser : showLogin
 						)
 					)
@@ -32242,7 +32266,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   null,
-                  'We want to see what hubz are around you!'
+                  'What hubz are around you!'
                 )
               ),
               _react2.default.createElement(
@@ -32299,7 +32323,7 @@ var Homepage = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   null,
-                  'Lay back and roll a j!'
+                  'Arrive, Enjoy, Share, Move!'
                 )
               )
             )
@@ -32311,61 +32335,127 @@ var Homepage = function (_React$Component) {
           { className: 'text-center' },
           ' Our Partners '
         ),
+        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { id: 'myCarousel', className: 'carousel slide', 'data-ride': 'carousel' },
+          { className: 'container' },
           _react2.default.createElement(
-            'ol',
-            { className: 'carousel-indicators' },
-            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '0', className: 'active' }),
-            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '1' }),
-            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '2' }),
-            _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '3' })
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/airbnb.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/fb.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/tripadvisor.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/snap.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/mot.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/elal.gif' })
+              )
+            )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'carousel-inner' },
+            { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'item active' },
-              _react2.default.createElement('img', { src: 'img/elal.jpg', alt: 'El Al' })
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block align-middle', src: 'img/logos/rome.png' })
+              )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'item' },
-              _react2.default.createElement('img', { src: 'img/airbnb.jpg', alt: 'Air BnB' })
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/vespa.gif' })
+              )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'item' },
-              _react2.default.createElement('img', { src: 'img/tour.jpg', alt: 'Ministry of Tourism' })
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/sams.gif' })
+              )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'item' },
-              _react2.default.createElement('img', { src: 'img/hi.jpg', alt: 'Hilik' })
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/car2.png' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/hbd.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-2 col-sm-4 col-xs-6' },
+              _react2.default.createElement(
+                'div',
+                { className: 'logowrap center-block' },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/ea.jpeg' })
+              )
             )
           ),
-          _react2.default.createElement(
-            'a',
-            { className: 'left carousel-control', href: '#myCarousel', 'data-slide': 'prev' },
-            _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-left' }),
-            _react2.default.createElement(
-              'span',
-              { className: 'sr-only' },
-              'Previous'
-            )
-          ),
-          _react2.default.createElement(
-            'a',
-            { className: 'right carousel-control', href: '#myCarousel', 'data-slide': 'next' },
-            _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-right' }),
-            _react2.default.createElement(
-              'span',
-              { className: 'sr-only' },
-              'Next'
-            )
-          )
+          _react2.default.createElement('hr', null)
         ),
         _react2.default.createElement(
           'div',
@@ -32622,7 +32712,7 @@ exports.default = App;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -32640,173 +32730,205 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var About = function (_React$Component) {
-  _inherits(About, _React$Component);
+	_inherits(About, _React$Component);
 
-  function About() {
-    _classCallCheck(this, About);
+	function About() {
+		_classCallCheck(this, About);
 
-    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
-  }
+		return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	}
 
-  _createClass(About, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-          "div",
-          { className: "container" },
-          _react2.default.createElement(
-            "div",
-            { className: "row text-center" },
-            _react2.default.createElement(
-              "div",
-              null,
-              _react2.default.createElement(
-                "h1",
-                null,
-                "About Us"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              null,
-              _react2.default.createElement(
-                "h2",
-                null,
-                "Our Team"
-              ),
-              _react2.default.createElement("br", null),
-              _react2.default.createElement(
-                "div",
-                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/tesla.jpg", alt: "" }),
-                _react2.default.createElement(
-                  "h4",
-                  null,
-                  "Tesla"
-                ),
-                _react2.default.createElement(
-                  "h6",
-                  null,
-                  "Full-Stack"
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/einstein.jpeg", alt: "" }),
-                _react2.default.createElement(
-                  "h4",
-                  null,
-                  "Einstein"
-                ),
-                _react2.default.createElement(
-                  "h6",
-                  null,
-                  "Team Leader"
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
-                _react2.default.createElement("img", { style: { maxWidth: "200px" }, className: "center-block img-responsive img-circle", src: "/img/elon.png", alt: "" }),
-                _react2.default.createElement(
-                  "h4",
-                  null,
-                  "Musk"
-                ),
-                _react2.default.createElement(
-                  "h6",
-                  null,
-                  "Designer"
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "footer",
-          { id: "about-footer" },
-          _react2.default.createElement(
-            "div",
-            { className: "container" },
-            _react2.default.createElement(
-              "div",
-              { className: "row" },
-              _react2.default.createElement(
-                "div",
-                { className: "col-md-5 col-sm-6 footerleft " },
-                _react2.default.createElement(
-                  "div",
-                  { className: "logofooter" },
-                  _react2.default.createElement("img", { className: "img-circle img-thumbnail", src: "img/ani1.gif" })
-                ),
-                _react2.default.createElement(
-                  "p",
-                  null,
-                  "Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. "
-                ),
-                _react2.default.createElement(
-                  "p",
-                  null,
-                  _react2.default.createElement("i", { className: "fa fa-map-pin" }),
-                  " WeWork HaZerem 10 | Tel-Aviv | Israel "
-                ),
-                _react2.default.createElement(
-                  "p",
-                  null,
-                  _react2.default.createElement("i", { className: "fa fa-phone" }),
-                  " 03-674-6999"
-                ),
-                _react2.default.createElement(
-                  "p",
-                  null,
-                  _react2.default.createElement("i", { className: "fa fa-envelope" }),
-                  " E-mail : contact@hubz.com"
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-md-5 col-sm-6 paddingtop-bottom" },
-                _react2.default.createElement(
-                  "h3",
-                  null,
-                  "Social Media Hubz"
-                ),
-                _react2.default.createElement(
-                  "a",
-                  { href: "https://www.linkedin.com/in/eliranamar/", target: "_blank", className: "sicons btn btn-block btn-social btn-linkedin" },
-                  _react2.default.createElement("span", { className: "fa fa-linkedin" }),
-                  " Hire through Linkedin"
-                ),
-                _react2.default.createElement(
-                  "a",
-                  { href: "https://github.com/eliranamar/Routesss", target: "_blank", className: "sicons btn btn-block btn-social btn-github" },
-                  _react2.default.createElement("span", { className: "fa fa-github" }),
-                  " Clone from github"
-                ),
-                _react2.default.createElement(
-                  "a",
-                  { href: "https://twitter.com/realDonaldTrump", target: "_blank", className: "sicons btn btn-block btn-social btn-twitter" },
-                  _react2.default.createElement("span", { className: "fa fa-twitter" }),
-                  " Follow us on Twitter"
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+	_createClass(About, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ className: "container" },
+					_react2.default.createElement(
+						"div",
+						{ className: "row text-center" },
+						_react2.default.createElement(
+							"div",
+							null,
+							_react2.default.createElement(
+								"h1",
+								null,
+								"About Us"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis libero, sit. Assumenda numquam consequuntur eum deleniti non eligendi, quo corporis at qui consequatur ab amet deserunt accusamus molestiae quidem vitae necessitatibus ad aliquid minus, sapiente eius doloribus! Dicta architecto sit nemo ducimus aut omnis atque velit, consectetur animi iste, laudantium doloribus dolorem ullam tempore! Esse vel omnis nemo incidunt repudiandae dolore voluptatibus minima assumenda commodi odio tempora aliquam illo, voluptatem minus ex voluptas laboriosam doloremque praesentium, dolorem et consectetur, distinctio similique. Culpa accusantium deleniti qui recusandae vel, ipsam, dignissimos repudiandae, soluta magni consectetur quos et optio exercitationem expedita ratione! A."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							null,
+							_react2.default.createElement(
+								"h2",
+								null,
+								"Our Team"
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+								_react2.default.createElement("img", {
+									style: { maxWidth: "200px" },
+									className: "center-block img-responsive img-circle",
+									src: "/img/eliran.jpg",
+									alt: ""
+								}),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Tesla"
+								),
+								_react2.default.createElement(
+									"h6",
+									null,
+									"Full-Stack"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+								_react2.default.createElement("img", {
+									style: { maxWidth: "200px" },
+									className: "center-block img-responsive img-circle",
+									src: "/img/amit.jpg",
+									alt: ""
+								}),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Einstein"
+								),
+								_react2.default.createElement(
+									"h6",
+									null,
+									"Team Leader"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-4 col-lg-4 col-sm-4 col-xs-12" },
+								_react2.default.createElement("img", {
+									style: { maxWidth: "200px" },
+									className: "center-block img-responsive img-circle",
+									src: "/img/elio.jpg",
+									alt: ""
+								}),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Musk"
+								),
+								_react2.default.createElement(
+									"h6",
+									null,
+									"Designer"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"footer",
+					{ id: "about-footer" },
+					_react2.default.createElement(
+						"div",
+						{ className: "container" },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-5 col-sm-6 footerleft " },
+								_react2.default.createElement(
+									"div",
+									{ className: "logofooter" },
+									_react2.default.createElement("img", {
+										className: "img-circle img-thumbnail",
+										src: "img/ani1.gif"
+									})
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers.",
+									" "
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-map-pin" }),
+									" WeWork HaZerem 10 | Tel-Aviv | Israel",
+									" "
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-phone" }),
+									" 03-674-6999"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-envelope" }),
+									" E-mail : contact@hubz.com"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-5 col-sm-6 paddingtop-bottom" },
+								_react2.default.createElement(
+									"h3",
+									null,
+									"Social Media Hubz"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://www.linkedin.com/in/eliranamar/",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-linkedin"
+									},
+									_react2.default.createElement("span", { className: "fa fa-linkedin" }),
+									" Hire through Linkedin"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://github.com/eliranamar/Routesss",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-github"
+									},
+									_react2.default.createElement("span", { className: "fa fa-github" }),
+									" Clone from github"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://twitter.com/realDonaldTrump",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-twitter"
+									},
+									_react2.default.createElement("span", { className: "fa fa-twitter" }),
+									" Follow us on Twitter"
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return About;
+	return About;
 }(_react2.default.Component);
 
 exports.default = About;
@@ -33209,19 +33331,23 @@ var Trip = function (_React$Component) {
 									name: "trip-type",
 									value: "Couple"
 								}),
-								"Couple"
+								"Couple |",
+								_react2.default.createElement("i", { className: "fa fa-user" }),
+								_react2.default.createElement("i", { className: "fa fa-user" })
 							),
 							_react2.default.createElement(
 								"label",
 								{ className: "radio-inline" },
 								_react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Friends" }),
-								"Friends Group"
+								"Friends Group |",
+								_react2.default.createElement("i", { className: "fa fa-users" })
 							),
 							_react2.default.createElement(
 								"label",
 								{ className: "radio-inline" },
 								_react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Solo" }),
-								"Solo Traveler"
+								"Solo Traveler |",
+								_react2.default.createElement("i", { className: "fa fa-user" })
 							),
 							_react2.default.createElement("br", null),
 							_react2.default.createElement("hr", null),

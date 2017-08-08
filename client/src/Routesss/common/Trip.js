@@ -78,15 +78,19 @@ class Trip extends React.Component {
 									type="radio"
 									name="trip-type"
 									value="Couple"
-								/>Couple
+								/>Couple | 
+								<i className="fa fa-user" />
+								<i className="fa fa-user" />
 							</label>
 							<label className="radio-inline">
 								<input type="radio" name="trip-type" value="Friends" />Friends
-								Group
+								Group | 
+								<i className="fa fa-users"></i>
 							</label>
 							<label className="radio-inline">
 								<input type="radio" name="trip-type" value="Solo" />Solo
-								Traveler
+								Traveler | 
+								<i className="fa fa-user" />
 							</label>
 							<br />
 							<hr />
