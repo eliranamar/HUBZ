@@ -23,7 +23,8 @@ class App extends React.Component {
 			</li>
 		);
 		return (
-			<nav className="navbar navbar-inverse">
+			// took off inverse style navbar
+			<nav className="navbar">
 				<div className="container-fluid">
 					<div className="navbar-header">
 						<button
@@ -37,7 +38,7 @@ class App extends React.Component {
 							<span className="icon-bar" />
 						</button>
 						<Link className="navbar-brand" to="/">
-							React-Website
+							Hubz
 						</Link>
 					</div>
 					<div className="collapse navbar-collapse" id="myNavbar">
@@ -45,11 +46,25 @@ class App extends React.Component {
 							<li role="presentation">
 								<Link to="/">Home</Link>
 							</li>
-							<li role="presentation">
-								<Link to="/findtrip">Find Trip</Link>
-							</li>
-							<li role="presentation">
-								<Link to="/trip">Create Trip</Link>
+							{/* dropdown + addition of CHECKIN */}
+							<li className="dropdown">
+								<a
+									className="dropdown-toggle"
+									data-toggle="dropdown"
+									href="#">Trips
+        <span className="caret"></span></a>
+								<ul className="dropdown-menu">
+									<li role="presentation">
+										<Link to="/findtrip">Find Trip</Link>
+									</li>
+									<li role="presentation">
+										<Link to="/trip">Create Trip</Link>
+									</li>
+									<li role="presentation">
+										<Link to="/checkin">Checkin To Hub</Link>
+									</li>
+									
+								</ul>
 							</li>
 							<li role="presentation">
 								<Link to="/about">About</Link>
@@ -57,14 +72,18 @@ class App extends React.Component {
 							<li role="presentation">
 								<Link to="/contact">Contact</Link>
 							</li>
-							<li>
+
+						</ul>
+						{/* made the login with an icon and moved to the right  */}
+						<ul className="nav navbar-nav navbar-right">
+							<li >
 								{/*//TODO chagne to LOGOUT after login.. of course and delete token   */}
-								<a target="_self" href="/auth/facebook">
-									Facebook Login
+								<a target="_self" href="/auth/facebook"> <span className="glyphicon glyphicon-log-in">   </span>
+								| Login
 								</a>
 							</li>
-							{this.state.trip.id ? currentTrip : null}
-						</ul>
+							</ul>
+
 					</div>
 				</div>
 			</nav>

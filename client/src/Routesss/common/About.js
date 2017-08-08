@@ -15,17 +15,17 @@ class About extends React.Component {
               <h2>Our Team</h2>
               <br />
               <div className="col-md-4 col-lg-4 col-sm-4 col-xs-12">
-                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/tesla.jpg" alt="" />
+                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/eliran.jpg" alt="" />
                 <h4>Tesla</h4>
                 <h6>Full-Stack</h6>
               </div>
               <div className="col-md-4 col-lg-4 col-sm-4 col-xs-12">
-                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/einstein.jpeg" alt="" />
+                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/amit.jpg" alt="" />
                 <h4>Einstein</h4>
                 <h6>Team Leader</h6>
               </div>
               <div className="col-md-4 col-lg-4 col-sm-4 col-xs-12">
-                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/elon.png" alt="" />
+                <img style={{ maxWidth: "200px" }} className="center-block img-responsive img-circle" src="/img/elio.jpg" alt="" />
                 <h4>Musk</h4>
                 <h6>Designer</h6>
               </div>

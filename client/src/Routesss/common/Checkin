@@ -48,14 +48,14 @@ class Trip extends React.Component {
 			return (
 				<div id="trip-box" className="container">
 					<div className="center-block text-center">
-						<form id="add-trip" action="" onSubmit={this.getTripData}>
-							<h3>Add Your Trip!</h3>
-							<h4>Enter You Trip Name:</h4>
+						<form id="add-trip" action="" onSubmit={}>
+							<h3>Where are you currently?</h3>
+							<p>Enter city name: </p>
 							<fieldset>
 								<input
-									id="trip-name"
+									id="checkin"
 									className="form-control"
-									placeholder="Your trip name"
+									placeholder="Current City"
 									type="text"
 									minLength="3"
 									tabIndex="1"
@@ -63,31 +63,6 @@ class Trip extends React.Component {
 									autoFocus
 								/>
 							</fieldset>
-							<h5>Which Kind Of Traveler Are You?</h5>
-							 {/* pay atten to the added FontAwe icons for users  */}
-							<label className="radio-inline">
-								<input
-									placeholder="Trip Name``"
-									required
-									type="radio"
-									name="trip-type"
-									value="Couple"
-									
-								/>Couple | 
-								<i class="fa fa-user"></i>
-									<i className="fa fa-user"></i>
-									<i className="fa fa-user"></i>
-							</label>
-							<label className="radio-inline">
-								<input type="radio" name="trip-type" value="Friends" />Friends
-								Group |
-								<i className="fa fa-users"></i>
-							</label>
-							<label className="radio-inline">
-								<input type="radio" name="trip-type" value="Solo" />Solo
-								Traveler |									<i className="fa fa-user"></i>
-							</label>
-							<br />
 							<hr />
 							<fieldset>
 								<button
@@ -109,4 +84,4 @@ class Trip extends React.Component {
 	}
 }
 
-export default Trip;
+export default Checkin;
