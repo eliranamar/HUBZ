@@ -45,7 +45,7 @@ class Homepage extends React.Component {
 
                 <h4>First</h4>
 
-                <p>We want to see what hubz are around you!</p>
+                <p>What hubz are around you!</p>
 
               </div>
 
@@ -74,8 +74,8 @@ class Homepage extends React.Component {
                 <i className="glyphicon glyphicon-tree-conifer"> </i>
 
                 <h4>Lastly</h4>
-
-                <p>Lay back and roll a j!</p>
+{/*changed text for step 4  */}
+                <p>Arrive, Enjoy, Share, Move!</p>
 
               </div>
 
@@ -88,45 +88,26 @@ class Homepage extends React.Component {
 
         <hr />
         <h2 className="text-center"> Our Partners </h2>
-        <div id="myCarousel" className="carousel slide" data-ride="carousel">
-
-          <ol className="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-
-          </ol>
-
-
-          <div className="carousel-inner">
-            <div className="item active">
-              <img src="img/elal.jpg" alt="El Al" />
-            </div>
-
-            <div className="item">
-              <img src="img/airbnb.jpg" alt="Air BnB" />
-            </div>
-
-            <div className="item">
-              <img src="img/tour.jpg" alt="Ministry of Tourism" />
-            </div>
-
-            <div className="item">
-              <img src="img/hi.jpg" alt="Hilik" />
-            </div>
+        <hr />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/airbnb.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/fb.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/tripadvisor.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/snap.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/mot.jpg" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/elal.gif" /></div></div>
           </div>
-
-          <a className="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span className="glyphicon glyphicon-chevron-left"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="right carousel-control" href="#myCarousel" data-slide="next">
-            <span className="glyphicon glyphicon-chevron-right"></span>
-            <span className="sr-only">Next</span>
-          </a>
+           <div className="row">
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block align-middle" src="img/logos/rome.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/vespa.gif" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/sams.gif" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/car2.png" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/hbd.jpg" /></div></div>
+            <div className="col-md-2 col-sm-4 col-xs-6"><div className="logowrap center-block"><img className="img-responsive center-block" src="img/logos/ea.jpeg" /></div></div>
+          </div>
+          <hr />
         </div>
-
         <div id="information" className="pad-section">
 
           <div id="testimonials" className="container">
@@ -136,7 +117,7 @@ class Homepage extends React.Component {
                   <div className="container bootstrap snippet">
                     <div className="row">
                       <h2 className="text-center text-primary">What our clients said about us?</h2>
-                      <hr/>
+                      <hr />
                       <div className="col-md-10 col-md-offset-1">
                         <div className="row testimonials">
                           <div className="col-sm-4">
