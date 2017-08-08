@@ -34,7 +34,7 @@ class Location extends React.Component {
       return;
     }
     let location = this.state.location; //TODO make this change state nicer
-    location.trip_id = this.state.trip.id;
+    location.trip_id = this.state.trip.trip_id;
     this.setState({ location: location });
     // console.log(this.state.location);
     // console.log('testLOC');
@@ -96,7 +96,7 @@ class Location extends React.Component {
     return (
       <div className="container" id="location-box">
         <div className="center-block text-center">
-          <h2>Your trip id is: {this.state.trip.id}</h2>
+          <h2>Your trip id is: {this.state.trip.trip_id}</h2>
           <h3>Add Your Location!</h3>
           <h4>Please Search and choose from suggestions</h4>
           <fieldset>

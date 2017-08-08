@@ -30,92 +30,41 @@ const connection = mysql.createConnection({
   database: "routesss"
 });
 
-// let q = connection.query("SELECT * from locations", function (err, rows, fields) {
-//   if (!err) {
-//     // console.log(fields);
-//     console.log(rows);
-//   } else console.log("Error while performing Query.");
-// });
-
-// console.log(q.sql);
 
 app.use('/auth', authRoutes);
 app.use('/trip', tripRoutes);
-// app.get('/trip/:id', function (req, res) {
-//   let where = {
-//     trip_id: req.params.id
-//   }
-//   connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send(result);
-//   });
-// });
 
 // for finding 
 app.post('/getnexthub', function (req, res) {
-  console.log(req.body);
-  // res.json(req.body);
-  if (!req.body.hub) {
-    res.send('no hub sent for search..')
-    return;
-  }
-  let where = {
-    name: req.body.hub
-  }
-  connection.query('SELECT * FROM locations WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
-    if (err) throw err;
-    console.log(result);
-    let obj = {};
-    for (let i = 0; i < result.length; i++) {
-      if (obj[result[i].trip_id]) {
-        obj[result[i].trip_id].push(result[i])
-      } else {
-        obj[result[i].trip_id] = [];
-        obj[result[i].trip_id].push(result[i]);
-      }
-    }
-    let arr = []
-    for (let id in obj) {
-      arr.push(obj[id])
-    }
-    console.log(arr)
-    res.send(arr);
-  });
+ console.log(req.body);
+ // res.json(req.body);
+ if (!req.body.hub) {
+   res.send('no hub sent for search..')
+   return;
+ }
+ let where = {
+   name: req.body.hub
+ }
+ connection.query('SELECT country, locations.id, locations.name,lat,lng,trip_id,trips.name as trip_name FROM locations inner join trips on trips.id = locations.trip_id WHERE trip_id IN ( SELECT trip_id FROM locations WHERE ?)', where, function (err, result) {
+   if (err) throw err;
+   console.log(result);
+   let obj  = {};
+   for (let i = 0; i < result.length; i++) {
+     if (obj[result[i].trip_id]) {
+       obj[result[i].trip_id].locations.push(result[i]);
+     } else {
+       obj[result[i].trip_id] = {name: result[i].trip_name, locations: []};
+       obj[result[i].trip_id].locations.push(result[i])
+     }
+   }
+   let arr = []
+   for (let id in obj) {
+     arr.push(obj[id])
+   }
+   console.log(arr)
+   res.send(arr);
+ });
 })
-
-
-// app.post('/trip/:trip_id/addlocation', function (req, res) {
-//   console.log(req.body);
-//   // res.json(req.body);
-//   let location = req.body;
-
-
-//   connection.query('INSERT INTO locations SET ?', location, function (err, result) {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send(result);
-//   });
-// });
-
-// app.post('/trip', function (req, res) {
-//   let trip = req.body;
-
-//   console.log(trip);
-//   // connection.connect();
-//   if (!trip.name || !trip.type) {
-//     res.send('Please fill trip data correctly');
-//   }
-
-//   connection.query('INSERT INTO trips SET ?', trip, function (err, result) {
-//     if (err) throw err;
-//     console.log("id: ", result.insertId);
-
-//     // connection.end();
-//     res.send(result);
-//   });
-// })
-
 
 
 //Handle browser refresh by redirecting to index html
