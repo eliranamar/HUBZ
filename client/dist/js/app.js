@@ -17019,12 +17019,10 @@ exports.default = (0, _flowRight3.default)(_createReactClass2.default, (0, _enha
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17054,220 +17052,224 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // and name it GettingStartedGoogleMap
 
 var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (props) {
-	return _react2.default.createElement(
-		_reactGoogleMaps.GoogleMap,
-		{ defaultZoom: 6, center: props.center },
-		props.markers.map(function (marker, index) {
-			return _react2.default.createElement(
-				_reactGoogleMaps.Marker,
-				{
-					key: index,
-					position: marker.position,
-					onClick: function onClick() {
-						return props.onMarkerClick(marker);
-					}
-				},
-				marker.showInfo && _react2.default.createElement(
-					_reactGoogleMaps.InfoWindow,
-					{ onCloseClick: function onCloseClick() {
-							return props.onMarkerClose(marker);
-						} },
-					_react2.default.createElement(
-						"div",
-						null,
-						marker.infoContent
-					)
-				)
-			);
-		}),
-		props.polyline.map(function (path, index) {
-			return _react2.default.createElement(_Polyline2.default, {
-				options: { strokeColor: "blue", geodesic: true },
-				key: index,
-				path: path.polyline
-			});
-		})
-	);
+  return _react2.default.createElement(
+    _reactGoogleMaps.GoogleMap,
+    { defaultZoom: 6, center: props.center },
+    props.markers.map(function (marker, index) {
+      return _react2.default.createElement(
+        _reactGoogleMaps.Marker,
+        {
+          key: index,
+          position: marker.position,
+          onClick: function onClick() {
+            return props.onMarkerClick(marker);
+          }
+        },
+        marker.showInfo && _react2.default.createElement(
+          _reactGoogleMaps.InfoWindow,
+          { onCloseClick: function onCloseClick() {
+              return props.onMarkerClose(marker);
+            } },
+          _react2.default.createElement(
+            "div",
+            null,
+            marker.infoContent
+          )
+        )
+      );
+    }),
+    props.polyline.map(function (path, index) {
+      return _react2.default.createElement(_Polyline2.default, {
+        options: { strokeColor: path.color, strokeWeight: path.strokeWeight, geodesic: true },
+        key: index,
+        path: path.polyline
+      });
+    })
+  );
 });
 
 // Then, render it:
 
 var FindLocation = function (_React$Component) {
-	_inherits(FindLocation, _React$Component);
+  _inherits(FindLocation, _React$Component);
 
-	function FindLocation(props) {
-		_classCallCheck(this, FindLocation);
+  function FindLocation(props) {
+    _classCallCheck(this, FindLocation);
 
-		var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (FindLocation.__proto__ || Object.getPrototypeOf(FindLocation)).call(this, props));
 
-		_this.state = {
-			markersArr: [],
-			place: props.place, // == object
-			currentHub: {},
-			// center: (99.0522346, 101.2436829),
-			// ,
+    _this.state = {
+      markersArr: [],
+      place: props.place, // == object
+      currentHub: {},
+      // center: (99.0522346, 101.2436829),
+      // ,
 
-			paths: [{
-				polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
-			}, {
-				polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
-			}],
+      paths: [{
+        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
+      }, {
+        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
+      }],
 
-			markers: [{
-				position: new google.maps.LatLng(-27.363882, 137.044922),
-				showInfo: false,
-				infoContent: _react2.default.createElement(
-					"p",
-					null,
-					"hey hey"
-				)
-			}, {
-				position: new google.maps.LatLng(-23.363882, 129.044922),
-				showInfo: false,
-				infoContent: _react2.default.createElement("svg", {
-					id: "Layer_1",
-					xmlns: "http://www.w3.org/2000/svg",
-					width: "16",
-					height: "16",
-					viewBox: "0 0 16 16"
-				})
-			}]
-		};
-		_this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
-		_this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
-		return _this;
-	}
+      markers: [{
+        position: new google.maps.LatLng(-27.363882, 137.044922),
+        showInfo: false,
+        infoContent: _react2.default.createElement(
+          "p",
+          null,
+          "hey hey"
+        )
+      }, {
+        position: new google.maps.LatLng(-23.363882, 129.044922),
+        showInfo: false,
+        infoContent: _react2.default.createElement("svg", {
+          id: "Layer_1",
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "16",
+          height: "16",
+          viewBox: "0 0 16 16"
+        })
+      }]
+    };
+    _this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
+    _this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
+    _this.getRandomColor = _this.getRandomColor.bind(_this);
+    return _this;
+  }
 
-	_createClass(FindLocation, [{
-		key: "componentDidMount",
-		value: function componentDidMount() {
-			this.setState({
-				center: new google.maps.LatLng(34.0522346, 20.2436829)
-			});
-		}
-	}, {
-		key: "componentWillReceiveProps",
-		value: function componentWillReceiveProps(nextprops) {
-			console.log(nextprops);
-			var templat = nextprops.place.geometry.location.lat();
-			var templng = nextprops.place.geometry.location.lng();
-			console.log(templat);
-			console.log(typeof templat === "undefined" ? "undefined" : _typeof(templat));
-			console.log(templng);
-			console.log(typeof templng === "undefined" ? "undefined" : _typeof(templng));
-			// debugger
-			this.setState({
-				center: new google.maps.LatLng(templat, templng)
-			});
-			if (this.props.paths !== nextprops.paths) {
-				var allLocations = nextprops.paths;
-				var fullpoly = [];
+  _createClass(FindLocation, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setState({
+        center: new google.maps.LatLng(34.0522346, 20.2436829)
+      });
+    }
+  }, {
+    key: "getRandomColor",
+    value: function getRandomColor() {
+      var letters = "123456789ABCDE";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextprops) {
+      var templat = nextprops.place.geometry.location.lat();
+      var templng = nextprops.place.geometry.location.lng();
+      this.setState({
+        center: new google.maps.LatLng(templat, templng)
+      });
+      if (this.props.paths !== nextprops.paths) {
+        var allLocations = nextprops.paths;
+        var fullpoly = [];
+        for (var i = 0; i < allLocations.length; i++) {
+          var tempPoly = { polyline: [], color: this.getRandomColor(), strokeWeight: (Math.random() + 0.5) * 2 };
+          for (var z = 0; z < allLocations[i].locations.length; z++) {
+            var c = { lat: allLocations[i].locations[z].lat, lng: allLocations[i].locations[z].lng };
+            tempPoly.polyline.push(c);
+          }
+          fullpoly.push(tempPoly);
+        }
 
-				for (var i = 0; i < allLocations.length; i++) {
-					var tempPoly = { polyline: [] };
+        this.setState({
+          paths: fullpoly,
+          currentHub: nextprops.currentHub
+        });
 
-					for (var z = 0; z < allLocations[i].length; z++) {
-						var c = { lat: allLocations[i][z].lat, lng: allLocations[i][z].lng };
-						tempPoly.polyline.push(c);
-						fullpoly.push(tempPoly);
-					}
-				}
+        var fullMarker = [];
 
-				this.setState({
-					paths: fullpoly,
-					currentHub: nextprops.currentHub
-				});
+        for (var t = 0; t < allLocations.length; t++) {
+          for (var r = 0; r < allLocations[t].locations.length; r++) {
+            var lng = allLocations[t].locations[r].lat;
+            var lat = allLocations[t].locations[r].lng;
+            var tempMarker = {
+              position: new google.maps.LatLng(lng, lat),
+              showInfo: false,
+              infoContent: allLocations[t].locations[r].name + " https://www.tripadvisor.com/"
+            };
+            fullMarker.push(tempMarker);
+          }
+        }
 
-				var fullMarker = [];
+        this.setState({
+          markers: fullMarker
+        });
+      }
+    }
+  }, {
+    key: "handleMarkerClick",
+    value: function handleMarkerClick(targetMarker) {
+      this.setState({
+        markers: this.state.markers.map(function (marker) {
+          if (marker === targetMarker) {
+            return _extends({}, marker, {
+              showInfo: true
+            });
+          }
+          return marker;
+        })
+      });
+    }
+  }, {
+    key: "handleMarkerClose",
+    value: function handleMarkerClose(targetMarker) {
+      this.setState({
+        markers: this.state.markers.map(function (marker) {
+          if (marker === targetMarker) {
+            return _extends({}, marker, {
+              showInfo: false
+            });
+          }
+          return marker;
+        })
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "row full-height", style: { height: "100%" } },
+        _react2.default.createElement(
+          "div",
+          { className: "col-md-12", style: { height: "100%" } },
+          _react2.default.createElement(GettingStartedGoogleMap, {
+            containerElement: _react2.default.createElement("div", {
+              style: {
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                justifyContent: "flex-end",
+                alignItems: "center"
+              }
+            }),
+            mapElement: _react2.default.createElement("div", {
+              style: {
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0
+              }
+            }),
+            center: this.state.center,
+            markers: this.state.markers,
+            polyline: this.state.paths,
+            onMarkerClick: this.handleMarkerClick,
+            onMarkerClose: this.handleMarkerClose,
+            getRandomColor: this.getRandomColor
+          })
+        )
+      );
+    }
+  }]);
 
-				for (var t = 0; t < allLocations.length; t++) {
-					for (var r = 0; r < allLocations[t].length; r++) {
-						var lng = allLocations[t][r].lat;
-						var lat = allLocations[t][r].lng;
-						var tempMarker = {
-							position: new google.maps.LatLng(lng, lat),
-							showInfo: false,
-							infoContent: allLocations[t][r].name
-						};
-						fullMarker.push(tempMarker);
-					}
-				}
-
-				this.setState({
-					markers: fullMarker
-				});
-			}
-		}
-	}, {
-		key: "handleMarkerClick",
-		value: function handleMarkerClick(targetMarker) {
-			this.setState({
-				markers: this.state.markers.map(function (marker) {
-					if (marker === targetMarker) {
-						return _extends({}, marker, {
-							showInfo: true
-						});
-					}
-					return marker;
-				})
-			});
-		}
-	}, {
-		key: "handleMarkerClose",
-		value: function handleMarkerClose(targetMarker) {
-			this.setState({
-				markers: this.state.markers.map(function (marker) {
-					if (marker === targetMarker) {
-						return _extends({}, marker, {
-							showInfo: false
-						});
-					}
-					return marker;
-				})
-			});
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"div",
-				{ className: "row full-height", style: { height: "100%" } },
-				_react2.default.createElement(
-					"div",
-					{ className: "col-md-12", style: { height: "100%" } },
-					_react2.default.createElement(GettingStartedGoogleMap, {
-						containerElement: _react2.default.createElement("div", {
-							style: {
-								position: "absolute",
-								top: 0,
-								left: 0,
-								right: 0,
-								bottom: 0,
-								justifyContent: "flex-end",
-								alignItems: "center"
-							}
-						}),
-						mapElement: _react2.default.createElement("div", {
-							style: {
-								position: "absolute",
-								top: 0,
-								left: 0,
-								right: 0,
-								bottom: 0
-							}
-						}),
-						center: this.state.center,
-						markers: this.state.markers,
-						polyline: this.state.paths,
-						onMarkerClick: this.handleMarkerClick,
-						onMarkerClose: this.handleMarkerClose
-					})
-				)
-			);
-		}
-	}]);
-
-	return FindLocation;
+  return FindLocation;
 }(_react2.default.Component);
 
 exports.default = FindLocation;
@@ -41148,7 +41150,7 @@ function unmountInputElementFromControlPositionOnMap(index, controlPosition, map
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -41167,6 +41169,10 @@ var _TripFindEngine2 = _interopRequireDefault(_TripFindEngine);
 
 var _reactRouterDom = __webpack_require__(22);
 
+var _ViewLocations = __webpack_require__(587);
+
+var _ViewLocations2 = _interopRequireDefault(_ViewLocations);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41176,154 +41182,187 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FindTrip = function (_React$Component) {
-	_inherits(FindTrip, _React$Component);
+  _inherits(FindTrip, _React$Component);
 
-	function FindTrip(props) {
-		_classCallCheck(this, FindTrip);
+  function FindTrip(props) {
+    _classCallCheck(this, FindTrip);
 
-		var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
 
-		_this.state = {
-			trips: {},
-			currentHub: {
-				hub: null
-			},
-			results: [],
-			place: {}
-		};
-		// console.log(this.state.trip);
+    _this.state = {
+      trips: {},
+      currentHub: {
+        hub: null
+      },
+      results: [],
+      place: {}
+    };
+    // console.log(this.state.trip);
 
-		_this.findTripFunc = _this.findTripFunc.bind(_this);
-		// this.redirectToMap = this.redirectToMap.bind(this);
-		return _this;
-	}
+    _this.findTripFunc = _this.findTripFunc.bind(_this);
+    // this.redirectToMap = this.redirectToMap.bind(this);
+    return _this;
+  }
 
-	// redirectToMap(e) {
-	//   debugger
-	//   e.preventDefault();
-	//   render(){
-	//     return (
-	//       <Redirect to="/findlocation" />
-	//     );
-	//   }
-	// }
+  // redirectToMap(e) {
+  //   debugger
+  //   e.preventDefault();
+  //   render(){
+  //     return (
+  //       <Redirect to="/findlocation" />
+  //     );
+  //   }
+  // }
 
-	_createClass(FindTrip, [{
-		key: "findTripFunc",
-		value: function findTripFunc() {
-			//! this func fetchs all trips that contains this location
-			var that = this;
-			var data = [];
-			// let listItems = this.props.trips.map(function (trip) {
-			//   return (
-			//     <li key={trip.name}>
-			//
-			//     </li>
-			//   );
-			// });
-			// console.log(typeof(this.state.currentHub.hub));
-			// data.name = document.getElementById("trip-name").value;
-			// data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-			console.log(this.state.currentHub);
-			if (!this.state.currentHub.hub) {
-				alert("please choose valid hub");
-				return;
-			}
-			_axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
-				// console.log('testttt');
-				// console.log(response.data);
-				that.setState({ trips: response.data });
-			}).catch(function (error) {
-				console.log(error);
-			});
-		}
-	}, {
-		key: "componentDidMount",
-		value: function componentDidMount() {
-			var _this2 = this;
+  _createClass(FindTrip, [{
+    key: "findTripFunc",
+    value: function findTripFunc() {
+      //! this func fetchs all trips that contains this location
+      var that = this;
+      var data = [];
+      // let listItems = this.props.trips.map(function (trip) {
+      //   return (
+      //     <li key={trip.name}>
+      //
+      //     </li>
+      //   );
+      // });
+      // console.log(typeof(this.state.currentHub.hub));
+      // data.name = document.getElementById("trip-name").value;
+      // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+      console.log(this.state.currentHub);
+      if (!this.state.currentHub.hub) {
+        alert("please choose valid hub");
+        return;
+      }
+      _axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
+        that.setState({ trips: response.data });
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
 
-			// after mount make input to auto complete
-			var that = this;
-			var input = document.getElementById("searchTripInput");
-			var autocomplete = new google.maps.places.Autocomplete(input);
-			autocomplete.addListener("place_changed", function () {
-				var place = autocomplete.getPlace();
-				_this2.setState({ place: place });
-				var hub = {};
-				console.log(place);
-				for (var i = 0; i < place.address_components.length; i++) {
-					if (place.address_components[i].types[0] == "locality") {
-						hub.hub = place.address_components[i].long_name;
-					}
-				}
-				if (place.address_components) {
-					that.setState({ currentHub: hub });
-				} else {
-					alert("please choose location from google list");
-				}
-			});
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"div",
-				{ className: "container", id: "find-trip-box", style: { height: "100%" } },
-				_react2.default.createElement(
-					"div",
-					{ className: "row text-center" },
-					_react2.default.createElement(
-						"h3",
-						null,
-						"What is your current location?"
-					),
-					_react2.default.createElement(
-						"h4",
-						null,
-						"Search for your next Hub :)"
-					),
-					_react2.default.createElement(
-						"fieldset",
-						null,
-						_react2.default.createElement("input", {
-							required: true,
-							id: "searchTripInput",
-							className: "controls form-control",
-							type: "text",
-							placeholder: "Enter Your Current Hub",
-							autoFocus: true
-						})
-					),
-					_react2.default.createElement("hr", null),
-					_react2.default.createElement(
-						"fieldset",
-						null,
-						_react2.default.createElement(
-							"button",
-							{
-								onClick: this.findTripFunc,
-								className: "btn btn-success btn-square",
-								name: "submit",
-								type: "submit",
-								id: "contact-submit",
-								"data-submit": "...Sending"
-							},
-							"Submit"
-						)
-					)
-				),
-				_react2.default.createElement("hr", null),
-				_react2.default.createElement(_TripFindEngine2.default, {
-					place: this.state.place,
-					trips: this.state.trips,
-					redirectToMap: this.redirectToMap,
-					currentHub: this.state.currentHub
-				})
-			);
-		}
-	}]);
+      // after mount make input to auto complete
+      var that = this;
+      var input = document.getElementById("searchTripInput");
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener("place_changed", function () {
+        var place = autocomplete.getPlace();
+        _this2.setState({ place: place });
+        var hub = {};
+        console.log(place);
+        for (var i = 0; i < place.address_components.length; i++) {
+          if (place.address_components[i].types[0] == "locality") {
+            hub.hub = place.address_components[i].long_name;
+          }
+        }
+        if (place.address_components) {
+          that.setState({ currentHub: hub });
+        } else {
+          alert("please choose location from google list");
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "container", id: "find-trip-box", style: { height: "100%" } },
+        _react2.default.createElement(
+          "div",
+          { className: "row text-center" },
+          _react2.default.createElement(
+            "h1",
+            null,
+            "Find Your Next Hub!"
+          ),
+          _react2.default.createElement(
+            "h3",
+            { style: { color: "black" } },
+            "Add your current or future location and choose between thousends of trips made by other travellers"
+          ),
+          _react2.default.createElement(
+            "fieldset",
+            null,
+            _react2.default.createElement(
+              "p",
+              null,
+              "Who are you Travelling with?"
+            ),
+            _react2.default.createElement(
+              "label",
+              { className: "radio-inline" },
+              _react2.default.createElement("input", {
+                placeholder: "Trip Name``",
+                required: true,
+                type: "radio",
+                name: "trip-type",
+                value: "Couple"
+              }),
+              "Couple"
+            ),
+            _react2.default.createElement(
+              "label",
+              { className: "radio-inline" },
+              _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Friends" }),
+              "Friends Group"
+            ),
+            _react2.default.createElement(
+              "label",
+              { className: "radio-inline" },
+              _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Solo" }),
+              "Solo Traveler"
+            ),
+            _react2.default.createElement("hr", null),
+            _react2.default.createElement("input", {
+              required: true,
+              id: "searchTripInput",
+              className: "controls form-control",
+              type: "text",
+              placeholder: "Enter Your Current Hub",
+              autoFocus: true
+            })
+          ),
+          _react2.default.createElement("hr", null),
+          _react2.default.createElement(
+            "fieldset",
+            null,
+            _react2.default.createElement(
+              "button",
+              {
+                onClick: this.findTripFunc,
+                className: "btn btn-warning btn-square btn-lg btn-block",
+                name: "submit",
+                type: "submit",
+                id: "contact-submit",
+                "data-submit": "...Sending"
+              },
+              "Submit"
+            )
+          )
+        ),
+        _react2.default.createElement("hr", null),
+        _react2.default.createElement(_TripFindEngine2.default, {
+          place: this.state.place,
+          trips: this.state.trips,
+          redirectToMap: this.redirectToMap,
+          currentHub: this.state.currentHub
+        }),
+        _react2.default.createElement(_ViewLocations2.default, {
+          place: this.state.place,
+          trips: this.state.trips,
+          currentHub: this.state.currentHub
+        })
+      );
+    }
+  }]);
 
-	return FindTrip;
+  return FindTrip;
 }(_react2.default.Component);
 
 exports.default = FindTrip;
@@ -41649,6 +41688,158 @@ var Authentication = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Authentication;
+
+/***/ }),
+/* 587 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TripBox = __webpack_require__(588);
+
+var _TripBox2 = _interopRequireDefault(_TripBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ViewLocations = function (_React$Component) {
+  _inherits(ViewLocations, _React$Component);
+
+  function ViewLocations() {
+    _classCallCheck(this, ViewLocations);
+
+    return _possibleConstructorReturn(this, (ViewLocations.__proto__ || Object.getPrototypeOf(ViewLocations)).apply(this, arguments));
+  }
+
+  _createClass(ViewLocations, [{
+    key: "listTrips",
+    value: function listTrips() {
+      if (this.props.trips.length > 0) {
+        return this.props.trips.map(function (item, id) {
+          return _react2.default.createElement(_TripBox2.default, { key: id, item: item });
+        });
+      } else return _react2.default.createElement(
+        "p",
+        null,
+        "Select something"
+      );
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "row" },
+        _react2.default.createElement("hr", null),
+        _react2.default.createElement(
+          "h2",
+          null,
+          "Hubz and Routes by Other Travellers"
+        ),
+        this.listTrips()
+      );
+    }
+  }]);
+
+  return ViewLocations;
+}(_react2.default.Component);
+
+exports.default = ViewLocations;
+
+/***/ }),
+/* 588 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TripBox = function (_React$Component) {
+  _inherits(TripBox, _React$Component);
+
+  function TripBox(props) {
+    _classCallCheck(this, TripBox);
+
+    return _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
+    //bind this to functions
+    // this.findThisTrip = this.findThisTrip.bind(this);
+  }
+
+  _createClass(TripBox, [{
+    key: "theLocations",
+    value: function theLocations(dataItem) {
+      return dataItem.locations.map(function (item, id) {
+        return _react2.default.createElement(
+          "div",
+          { key: id },
+          " ",
+          item.name
+        );
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.props);
+      var dataItem = this.props.item;
+      return _react2.default.createElement(
+        "div",
+        { className: "col-md-4" },
+        _react2.default.createElement(
+          "div",
+          { style: { padding: "5px" } },
+          _react2.default.createElement(
+            "h3",
+            { className: "media-heading", style: { color: "#ff5733" } },
+            dataItem.name
+          ),
+          _react2.default.createElement(
+            "h4",
+            { className: "media-heading" },
+            this.theLocations(dataItem)
+          )
+        )
+      );
+    }
+  }]);
+
+  return TripBox;
+}(_react2.default.Component);
+
+exports.default = TripBox;
 
 /***/ })
 /******/ ]);
