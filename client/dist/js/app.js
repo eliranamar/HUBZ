@@ -29508,6 +29508,7 @@ var App = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
+		console.log(props);
 		_this.state = {
 			trip: props.trip,
 			user: props.user
@@ -29518,7 +29519,7 @@ var App = function (_React$Component) {
 	_createClass(App, [{
 		key: "componentWillReceiveProps",
 		value: function componentWillReceiveProps(nextProps) {
-			// console.log(nextProps);
+			console.log(nextProps);
 			this.setState({ trip: nextProps.trip });
 			this.setState({ user: nextProps.user });
 		}
@@ -32001,6 +32002,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32076,7 +32079,9 @@ var Routes = function Routes(props) {
             _react2.default.createElement(_reactRouterDom.Route, { name: 'trip', exact: true, path: '/trip', render: function render() {
                     return _react2.default.createElement(_Trip2.default, { user: props.user, trip: props.trip, setTripState: props.setTripState });
                 } }),
-            _react2.default.createElement(_reactRouterDom.Route, { name: 'authentication', path: '/authorization/:token/:name/:id', component: _Authentication2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'authentication', path: '/authorization/:token/:name/:id', render: function render(prop) {
+                    return _react2.default.createElement(_Authentication2.default, _extends({}, prop, { setUserState: props.setUserState }));
+                } }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
         )
     );
@@ -41653,7 +41658,13 @@ var UserTrips = function (_React$Component) {
 			// let tripsList = 
 			return _react2.default.createElement(
 				"div",
-				{ className: "container text-center center-block" },
+				{ className: "container text-center" },
+				_react2.default.createElement(
+					"h2",
+					null,
+					"My Trips"
+				),
+				_react2.default.createElement("hr", null),
 				_react2.default.createElement(
 					"div",
 					{ className: "row" },
@@ -41676,7 +41687,7 @@ exports.default = UserTrips;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -41694,50 +41705,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var UserTripBox = function (_React$Component) {
-  _inherits(UserTripBox, _React$Component);
+	_inherits(UserTripBox, _React$Component);
 
-  function UserTripBox(props) {
-    _classCallCheck(this, UserTripBox);
+	function UserTripBox(props) {
+		_classCallCheck(this, UserTripBox);
 
-    return _possibleConstructorReturn(this, (UserTripBox.__proto__ || Object.getPrototypeOf(UserTripBox)).call(this, props));
-  }
+		return _possibleConstructorReturn(this, (UserTripBox.__proto__ || Object.getPrototypeOf(UserTripBox)).call(this, props));
+	}
 
-  _createClass(UserTripBox, [{
-    key: "theLocations",
-    value: function theLocations(dataItem) {
-      return dataItem.locations.map(function (item, id) {
-        return _react2.default.createElement(
-          "div",
-          { key: id },
-          " ",
-          item.name
-        );
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      // console.log(this.props)
-      var dataItem = this.props.item;
-      return _react2.default.createElement(
-        "div",
-        { className: "col-md-4 col-lg-4 col-xl-4" },
-        _react2.default.createElement(
-          "h3",
-          { className: "media-heading" },
-          "Trip Name: ",
-          dataItem.name
-        ),
-        _react2.default.createElement(
-          "h4",
-          { className: "media-heading" },
-          this.theLocations(dataItem)
-        )
-      );
-    }
-  }]);
+	_createClass(UserTripBox, [{
+		key: "theLocations",
+		value: function theLocations(dataItem) {
+			return dataItem.locations.map(function (item, id) {
+				return _react2.default.createElement(
+					"div",
+					{ key: id },
+					" ",
+					item.name
+				);
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			// console.log(this.props)
+			var dataItem = this.props.item;
+			return _react2.default.createElement(
+				"div",
+				{ className: "col-sm-5 col-md-4 user-trip-box" },
+				_react2.default.createElement(
+					"h4",
+					{ className: "media-heading" },
+					"Trip Name: ",
+					dataItem.name
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(
+					"h5",
+					{ className: "media-heading" },
+					this.theLocations(dataItem)
+				),
+				_react2.default.createElement(
+					"button",
+					{ className: "btn btn-square" },
+					"Add location"
+				)
+			);
+		}
+	}]);
 
-  return UserTripBox;
+	return UserTripBox;
 }(_react2.default.Component);
 
 exports.default = UserTripBox;
@@ -41777,6 +41794,7 @@ var Authentication = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, (Authentication.__proto__ || Object.getPrototypeOf(Authentication)).call(this, props));
 
+		console.log(props);
 		_this.connected = _this.connected.bind(_this);
 		_this.state = {
 			name: _this.props.match.params.name,
@@ -41794,8 +41812,9 @@ var Authentication = function (_React$Component) {
 		key: "connected",
 		value: function connected() {
 			console.log('from connected()');
-			console.log(this.props);
+			// console.log(this.props);
 			var user = this.state;
+			this.props.setUserState(user);
 			localStorage.setItem("user", JSON.stringify(user));
 		}
 	}, {

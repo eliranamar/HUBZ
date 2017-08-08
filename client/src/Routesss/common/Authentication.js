@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 class Authentication extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log(props);
 		this.connected = this.connected.bind(this);
 		this.state = {
 			name: this.props.match.params.name,
@@ -16,8 +17,9 @@ class Authentication extends React.Component {
 	//  Save the token and the name of connected user to local storage
 	connected() {
 		console.log('from connected()');
-		console.log(this.props);
+		// console.log(this.props);
 		let user = this.state;
+		this.props.setUserState(user);
 		localStorage.setItem("user", JSON.stringify(user));
 	}
 
