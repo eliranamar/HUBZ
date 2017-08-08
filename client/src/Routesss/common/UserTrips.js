@@ -44,7 +44,9 @@ class UserTrips extends React.Component {
 	render() {
     // let tripsList = 
 		return (
-			<div className="container text-center center-block">
+			<div className="container text-center">
+				<h2>My Trips</h2>
+				<hr/>
         <div className="row">
            {this.listTrips()}
         </div>

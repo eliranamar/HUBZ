@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-
+		console.log(props);
 		this.state = {
 			trip: props.trip,
 			user: props.user
 		};
 	}
 	componentWillReceiveProps(nextProps) {
-		// console.log(nextProps);
+		console.log(nextProps);
 		this.setState({ trip: nextProps.trip });
 		this.setState({ user: nextProps.user });
 	}
