@@ -35,6 +35,11 @@ class Trip extends React.Component {
 			})
 			.catch(function(error) {
 				console.log(error);
+				if (error.request.status === 401) {
+					alert("UNAUTHORIZED. PLEASE LOGIN");
+					// history.pushState(null, null, '/');
+					// return <Redirect to="/" />;
+				}
 			});
 	}
 

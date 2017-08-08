@@ -15,16 +15,21 @@ class App extends React.Component {
 				type: null,
 				id: null
 			},
-			user: {}
+			user: {
+				name: null,
+				token: null,
+				id: null
+			}
 		};
-		console.log(this.state.user);
+		// console.log(this.state.user);
 		this.setTripState = this.setTripState.bind(this);
+		this.setUserState = this.setUserState.bind(this);
 	}
 	componentDidMount() {
 		let that = this;
 		(function() {
 			let user = JSON.parse(localStorage.getItem("user"));
-			if (user.token) {
+			if (user) {
 				that.setState({ user: user });
 				axios.defaults.headers.common["Authorization"] = "Bearer " + user.token;
 			} else {
@@ -39,14 +44,17 @@ class App extends React.Component {
 	setTripState(trip) {
 		this.setState({ trip: trip });
 	}
+	setUserState(user) {
+		this.setState({ user: user });
+	}
 
 	render() {
 		// console.log('connected');
 		return (
 			<BrowserRouter>
 				<div id="root" style={{ height: "100%" }}>
-					<Header trip={this.state.trip} />
-					<Routesss trip={this.state.trip} setTripState={this.setTripState} />
+					<Header user={this.state.user} trip={this.state.trip} />
+					<Routesss user={this.state.user} trip={this.state.trip} setUserState={this.setUserState} setTripState={this.setTripState} />
 				</div>
 			</BrowserRouter>
 		);

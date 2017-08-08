@@ -7,7 +7,8 @@ class Authentication extends React.Component {
 		this.connected = this.connected.bind(this);
 		this.state = {
 			name: this.props.match.params.name,
-			token: this.props.match.params.token
+			token: this.props.match.params.token,
+			id: this.props.match.params.id
 		};
 		console.log('from authenticaton.js');
 		console.log(this.state);
@@ -16,8 +17,8 @@ class Authentication extends React.Component {
 	connected() {
 		console.log('from connected()');
 		console.log(this.props);
-		let User = this.state;
-		localStorage.setItem("user", JSON.stringify(User));
+		let user = this.state;
+		localStorage.setItem("user", JSON.stringify(user));
 	}
 
 	componentWillMount() {

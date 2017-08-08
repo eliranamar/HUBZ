@@ -6,20 +6,27 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			trip: props.trip
+			trip: props.trip,
+			user: props.user
 		};
 	}
 	componentWillReceiveProps(nextProps) {
 		// console.log(nextProps);
 		this.setState({ trip: nextProps.trip });
+		this.setState({ user: nextProps.user });
 	}
 
 	render() {
-		let currentTrip = (
+		let showLogin = (
 			<li>
-				<Link to="/trip">
-					Current Trip ID: {this.state.trip.id}
-				</Link>
+				<a target="_self" href="/auth/facebook">
+					Facebook Login
+				</a>
+			</li>
+		);
+		let showUser = (
+			<li role="presentation">
+				<Link to="/logout">Logout({this.state.user.name})</Link>
 			</li>
 		);
 		return (
@@ -52,18 +59,16 @@ class App extends React.Component {
 								<Link to="/trip">Create Trip</Link>
 							</li>
 							<li role="presentation">
+								<Link to="/usertrips">My Trips</Link>
+							</li>
+							<li role="presentation">
 								<Link to="/about">About</Link>
 							</li>
 							<li role="presentation">
 								<Link to="/contact">Contact</Link>
 							</li>
-							<li>
-								{/*//TODO chagne to LOGOUT after login.. of course and delete token   */}
-								<a target="_self" href="/auth/facebook">
-									Facebook Login
-								</a>
-							</li>
-							{this.state.trip.id ? currentTrip : null}
+							{/* if user is logged in show logout button */}
+							 {this.state.user.name ? showUser : showLogin} 
 						</ul>
 					</div>
 				</div>

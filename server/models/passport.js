@@ -48,20 +48,25 @@ passport.use(
 					) {
 						if (err) throw err;
 						console.log(result);
-					let tokenid = jwt.sign(
-						{
-							id: result[0].id,
-							name: result[0].name
-						},
-						"Elirans$uperC0mpl3xKey1337",
-						{ expiresIn: "7d" }
-					);
-					return done(null, { token: tokenid, name: result[0].name });
+						let tokenid = jwt.sign(
+							{
+								id: result[0].id,
+								name: result[0].name
+							},
+							"Elirans$uperC0mpl3xKey1337",
+							{ expiresIn: "14d" }
+						);
+						return done(null, {
+							token: tokenid,
+							name: result[0].name,
+							id: result[0].id
+						});
 					});
 				} else {
 					console.log("found user:");
 					console.log(result[0]);
 					console.log(result[0].name);
+					console.log(result[0].id);
 					console.log("user exists already");
 					let tokenid = jwt.sign(
 						{
@@ -69,9 +74,13 @@ passport.use(
 							name: result[0].name
 						},
 						"Elirans$uperC0mpl3xKey1337",
-						{ expiresIn: "7d" }
+						{ expiresIn: "14d" }
 					);
-					return done(null, { token: tokenid, name: result[0].name });
+					return done(null, {
+						token: tokenid,
+						name: result[0].name,
+						id: result[0].id
+					});
 				}
 			});
 		}

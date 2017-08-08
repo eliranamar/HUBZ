@@ -30,27 +30,9 @@ const connection = mysql.createConnection({
   database: "routesss"
 });
 
-// let q = connection.query("SELECT * from locations", function (err, rows, fields) {
-//   if (!err) {
-//     // console.log(fields);
-//     console.log(rows);
-//   } else console.log("Error while performing Query.");
-// });
-
-// console.log(q.sql);
 
 app.use('/auth', authRoutes);
 app.use('/trip', tripRoutes);
-// app.get('/trip/:id', function (req, res) {
-//   let where = {
-//     trip_id: req.params.id
-//   }
-//   connection.query('SELECT * FROM locations WHERE ?', where, function (err, result) {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send(result);
-//   });
-// });
 
 // for finding 
 app.post('/getnexthub', function (req, res) {
@@ -83,39 +65,6 @@ app.post('/getnexthub', function (req, res) {
     res.send(arr);
   });
 })
-
-
-// app.post('/trip/:trip_id/addlocation', function (req, res) {
-//   console.log(req.body);
-//   // res.json(req.body);
-//   let location = req.body;
-
-
-//   connection.query('INSERT INTO locations SET ?', location, function (err, result) {
-//     if (err) throw err;
-//     console.log(result);
-//     res.send(result);
-//   });
-// });
-
-// app.post('/trip', function (req, res) {
-//   let trip = req.body;
-
-//   console.log(trip);
-//   // connection.connect();
-//   if (!trip.name || !trip.type) {
-//     res.send('Please fill trip data correctly');
-//   }
-
-//   connection.query('INSERT INTO trips SET ?', trip, function (err, result) {
-//     if (err) throw err;
-//     console.log("id: ", result.insertId);
-
-//     // connection.end();
-//     res.send(result);
-//   });
-// })
-
 
 
 //Handle browser refresh by redirecting to index html
