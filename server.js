@@ -4,10 +4,8 @@ let path = require('path');
 const app = express();
 let mysql = require('mysql');
 let passport = require('./server/models/passport');
-
 let authRoutes = require('./routes/authRoutes');
 let tripRoutes = require('./routes/tripRoutes');
-
 let expressJWT = require('express-jwt');
 let ensureAuthenticated = expressJWT({ secret: 'Elirans$uperC0mpl3xKey1337' });
 

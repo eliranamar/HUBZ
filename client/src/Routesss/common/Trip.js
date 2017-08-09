@@ -7,10 +7,10 @@ class Trip extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			trip: props.trip,
-			user: props.user
-		};
+		// this.state = {
+		// 	trip: props.trip,
+		// 	user: props.user
+		// };
 		// console.log(this.state.trip);
 
 		this.getTripData = this.getTripData.bind(this);
@@ -46,11 +46,11 @@ class Trip extends React.Component {
 	}
 
 	render() {
-		if (this.state.trip.trip_id) {
+		if (this.props.trip.trip_id) {
 			// console.log(this.state.trip);
 			// console.log(this.state.trip.id);
 			// history.pushState(null, null, '/trip/'+"3"+'/addlocation');
-			return <Location trip={this.state.trip} />;
+			return <Location setTripState={this.props.setTripState} trip={this.props.trip} />;
 		} else {
 			return (
 				<div id="trip-box" className="container">
@@ -96,13 +96,11 @@ class Trip extends React.Component {
 							<hr />
 							<fieldset>
 								<button
-									name="submit"
 									type="submit"
 									className="btn btn-primary btn-square"
-									id="contact-submit"
 									data-submit="...Sending"
 								>
-									Submit
+									Create Trip !
 								</button>
 							</fieldset>
 						</form>

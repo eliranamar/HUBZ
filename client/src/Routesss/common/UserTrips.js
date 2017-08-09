@@ -23,7 +23,7 @@ class UserTrips extends React.Component {
  }
   
 	componentDidMount() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
     this.findUserTrips();
   }
 
@@ -33,7 +33,7 @@ class UserTrips extends React.Component {
 			.get("/trip/usertrips/" + this.props.user.id)
 			.then(function(response) {
 				// console.log('testttt');
-				console.log(response.data);
+				// console.log(response.data);
 				that.setState({ userTrips: response.data });
 			})
 			.catch(function(error) {
