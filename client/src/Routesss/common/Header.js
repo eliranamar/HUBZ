@@ -72,13 +72,13 @@ class App extends React.Component {
 								</a>
 								<ul className="dropdown-menu">
 									<li role="presentation">
-										<Link to="/findtrip">Find Trip</Link>
+										<Link to="/findtrip">Find Trip <i className="glyphicon glyphicon-search"></i></Link>
 									</li>
 									<li role="presentation">
-										<Link to="/trip">Create Trip</Link>
+										<Link to="/trip">Create Trip <i className="glyphicon glyphicon-plus"></i></Link>
 									</li>
 									<li role="presentation">
-										<Link to="/usertrips">My Trips</Link>
+										<Link to="/usertrips">My Trips <i className="glyphicon glyphicon-user"></i></Link>
 									</li>
 								</ul>
 							</li>

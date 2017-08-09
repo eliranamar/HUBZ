@@ -34,8 +34,8 @@ class About extends React.Component {
 									src="/img/eliran.jpg"
 									alt=""
 								/>
-								<h4>Tesla</h4>
-								<h6>Full-Stack</h6>
+								<h3>Tesla</h3>
+								<h4>Full-Stack</h4>
 							</div>
 							<div className="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 								<img
@@ -44,8 +44,8 @@ class About extends React.Component {
 									src="/img/amit.jpg"
 									alt=""
 								/>
-								<h4>Einstein</h4>
-								<h6>Team Leader</h6>
+								<h3>Einstein</h3>
+								<h4>Team Leader</h4>
 							</div>
 							<div className="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 								<img
@@ -54,8 +54,8 @@ class About extends React.Component {
 									src="/img/elio.jpg"
 									alt=""
 								/>
-								<h4>Musk</h4>
-								<h6>Designer</h6>
+								<h3>Musk</h3>
+								<h4>Designer</h4>
 							</div>
 						</div>
 					</div>

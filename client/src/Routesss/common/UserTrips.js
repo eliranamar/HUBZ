@@ -45,7 +45,7 @@ class UserTrips extends React.Component {
     // let tripsList = 
 		return (
 			<div className="container text-center">
-				<h2>My Trips</h2>
+				<h2>My Trips <i className="glyphicon glyphicon-map-marker"></i></h2>
 				<hr/>
         <div className="row">
            {this.listTrips()}

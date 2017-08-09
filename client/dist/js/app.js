@@ -14806,8 +14806,8 @@ var Location = function (_React$Component) {
 			_axios2.default.post("/trip/" + location.trip_id + "/addlocation", location).then(function (response) {
 				console.log("server responded");
 				console.log(response.data);
-				that.state.searchInput.value = "";
-				that.state.searchInput.focus();
+				document.getElementById("searchInput").value = "";
+				document.getElementById("searchInput").focus();
 				that.setState({ location: {} });
 				// data.id = response.data.insertId;
 				// that.setState({ trip: data })
@@ -29715,7 +29715,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/findtrip" },
-											"Find Trip"
+											"Find Trip ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
 										)
 									),
 									_react2.default.createElement(
@@ -29724,7 +29725,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/trip" },
-											"Create Trip"
+											"Create Trip ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-plus" })
 										)
 									),
 									_react2.default.createElement(
@@ -29733,7 +29735,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/usertrips" },
-											"My Trips"
+											"My Trips ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-user" })
 										)
 									)
 								)
@@ -32953,12 +32956,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Tesla"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Full-Stack"
 								)
@@ -32973,12 +32976,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Einstein"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Team Leader"
 								)
@@ -32993,12 +32996,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Musk"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Designer"
 								)
@@ -33230,7 +33233,8 @@ var Contact = function (_React$Component) {
                 _react2.default.createElement(
                   "h3",
                   null,
-                  "Contact Us!"
+                  "Contact Us! ",
+                  _react2.default.createElement("i", { className: "glyphicon glyphicon-envelope" })
                 ),
                 _react2.default.createElement(
                   "h4",
@@ -42045,7 +42049,8 @@ var UserTrips = function (_React$Component) {
 				_react2.default.createElement(
 					"h2",
 					null,
-					"My Trips"
+					"My Trips ",
+					_react2.default.createElement("i", { className: "glyphicon glyphicon-map-marker" })
 				),
 				_react2.default.createElement("hr", null),
 				_react2.default.createElement(
@@ -42115,28 +42120,33 @@ var UserTripBox = function (_React$Component) {
 			var dataItem = this.props.item;
 			return _react2.default.createElement(
 				"div",
-				{
-					style: { padding: "10px" },
-					className: "col-sm-6 col-md-4"
-				},
+				{ style: { padding: "10px" }, className: "col-sm-6 col-md-4" },
 				_react2.default.createElement(
 					"div",
-					{ className: "user-trip-box", style: { height: "250px", overflow: "auto", marginTop: "10px" } },
+					{
+						className: "user-trip-box",
+						style: { height: "250px", overflow: "auto", marginTop: "10px" }
+					},
 					_react2.default.createElement(
 						"div",
 						null,
 						_react2.default.createElement(
 							"h3",
 							null,
-							"Trip Name: ",
 							dataItem.name
 						),
 						_react2.default.createElement("hr", null),
 						this.theLocations(dataItem),
 						_react2.default.createElement(
 							"button",
-							{ className: "btn btn-square" },
+							{ className: "btn btn-success btn-square" },
 							"Add location"
+						),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-primary btn-square" },
+							_react2.default.createElement("i", { className: "fa fa-facebook-square", "aria-hidden": "true" }),
+							" Share"
 						)
 					)
 				)

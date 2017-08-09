@@ -63,7 +63,7 @@ html {
 #contact h4 {
 	margin: 5px 0 15px;
 	display: block;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 400;
 }
 
@@ -156,7 +156,6 @@ fieldset {
 	border-radius: 0;
 }
 
-
 #about-footer {
 	margin-top: 50px;
 }
@@ -169,10 +168,11 @@ div.user-trip-box {
 	border: 1px solid lightgray;
 	padding: 10px;
 	/* margin: 10px; */
+	background-color: #eaeaea;
 	box-sizing: border-box;
 }
 
-div.user-trip-box > hr {
+div.user-trip-box > div > hr {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -182,7 +182,7 @@ div.user-trip-box > h4 {
 	font-size: 20px;
 	font-weight: 200;
 }
-div.user-trip-box > h5 {
+div.user-trip-box > div > h5 {
 	color: grey;
 	font-size: 18px;
 }

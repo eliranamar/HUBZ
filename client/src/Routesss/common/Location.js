@@ -47,8 +47,8 @@ class Location extends React.Component {
 			.then(function(response) {
 				console.log("server responded");
 				console.log(response.data);
-				that.state.searchInput.value = "";
-				that.state.searchInput.focus();
+				document.getElementById("searchInput").value = "";
+				document.getElementById("searchInput").focus();
 				that.setState({ location: {} });
 				// data.id = response.data.insertId;
 				// that.setState({ trip: data })
