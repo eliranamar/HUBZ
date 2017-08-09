@@ -29,7 +29,7 @@ class Contact extends React.Component {
                 <fieldset>
                   <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                 </fieldset>
-                <p className="copyright">Designed by <a href="https://github.com/eliranamar" target="_blank" title="Colorlib">Eliran</a></p>
+                <p className="copyright">Designed by <a href="https://github.com/eliranamar" target="_blank" title="Colorlib">Someone</a></p>
               </form>
             </div>
             <div className="col-md-4 col-lg-4 col-xl-4"></div>

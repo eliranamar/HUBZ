@@ -52,18 +52,18 @@ class App extends React.Component {
 					</div>
 					<div className="collapse navbar-collapse" id="myNavbar">
 						<ul className="nav navbar-nav">
-							<li role="presentation">
-								<Link to="/">Home</Link>
-							</li>
 							{/* <li role="presentation">
-								<Link to="/findtrip">Find Trip</Link>
-							</li>
-							<li role="presentation">
-								<Link to="/trip">Create Trip</Link>
-							</li>
-							<li role="presentation">
-								<Link to="/usertrips">My Trips</Link>
-							</li> */}
+                                <Link to="/">Home</Link>
+                            </li> */}
+							{/* <li role="presentation">
+                                <Link to="/findtrip">Find Trip</Link>
+                            </li>
+                            <li role="presentation">
+                                <Link to="/trip">Create Trip</Link>
+                            </li>
+                            <li role="presentation">
+                                <Link to="/usertrips">My Trips</Link>
+                            </li> */}
 
 							<li className="dropdown">
 								<a className="dropdown-toggle" data-toggle="dropdown" href="#">

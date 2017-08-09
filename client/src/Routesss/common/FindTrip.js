@@ -11,7 +11,8 @@ class FindTrip extends React.Component {
     this.state = {
       trips: {},
       currentHub: {
-        hub: null
+        hub: null,
+        type: null
       },
       results: [],
       place: {}
@@ -36,6 +37,11 @@ class FindTrip extends React.Component {
     //! this func fetchs all trips that contains this location
     let that = this;
     let data = [];
+    let typeA = ""
+    if (document.querySelector('input[name = "trip-type"]:checked')) {
+       typeA = document.querySelector('input[name = "trip-type"]:checked')
+        .value;
+    }
     // let listItems = this.props.trips.map(function (trip) {
     //   return (
     //     <li key={trip.name}>
@@ -51,8 +57,14 @@ class FindTrip extends React.Component {
       alert("please choose valid hub");
       return;
     }
+
+    let obj = {
+      type: typeA,
+      currentHub: this.state.currentHub
+    };
+
     axios
-      .post("/getnexthub", this.state.currentHub)
+      .post("/getnexthub", obj)
       .then(function(response) {
         that.setState({ trips: response.data });
       })
@@ -66,6 +78,7 @@ class FindTrip extends React.Component {
     let that = this;
     let input = document.getElementById("searchTripInput");
     let autocomplete = new google.maps.places.Autocomplete(input);
+
     autocomplete.addListener("place_changed", () => {
       let place = autocomplete.getPlace();
       this.setState({ place: place });
@@ -98,17 +111,30 @@ class FindTrip extends React.Component {
               <input
                 placeholder="Trip Name``"
                 required
+                id="type-couple"
                 type="radio"
                 name="trip-type"
                 value="Couple"
-              />Couple
+              />Couple |
+              <i className="fa fa-user" />
+              <i className="fa fa-user" />
             </label>
             <label className="radio-inline">
-              <input type="radio" name="trip-type" value="Friends" />Friends
-              Group
+              <input
+                type="radio"
+                id="type-friends"
+                name="trip-type"
+                value="FRIENDS"
+              />Friends Group | <i className="fa fa-users" />
             </label>
             <label className="radio-inline">
-              <input type="radio" name="trip-type" value="Solo" />Solo Traveler
+              <input
+                id="type-solo"
+                type="radio"
+                name="trip-type"
+                value="Solo"
+              />Solo Traveler |
+              <i className="fa fa-user" />
             </label>
             <hr />
 

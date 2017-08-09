@@ -7,10 +7,12 @@ class Location extends React.Component {
 	constructor(props) {
 		super(props);
 		let trip = this.props.trip;
+		let searchInput = document.getElementById("searchInput");
 		// console.log(trip);
 		this.state = {
 			trip: trip,
-			location: {}
+			location: {},
+			searchInput: searchInput
 		};
 		// let trip = {};
 		// trip.name = "amit";
@@ -45,7 +47,8 @@ class Location extends React.Component {
 			.then(function(response) {
 				console.log("server responded");
 				console.log(response.data);
-				document.getElementById("searchInput").value = "";
+				that.state.searchInput.value = "";
+				that.state.searchInput.focus();
 				that.setState({ location: {} });
 				// data.id = response.data.insertId;
 				// that.setState({ trip: data })
@@ -132,6 +135,7 @@ class Location extends React.Component {
 							className="controls form-control"
 							type="text"
 							placeholder="Enter a location"
+							autoFocus
 						/>
 					</fieldset>
 					<br />

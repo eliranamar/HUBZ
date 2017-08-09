@@ -8,9 +8,9 @@ class UserTripBox extends React.Component {
 	theLocations(dataItem) {
 		return dataItem.locations.map(function(item, id) {
 			return (
-				<div key={id}>
+				<h5 key={id}>
 					{" "}{item.name}
-				</div>
+				</h5>
 			);
 		});
 	}
@@ -19,15 +19,22 @@ class UserTripBox extends React.Component {
 		// console.log(this.props)
 		const dataItem = this.props.item;
 		return (
-			<div className="col-sm-5 col-md-4 user-trip-box">
-				<h4 className="media-heading">
-					Trip Name: {dataItem.name}
-				</h4>
-				<hr />
-				<h5 className="media-heading">
-					{this.theLocations(dataItem)}
-				</h5>
-        <button className="btn btn-square">Add location</button>
+			<div
+				style={{ padding: "10px" }}
+				className="col-sm-6 col-md-4"
+			>
+				<div className="user-trip-box" style={{ height: "250px", overflow: "auto", marginTop: "10px" }}>
+					<div>
+						<h3>
+							Trip Name: {dataItem.name}
+						</h3>
+						<hr />
+
+						{this.theLocations(dataItem)}
+
+						<button className="btn btn-square">Add location</button>
+					</div>
+				</div>
 			</div>
 		);
 	}
