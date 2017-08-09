@@ -36,6 +36,8 @@ class UserTripBox extends React.Component {
 						<button className="btn btn-primary btn-square">
 							<i className="fa fa-facebook-square" aria-hidden="true" /> Share
 						</button>
+						<hr/>
+						<button className="btn btn-danger btn-square">Delete Trip<i className="glyphicon glyphicon-trash" aria-hidden="true" /></button>
 					</div>
 				</div>
 			</div>

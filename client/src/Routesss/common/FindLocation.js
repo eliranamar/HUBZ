@@ -104,7 +104,7 @@ class FindLocation extends React.Component {
   }
 
   getRandomColor() {
-    var letters = "123456789ABCDE";
+    var letters = "123456789ABCDEF";
     var color = "#";
     for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
@@ -125,7 +125,7 @@ class FindLocation extends React.Component {
         let tempPoly = {
           polyline: [],
           color: this.getRandomColor(),
-          strokeWeight: (Math.random() + 0.3) * 3
+          strokeWeight: 4
         };
         for (var z = 0; z < allLocations[i].locations.length; z++) {
           let c = {

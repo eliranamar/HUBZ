@@ -17214,7 +17214,7 @@ var FindLocation = function (_React$Component) {
   }, {
     key: "getRandomColor",
     value: function getRandomColor() {
-      var letters = "123456789ABCDE";
+      var letters = "123456789ABCDEF";
       var color = "#";
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
@@ -17236,7 +17236,7 @@ var FindLocation = function (_React$Component) {
           var tempPoly = {
             polyline: [],
             color: this.getRandomColor(),
-            strokeWeight: (Math.random() + 0.3) * 3
+            strokeWeight: 4
           };
           for (var z = 0; z < allLocations[i].locations.length; z++) {
             var c = {
@@ -41448,7 +41448,7 @@ function unmountInputElementFromControlPositionOnMap(index, controlPosition, map
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -41480,214 +41480,215 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FindTrip = function (_React$Component) {
-  _inherits(FindTrip, _React$Component);
+	_inherits(FindTrip, _React$Component);
 
-  function FindTrip(props) {
-    _classCallCheck(this, FindTrip);
+	function FindTrip(props) {
+		_classCallCheck(this, FindTrip);
 
-    var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
 
-    _this.state = {
-      trips: {},
-      currentHub: {
-        hub: null,
-        type: null
-      },
-      results: [],
-      place: {}
-    };
-    // console.log(this.state.trip);
+		_this.state = {
+			trips: {},
+			currentHub: {
+				hub: null,
+				type: null
+			},
+			results: [],
+			place: {}
+		};
+		// console.log(this.state.trip);
 
-    _this.findTripFunc = _this.findTripFunc.bind(_this);
-    // this.redirectToMap = this.redirectToMap.bind(this);
-    return _this;
-  }
+		_this.findTripFunc = _this.findTripFunc.bind(_this);
+		// this.redirectToMap = this.redirectToMap.bind(this);
+		return _this;
+	}
 
-  // redirectToMap(e) {
-  //   debugger
-  //   e.preventDefault();
-  //   render(){
-  //     return (
-  //       <Redirect to="/findlocation" />
-  //     );
-  //   }
-  // }
+	// redirectToMap(e) {
+	//   debugger
+	//   e.preventDefault();
+	//   render(){
+	//     return (
+	//       <Redirect to="/findlocation" />
+	//     );
+	//   }
+	// }
 
-  _createClass(FindTrip, [{
-    key: "findTripFunc",
-    value: function findTripFunc() {
-      //! this func fetchs all trips that contains this location
-      var that = this;
-      var data = [];
-      var typeA = "";
-      if (document.querySelector('input[name = "trip-type"]:checked')) {
-        typeA = document.querySelector('input[name = "trip-type"]:checked').value;
-      }
-      // let listItems = this.props.trips.map(function (trip) {
-      //   return (
-      //     <li key={trip.name}>
-      //
-      //     </li>
-      //   );
-      // });
-      // console.log(typeof(this.state.currentHub.hub));
-      // data.name = document.getElementById("trip-name").value;
-      // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-      console.log(this.state.currentHub);
-      if (!this.state.currentHub.hub) {
-        alert("please choose valid hub");
-        return;
-      }
+	_createClass(FindTrip, [{
+		key: "findTripFunc",
+		value: function findTripFunc() {
+			//! this func fetchs all trips that contains this location
+			var that = this;
+			var data = [];
+			var typeA = "";
+			if (document.querySelector('input[name = "trip-type"]:checked')) {
+				typeA = document.querySelector('input[name = "trip-type"]:checked').value;
+			}
+			// let listItems = this.props.trips.map(function (trip) {
+			//   return (
+			//     <li key={trip.name}>
+			//
+			//     </li>
+			//   );
+			// });
+			// console.log(typeof(this.state.currentHub.hub));
+			// data.name = document.getElementById("trip-name").value;
+			// data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+			console.log(this.state.currentHub);
+			if (!this.state.currentHub.hub) {
+				alert("please choose valid hub");
+				return;
+			}
 
-      var obj = {
-        type: typeA,
-        currentHub: this.state.currentHub
-      };
+			var obj = {
+				type: typeA,
+				currentHub: this.state.currentHub
+			};
 
-      _axios2.default.post("/getnexthub", obj).then(function (response) {
-        that.setState({ trips: response.data });
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
+			_axios2.default.post("/getnexthub", obj).then(function (response) {
+				that.setState({ trips: response.data });
+			}).catch(function (error) {
+				console.log(error);
+			});
+		}
+	}, {
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
 
-      // after mount make input to auto complete
-      var that = this;
-      var input = document.getElementById("searchTripInput");
-      var autocomplete = new google.maps.places.Autocomplete(input);
+			// after mount make input to auto complete
+			var that = this;
+			var input = document.getElementById("searchTripInput");
+			var autocomplete = new google.maps.places.Autocomplete(input);
 
-      autocomplete.addListener("place_changed", function () {
-        var place = autocomplete.getPlace();
-        _this2.setState({ place: place });
-        var hub = {};
-        console.log(place);
-        for (var i = 0; i < place.address_components.length; i++) {
-          if (place.address_components[i].types[0] == "locality") {
-            hub.hub = place.address_components[i].long_name;
-          }
-        }
-        if (place.address_components) {
-          that.setState({ currentHub: hub });
-        } else {
-          alert("please choose location from google list");
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "container", id: "find-trip-box", style: { height: "100%" } },
-        _react2.default.createElement(
-          "div",
-          { className: "row text-center" },
-          _react2.default.createElement(
-            "h1",
-            null,
-            "Find Your Next Hub!"
-          ),
-          _react2.default.createElement(
-            "h3",
-            { style: { color: "black" } },
-            "Add your current or future location and choose between thousends of trips made by other travellers"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "p",
-              null,
-              "Who are you Travelling with?"
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", {
-                placeholder: "Trip Name``",
-                required: true,
-                id: "type-couple",
-                type: "radio",
-                name: "trip-type",
-                value: "Couple"
-              }),
-              "Couple |",
-              _react2.default.createElement("i", { className: "fa fa-user" }),
-              _react2.default.createElement("i", { className: "fa fa-user" })
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", {
-                type: "radio",
-                id: "type-friends",
-                name: "trip-type",
-                value: "FRIENDS"
-              }),
-              "Friends Group | ",
-              _react2.default.createElement("i", { className: "fa fa-users" })
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", {
-                id: "type-solo",
-                type: "radio",
-                name: "trip-type",
-                value: "Solo"
-              }),
-              "Solo Traveler |",
-              _react2.default.createElement("i", { className: "fa fa-user" })
-            ),
-            _react2.default.createElement("hr", null),
-            _react2.default.createElement("input", {
-              required: true,
-              id: "searchTripInput",
-              className: "controls form-control",
-              type: "text",
-              placeholder: "Enter Your Current Hub",
-              autoFocus: true
-            })
-          ),
-          _react2.default.createElement("hr", null),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "button",
-              {
-                onClick: this.findTripFunc,
-                className: "btn btn-warning btn-square btn-lg btn-block",
-                name: "submit",
-                type: "submit",
-                id: "contact-submit",
-                "data-submit": "...Sending"
-              },
-              "Submit"
-            )
-          )
-        ),
-        _react2.default.createElement("hr", null),
-        _react2.default.createElement(_TripFindEngine2.default, {
-          place: this.state.place,
-          trips: this.state.trips,
-          redirectToMap: this.redirectToMap,
-          currentHub: this.state.currentHub
-        }),
-        _react2.default.createElement(_ViewLocations2.default, {
-          place: this.state.place,
-          trips: this.state.trips,
-          currentHub: this.state.currentHub
-        })
-      );
-    }
-  }]);
+			autocomplete.addListener("place_changed", function () {
+				var place = autocomplete.getPlace();
+				_this2.setState({ place: place });
+				var hub = {};
+				console.log(place);
+				for (var i = 0; i < place.address_components.length; i++) {
+					if (place.address_components[i].types[0] == "locality" || place.address_components[i].types[0] == "administrative_area_level_2") {
+						hub.hub = place.address_components[i].long_name;
+						break;
+					}
+				}
+				if (place.address_components) {
+					that.setState({ currentHub: hub });
+				} else {
+					alert("please choose location from google list");
+				}
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "container", id: "find-trip-box", style: { height: "100%" } },
+				_react2.default.createElement(
+					"div",
+					{ className: "row text-center" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						"Find Your Next Hub!"
+					),
+					_react2.default.createElement(
+						"h3",
+						{ style: { color: "black" } },
+						"Add your current or future location and choose between thousends of trips made by other travellers"
+					),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"p",
+							null,
+							"Who are you Travelling with?"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								placeholder: "Trip Name``",
+								required: true,
+								id: "type-couple",
+								type: "radio",
+								name: "trip-type",
+								value: "Couple"
+							}),
+							"Couple |",
+							_react2.default.createElement("i", { className: "fa fa-user" }),
+							_react2.default.createElement("i", { className: "fa fa-user" })
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								type: "radio",
+								id: "type-friends",
+								name: "trip-type",
+								value: "FRIENDS"
+							}),
+							"Friends Group | ",
+							_react2.default.createElement("i", { className: "fa fa-users" })
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								id: "type-solo",
+								type: "radio",
+								name: "trip-type",
+								value: "Solo"
+							}),
+							"Solo Traveler |",
+							_react2.default.createElement("i", { className: "fa fa-user" })
+						),
+						_react2.default.createElement("hr", null),
+						_react2.default.createElement("input", {
+							required: true,
+							id: "searchTripInput",
+							className: "controls form-control",
+							type: "text",
+							placeholder: "Enter Your Current Hub",
+							autoFocus: true
+						})
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"button",
+							{
+								onClick: this.findTripFunc,
+								className: "btn btn-warning btn-square btn-lg btn-block",
+								name: "submit",
+								type: "submit",
+								id: "contact-submit",
+								"data-submit": "...Sending"
+							},
+							"Submit"
+						)
+					)
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(_TripFindEngine2.default, {
+					place: this.state.place,
+					trips: this.state.trips,
+					redirectToMap: this.redirectToMap,
+					currentHub: this.state.currentHub
+				}),
+				_react2.default.createElement(_ViewLocations2.default, {
+					place: this.state.place,
+					trips: this.state.trips,
+					currentHub: this.state.currentHub
+				})
+			);
+		}
+	}]);
 
-  return FindTrip;
+	return FindTrip;
 }(_react2.default.Component);
 
 exports.default = FindTrip;
@@ -42147,6 +42148,13 @@ var UserTripBox = function (_React$Component) {
 							{ className: "btn btn-primary btn-square" },
 							_react2.default.createElement("i", { className: "fa fa-facebook-square", "aria-hidden": "true" }),
 							" Share"
+						),
+						_react2.default.createElement("hr", null),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-danger btn-square" },
+							"Delete Trip",
+							_react2.default.createElement("i", { className: "glyphicon glyphicon-trash", "aria-hidden": "true" })
 						)
 					)
 				)
