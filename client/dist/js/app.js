@@ -320,6 +320,16 @@ module.exports = invariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(41);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -385,16 +395,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(41);
-
 
 /***/ }),
 /* 4 */
@@ -974,7 +974,7 @@ module.exports = flowRight;
 
 
 
-var React = __webpack_require__(3);
+var React = __webpack_require__(2);
 var factory = __webpack_require__(146);
 
 if (typeof React === 'undefined') {
@@ -1195,7 +1195,7 @@ var _prodInvariant = __webpack_require__(42);
 var ReactCurrentOwner = __webpack_require__(24);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 function isNative(fn) {
   // Based on isNative() from Lodash
@@ -2425,7 +2425,7 @@ var _assign = __webpack_require__(6);
 var PooledClass = __webpack_require__(35);
 
 var emptyFunction = __webpack_require__(18);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var didWarnForAddedNewProperty = false;
 var isProxySupported = typeof Proxy === 'function';
@@ -3134,7 +3134,7 @@ var _assign = __webpack_require__(6);
 
 var ReactCurrentOwner = __webpack_require__(24);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var canDefineProperty = __webpack_require__(62);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -3869,7 +3869,7 @@ module.exports = reactProdInvariant;
 var ReactRef = __webpack_require__(258);
 var ReactInstrumentation = __webpack_require__(19);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 /**
  * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -4263,7 +4263,7 @@ var EventPluginUtils = __webpack_require__(88);
 
 var accumulateInto = __webpack_require__(148);
 var forEachAccumulated = __webpack_require__(149);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var getListener = EventPluginHub.getListener;
 
@@ -6665,7 +6665,7 @@ var _prodInvariant = __webpack_require__(4);
 var ReactErrorUtils = __webpack_require__(89);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 /**
  * Injected dependencies:
@@ -7430,7 +7430,7 @@ var React = __webpack_require__(41);
 var PropTypes = propTypesFactory(React.isValidElement);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var hasReadOnlyValue = {
   button: true,
@@ -7807,7 +7807,7 @@ var ReactInstrumentation = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(25);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 function enqueueUpdate(internalInstance) {
   ReactUpdates.enqueueUpdate(internalInstance);
@@ -8042,7 +8042,7 @@ module.exports = ReactUpdateQueue;
 var _assign = __webpack_require__(6);
 
 var emptyFunction = __webpack_require__(18);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var validateDOMNesting = emptyFunction;
 
@@ -8738,7 +8738,7 @@ exports.default = createTransitionManager;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
@@ -9750,7 +9750,7 @@ module.exports = {
 
 
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 function warnNoop(publicInstance, callerName) {
   if (process.env.NODE_ENV !== 'production') {
@@ -9937,7 +9937,7 @@ var checkReactTypeSpec = __webpack_require__(242);
 
 var canDefineProperty = __webpack_require__(62);
 var getIteratorFn = __webpack_require__(142);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var lowPriorityWarning = __webpack_require__(86);
 
 function getDeclarationErrorAddendum() {
@@ -10212,7 +10212,7 @@ module.exports = function(isValidElement) {
 
 var emptyFunction = __webpack_require__(18);
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ReactPropTypesSecret = __webpack_require__(87);
 var checkPropTypes = __webpack_require__(246);
@@ -10737,7 +10737,7 @@ var emptyObject = __webpack_require__(63);
 var _invariant = __webpack_require__(1);
 
 if (process.env.NODE_ENV !== 'production') {
-  var warning = __webpack_require__(2);
+  var warning = __webpack_require__(3);
 }
 
 var MIXINS_KEY = 'mixins';
@@ -12391,7 +12391,7 @@ var ReactDOMComponentTree = __webpack_require__(7);
 var ReactInstrumentation = __webpack_require__(19);
 
 var quoteAttributeValueForBrowser = __webpack_require__(283);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
 var illegalAttributeNameCache = {};
@@ -12655,7 +12655,7 @@ var LinkedValueUtils = __webpack_require__(96);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactUpdates = __webpack_require__(25);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var didWarnValueLink = false;
 var didWarnValueDefaultValue = false;
@@ -12864,7 +12864,7 @@ var ReactHostComponent = __webpack_require__(165);
 
 var getNextDebugID = __webpack_require__(294);
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 // To avoid a cyclic dependency, we create the final class in this module
 var ReactCompositeComponentWrapper = function (element) {
@@ -13153,7 +13153,7 @@ var REACT_ELEMENT_TYPE = __webpack_require__(295);
 var getIteratorFn = __webpack_require__(296);
 var invariant = __webpack_require__(1);
 var KeyEscapeUtils = __webpack_require__(100);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -13605,7 +13605,7 @@ var instantiateReactComponent = __webpack_require__(162);
 var invariant = __webpack_require__(1);
 var setInnerHTML = __webpack_require__(68);
 var shouldUpdateReactComponent = __webpack_require__(99);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
 var ROOT_ATTR_NAME = DOMProperty.ROOT_ATTRIBUTE_NAME;
@@ -14481,7 +14481,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
@@ -14623,7 +14623,7 @@ Route.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -14729,12 +14729,12 @@ Link.contextTypes = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -14757,176 +14757,222 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Location = function (_React$Component) {
-  _inherits(Location, _React$Component);
+	_inherits(Location, _React$Component);
 
-  function Location(props) {
-    _classCallCheck(this, Location);
+	function Location(props) {
+		_classCallCheck(this, Location);
 
-    var _this = _possibleConstructorReturn(this, (Location.__proto__ || Object.getPrototypeOf(Location)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Location.__proto__ || Object.getPrototypeOf(Location)).call(this, props));
 
-    var trip = _this.props.trip;
-    // console.log(trip);
-    _this.state = {
-      trip: trip,
-      location: {}
-      // let trip = {};
-      // trip.name = "amit";
-      // trip.id = 3;
-      // trip.type = 'Solo';
-    };console.log("trip ", _this.state.trip);
-    _this.addLocation = _this.addLocation.bind(_this);
-    // this.setLocationState = this.setLocationState.bind(this);
-    return _this;
-  }
+		var trip = _this.props.trip;
+		var searchInput = document.getElementById("searchInput");
+		// console.log(trip);
+		_this.state = {
+			trip: trip,
+			location: {},
+			searchInput: searchInput
+		};
+		// let trip = {};
+		// trip.name = "amit";
+		// trip.id = 3;
+		// trip.type = 'Solo';
+		console.log("trip ", _this.state.trip);
+		_this.addLocation = _this.addLocation.bind(_this);
+		_this.finishTripFunc = _this.finishTripFunc.bind(_this);
+		// this.setLocationState = this.setLocationState.bind(this);
+		return _this;
+	}
 
-  // setLocationState(location) {
-  //   console.log(location);
-  //   this.setState({ location: location })
-  // }
+	// setLocationState(location) {
+	//   console.log(location);
+	//   this.setState({ location: location })
+	// }
 
-  _createClass(Location, [{
-    key: "addLocation",
-    value: function addLocation(e) {
-      var that = this;
-      e.preventDefault();
-      if (!this.state.location.name) {
-        alert('please choose location before submitting');
-        return;
-      }
-      var location = this.state.location; //TODO make this change state nicer
-      location.trip_id = this.state.trip.trip_id;
-      this.setState({ location: location });
-      // console.log(this.state.location);
-      // console.log('testLOC');
-      // location.name = document.getElementById("location-name").value;
-      _axios2.default.post("/trip/" + location.trip_id + "/addlocation", location).then(function (response) {
-        console.log('server responded');
-        console.log(response.data);
-        document.getElementById('searchInput').value = "";
-        that.setState({ location: {} });
-        // data.id = response.data.insertId;
-        // that.setState({ trip: data })
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
+	_createClass(Location, [{
+		key: "addLocation",
+		value: function addLocation(e) {
+			var that = this;
+			e.preventDefault();
+			if (!this.state.location.name) {
+				alert("please choose location before submitting");
+				return;
+			}
+			var location = this.state.location; //TODO make this change state nicer
+			location.trip_id = this.state.trip.trip_id;
+			this.setState({ location: location });
+			// console.log(this.state.location);
+			// console.log('testLOC');
+			// location.name = document.getElementById("location-name").value;
+			_axios2.default.post("/trip/" + location.trip_id + "/addlocation", location).then(function (response) {
+				console.log("server responded");
+				console.log(response.data);
+				document.getElementById("searchInput").value = "";
+				document.getElementById("searchInput").focus();
+				that.setState({ location: {} });
+				// data.id = response.data.insertId;
+				// that.setState({ trip: data })
+			}).catch(function (error) {
+				console.log(error);
+			});
+		}
+	}, {
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
 
-      // let that = this;
-      var input = document.getElementById('searchInput');
-      var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.addListener('place_changed', function () {
+			// let that = this;
+			var input = document.getElementById("searchInput");
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			autocomplete.addListener("place_changed", function () {
+				var place = autocomplete.getPlace();
+				console.log(place);
 
-        var place = autocomplete.getPlace();
-        console.log(place);
+				if (place.address_components) {
+					var location = {};
+					for (var i = 0; i < place.address_components.length; i++) {
+						if (place.address_components[i].types[0] == "country") {
+							location.country = place.address_components[i].long_name;
+							document.getElementById("country").innerHTML = place.address_components[i].long_name;
+						}
+						if (place.address_components[i].types[0] == "locality") {
+							location.name = place.address_components[i].long_name;
+							document.getElementById("name").innerHTML = place.address_components[i].long_name;
+						}
+					}
+					if (place.name) {
+						document.getElementById("name").innerHTML = place.name;
+						location.name = place.name;
+					}
+					location.lat = place.geometry.location.lat();
+					location.lng = place.geometry.location.lng();
+					console.log(location);
+					// document.getElementById('location').innerHTML = place.formatted_address;
+					// document.getElementById('location').innerHTML = place.formatted_address;
+					document.getElementById("lat").innerHTML = place.geometry.location.lat();
+					document.getElementById("lon").innerHTML = place.geometry.location.lng();
+					_this2.setState({ location: location });
+				} else {
+					alert("please choose location from google list");
+				}
+			});
+		}
+	}, {
+		key: "finishTripFunc",
+		value: function finishTripFunc() {
+			var nullTrip = {
+				name: null,
+				type: null,
+				id: null,
+				user_id: null
+			};
 
-        if (place.address_components) {
-          var location = {};
-          for (var i = 0; i < place.address_components.length; i++) {
-            if (place.address_components[i].types[0] == 'country') {
-              location.country = place.address_components[i].long_name;
-              document.getElementById('country').innerHTML = place.address_components[i].long_name;
-            }
-            if (place.address_components[i].types[0] == "locality") {
-              location.name = place.address_components[i].long_name;
-              document.getElementById('name').innerHTML = place.address_components[i].long_name;
-            }
-          }
-          if (place.name) {
-            document.getElementById('name').innerHTML = place.name;
-            location.name = place.name;
-          }
-          location.lat = place.geometry.location.lat();
-          location.lng = place.geometry.location.lng();
-          console.log(location);
-          // document.getElementById('location').innerHTML = place.formatted_address;
-          // document.getElementById('location').innerHTML = place.formatted_address;
-          document.getElementById('lat').innerHTML = place.geometry.location.lat();
-          document.getElementById('lon').innerHTML = place.geometry.location.lng();
-          _this2.setState({ location: location });
-        } else {
-          alert('please choose location from google list');
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "container", id: "location-box" },
-        _react2.default.createElement(
-          "div",
-          { className: "center-block text-center" },
-          _react2.default.createElement(
-            "h2",
-            null,
-            "Your trip id is: ",
-            this.state.trip.trip_id
-          ),
-          _react2.default.createElement(
-            "h3",
-            null,
-            "Add Your Location!"
-          ),
-          _react2.default.createElement(
-            "h4",
-            null,
-            "Please Search and choose from suggestions"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement("input", { required: true, id: "searchInput", className: "controls form-control", type: "text", placeholder: "Enter a location" })
-          ),
-          _react2.default.createElement("br", null),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "button",
-              { name: "submit", type: "submit", className: "btn btn-primary", onClick: this.addLocation, id: "contact-submit", "data-submit": "...Sending" },
-              "Add Location To Trip !"
-            )
-          ),
-          _react2.default.createElement("hr", null),
-          _react2.default.createElement(
-            "ul",
-            { id: "geoData", style: { listStyleType: 'none' } },
-            _react2.default.createElement(
-              "li",
-              null,
-              "Name: ",
-              _react2.default.createElement("span", { id: "name" })
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "Country: ",
-              _react2.default.createElement("span", { id: "country" })
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "Latitude: ",
-              _react2.default.createElement("span", { id: "lat" })
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "Longitude: ",
-              _react2.default.createElement("span", { id: "lon" })
-            )
-          )
-        )
-      );
-    }
-  }]);
+			this.props.setTripState(nullTrip);
+		}
+	}, {
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			// debugger;
+			// console.log(nextProps);
+			// this.setState({ trip: nextProps.trip });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "container", id: "location-box" },
+				_react2.default.createElement(
+					"div",
+					{ className: "center-block text-center" },
+					_react2.default.createElement(
+						"h2",
+						null,
+						"Your trip id is: ",
+						this.state.trip.trip_id
+					),
+					_react2.default.createElement(
+						"h3",
+						null,
+						"Add Your Location!"
+					),
+					_react2.default.createElement(
+						"h4",
+						null,
+						"Please Search and choose from suggestions"
+					),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement("input", {
+							required: true,
+							id: "searchInput",
+							className: "controls form-control",
+							type: "text",
+							placeholder: "Enter a location",
+							autoFocus: true
+						})
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"button",
+							{
+								type: "submit",
+								className: "btn btn-primary btn-square",
+								onClick: this.addLocation,
+								id: "contact-submit",
+								"data-submit": "...Sending"
+							},
+							"Add Location To Trip !"
+						)
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"button",
+						{
+							onClick: this.finishTripFunc,
+							type: "submit",
+							className: "btn btn-warning btn-square"
+						},
+						"Finish!"
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"ul",
+						{ id: "geoData", style: { listStyleType: "none" } },
+						_react2.default.createElement(
+							"li",
+							null,
+							"Name: ",
+							_react2.default.createElement("span", { id: "name" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							"Country: ",
+							_react2.default.createElement("span", { id: "country" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							"Latitude: ",
+							_react2.default.createElement("span", { id: "lat" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							"Longitude: ",
+							_react2.default.createElement("span", { id: "lon" })
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return Location;
+	return Location;
 }(_react2.default.Component);
 
 exports.default = Location;
@@ -17026,7 +17072,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -17041,6 +17087,8 @@ var _Polyline = __webpack_require__(232);
 var _Polyline2 = _interopRequireDefault(_Polyline);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17080,9 +17128,16 @@ var GettingStartedGoogleMap = (0, _reactGoogleMaps.withGoogleMap)(function (prop
     }),
     props.polyline.map(function (path, index) {
       return _react2.default.createElement(_Polyline2.default, {
-        options: { strokeColor: path.color, strokeWeight: path.strokeWeight, geodesic: true },
+        options: {
+          strokeColor: path.color,
+          strokeWeight: path.strokeWeight,
+          geodesic: true
+        },
         key: index,
-        path: path.polyline
+        path: path.polyline,
+        onClick: function onClick() {
+          return props.onPolyClik(path.polyline);
+        }
       });
     })
   );
@@ -17105,31 +17160,43 @@ var FindLocation = function (_React$Component) {
       // center: (99.0522346, 101.2436829),
       // ,
 
-      paths: [{
-        polyline: [{ lat: -27.363882, lng: 137.044922 }, { lat: -23.363882, lng: 129.044922 }, { lat: -20.5107991, lng: 131.9081663 }]
-      }, {
-        polyline: [{ lat: 8.5088733, lng: 76.909832 }, { lat: 12.5100829, lng: 90.9087966 }, { lat: 14.5107991, lng: 76.9081663 }]
-      }],
+      paths: [
+        // {
+        //   polyline: [
+        //     { lat: -27.363882, lng: 137.044922 },
+        //     { lat: -23.363882, lng: 129.044922 },
+        //     { lat: -20.5107991, lng: 131.9081663 }
+        //   ]
+        // },
+        // {
+        //   polyline: [
+        //     { lat: 8.5088733, lng: 76.909832 },
+        //     { lat: 12.5100829, lng: 90.9087966 },
+        //     { lat: 14.5107991, lng: 76.9081663 }
+        //   ]
+        // }
+      ],
 
-      markers: [{
-        position: new google.maps.LatLng(-27.363882, 137.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement(
-          "p",
-          null,
-          "hey hey"
-        )
-      }, {
-        position: new google.maps.LatLng(-23.363882, 129.044922),
-        showInfo: false,
-        infoContent: _react2.default.createElement("svg", {
-          id: "Layer_1",
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "16",
-          height: "16",
-          viewBox: "0 0 16 16"
-        })
-      }]
+      markers: [
+        // {
+        //   position: new google.maps.LatLng(-27.363882, 137.044922),
+        //   showInfo: false,
+        //   infoContent: <p>hey hey</p>
+        // },
+        // {
+        //   position: new google.maps.LatLng(-23.363882, 129.044922),
+        //   showInfo: false,
+        //   infoContent: (
+        //     <svg
+        //       id="Layer_1"
+        //       xmlns="http://www.w3.org/2000/svg"
+        //       width="16"
+        //       height="16"
+        //       viewBox="0 0 16 16"
+        //     />
+        //   )
+        // }
+      ]
     };
     _this.handleMarkerClick = _this.handleMarkerClick.bind(_this);
     _this.handleMarkerClose = _this.handleMarkerClose.bind(_this);
@@ -17147,7 +17214,7 @@ var FindLocation = function (_React$Component) {
   }, {
     key: "getRandomColor",
     value: function getRandomColor() {
-      var letters = "123456789ABCDE";
+      var letters = "123456789ABCDEF";
       var color = "#";
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
@@ -17166,9 +17233,16 @@ var FindLocation = function (_React$Component) {
         var allLocations = nextprops.paths;
         var fullpoly = [];
         for (var i = 0; i < allLocations.length; i++) {
-          var tempPoly = { polyline: [], color: this.getRandomColor(), strokeWeight: (Math.random() + 0.5) * 2 };
+          var tempPoly = {
+            polyline: [],
+            color: this.getRandomColor(),
+            strokeWeight: 4
+          };
           for (var z = 0; z < allLocations[i].locations.length; z++) {
-            var c = { lat: allLocations[i].locations[z].lat, lng: allLocations[i].locations[z].lng };
+            var c = {
+              lat: allLocations[i].locations[z].lat,
+              lng: allLocations[i].locations[z].lng
+            };
             tempPoly.polyline.push(c);
           }
           fullpoly.push(tempPoly);
@@ -17183,12 +17257,32 @@ var FindLocation = function (_React$Component) {
 
         for (var t = 0; t < allLocations.length; t++) {
           for (var r = 0; r < allLocations[t].locations.length; r++) {
+            var _React$createElement;
+
             var lng = allLocations[t].locations[r].lat;
             var lat = allLocations[t].locations[r].lng;
+
+            var showLogin = _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "p",
+                null,
+                "go to"
+              ),
+              _react2.default.createElement(
+                "a",
+                (_React$createElement = {
+                  target: "_self"
+                }, _defineProperty(_React$createElement, "target", "_blank"), _defineProperty(_React$createElement, "href", "https://www.rome2rio.com/s/" + nextprops.currentHub.hub + "/" + allLocations[t].locations[r].name), _React$createElement),
+                allLocations[t].locations[r].name
+              )
+            );
+
             var tempMarker = {
               position: new google.maps.LatLng(lng, lat),
               showInfo: false,
-              infoContent: allLocations[t].locations[r].name + " https://www.tripadvisor.com/"
+              infoContent: showLogin
             };
             fullMarker.push(tempMarker);
           }
@@ -17198,6 +17292,20 @@ var FindLocation = function (_React$Component) {
           markers: fullMarker
         });
       }
+    }
+  }, {
+    key: "onPolyClik",
+    value: function onPolyClik(targetPoly) {
+      targetPoly[0];
+      // let blabla = "Hanoi"
+      // let showLoginA = (
+      //         <div>
+      //             <a target="_self" target="_blank" href={`https://www.rome2rio.com/s/${blabla}`} >
+      //                 click me
+      //             </a>
+      //             </div>
+      //     );
+      alert(targetPoly);
     }
   }, {
     key: "handleMarkerClick",
@@ -17262,7 +17370,8 @@ var FindLocation = function (_React$Component) {
             polyline: this.state.paths,
             onMarkerClick: this.handleMarkerClick,
             onMarkerClose: this.handleMarkerClose,
-            getRandomColor: this.getRandomColor
+            getRandomColor: this.getRandomColor,
+            onPolyClik: this.onPolyClik
           })
         )
       );
@@ -17283,7 +17392,7 @@ exports.default = FindLocation;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -17332,6 +17441,9 @@ var App = function (_React$Component) {
 				name: null,
 				token: null,
 				id: null
+			},
+			userProfilePic: {
+				url: null
 			}
 		};
 		// console.log(this.state.user);
@@ -17728,7 +17840,7 @@ var REACT_ELEMENT_TYPE = __webpack_require__(141);
 var getIteratorFn = __webpack_require__(142);
 var invariant = __webpack_require__(1);
 var KeyEscapeUtils = __webpack_require__(240);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -18147,7 +18259,7 @@ var ReactPropTypeLocationNames = __webpack_require__(243);
 var ReactPropTypesSecret = __webpack_require__(244);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
 
@@ -18312,7 +18424,7 @@ module.exports = factory(isValidElement);
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(1);
-  var warning = __webpack_require__(2);
+  var warning = __webpack_require__(3);
   var ReactPropTypesSecret = __webpack_require__(87);
   var loggedTypeFailures = {};
 }
@@ -18483,7 +18595,7 @@ var ReactVersion = __webpack_require__(329);
 var findDOMNode = __webpack_require__(330);
 var getHostComponentFromComposite = __webpack_require__(171);
 var renderSubtreeIntoContainer = __webpack_require__(331);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 ReactDefaultInjection.inject();
 
@@ -19847,7 +19959,7 @@ var ReactComponentTreeHook = __webpack_require__(15);
 var ExecutionEnvironment = __webpack_require__(8);
 
 var performanceNow = __webpack_require__(263);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var hooks = [];
 var didHookThrowForEvent = {};
@@ -20208,7 +20320,7 @@ module.exports = ReactDebugTool;
 
 
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 if (process.env.NODE_ENV !== 'production') {
   var processingChildContext = false;
@@ -21209,7 +21321,7 @@ var isEventSupported = __webpack_require__(91);
 var shallowEqual = __webpack_require__(98);
 var inputValueTracking = __webpack_require__(153);
 var validateDOMNesting = __webpack_require__(102);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var Flags = ReactDOMComponentFlags;
 var deleteListener = EventPluginHub.deleteListener;
@@ -22231,7 +22343,7 @@ var camelizeStyleName = __webpack_require__(277);
 var dangerousStyleValue = __webpack_require__(279);
 var hyphenateStyleName = __webpack_require__(280);
 var memoizeStringOnly = __webpack_require__(282);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var processStyleName = memoizeStringOnly(function (styleName) {
   return hyphenateStyleName(styleName);
@@ -22527,7 +22639,7 @@ module.exports = camelize;
 
 
 var CSSProperty = __webpack_require__(158);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var isUnitlessNumber = CSSProperty.isUnitlessNumber;
 var styleWarnings = {};
@@ -22911,7 +23023,7 @@ var ReactDOMComponentTree = __webpack_require__(7);
 var ReactUpdates = __webpack_require__(25);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var didWarnValueLink = false;
 var didWarnCheckedLink = false;
@@ -23201,7 +23313,7 @@ var React = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactDOMSelect = __webpack_require__(161);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var didWarnInvalidOptionChildren = false;
 
 function flattenChildren(children) {
@@ -23331,7 +23443,7 @@ var ReactDOMComponentTree = __webpack_require__(7);
 var ReactUpdates = __webpack_require__(25);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var didWarnValueLink = false;
 var didWarnValDefaultVal = false;
@@ -23947,7 +24059,7 @@ var instantiateReactComponent = __webpack_require__(162);
 var KeyEscapeUtils = __webpack_require__(100);
 var shouldUpdateReactComponent = __webpack_require__(99);
 var traverseAllChildren = __webpack_require__(166);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
 
@@ -24120,7 +24232,7 @@ var emptyObject = __webpack_require__(63);
 var invariant = __webpack_require__(1);
 var shallowEqual = __webpack_require__(98);
 var shouldUpdateReactComponent = __webpack_require__(99);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var CompositeTypes = {
   ImpureClass: 0,
@@ -25012,7 +25124,7 @@ var ReactPropTypeLocationNames = __webpack_require__(293);
 var ReactPropTypesSecret = __webpack_require__(160);
 
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
 
@@ -25230,7 +25342,7 @@ module.exports = getIteratorFn;
 
 var KeyEscapeUtils = __webpack_require__(100);
 var traverseAllChildren = __webpack_require__(166);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
 
@@ -25410,7 +25522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var ReactUpdateQueue = __webpack_require__(101);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 function warnNoop(publicInstance, callerName) {
   if (process.env.NODE_ENV !== 'production') {
@@ -28277,7 +28389,7 @@ var ReactInstanceMap = __webpack_require__(53);
 
 var getHostComponentFromComposite = __webpack_require__(171);
 var invariant = __webpack_require__(1);
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 /**
  * Returns the DOM node rendered by this element.
@@ -28360,7 +28472,7 @@ var DOMProperty = __webpack_require__(28);
 var EventPluginRegistry = __webpack_require__(65);
 var ReactComponentTreeHook = __webpack_require__(15);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 if (process.env.NODE_ENV !== 'production') {
   var reactProps = {
@@ -28476,7 +28588,7 @@ module.exports = ReactDOMUnknownPropertyHook;
 
 var ReactComponentTreeHook = __webpack_require__(15);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var didWarnValueNull = false;
 
@@ -28526,7 +28638,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 var DOMProperty = __webpack_require__(28);
 var ReactComponentTreeHook = __webpack_require__(15);
 
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 
 var warnedProperties = {};
 var rARIA = new RegExp('^(aria)-[' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -29486,7 +29598,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -29506,9 +29618,9 @@ var App = function (_React$Component) {
 	function App(props) {
 		_classCallCheck(this, App);
 
+		// console.log(props);
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-		console.log(props);
 		_this.state = {
 			trip: props.trip,
 			user: props.user
@@ -29519,7 +29631,7 @@ var App = function (_React$Component) {
 	_createClass(App, [{
 		key: "componentWillReceiveProps",
 		value: function componentWillReceiveProps(nextProps) {
-			console.log(nextProps);
+			// console.log(nextProps);
 			this.setState({ trip: nextProps.trip });
 			this.setState({ user: nextProps.user });
 		}
@@ -29587,15 +29699,6 @@ var App = function (_React$Component) {
 							{ className: "nav navbar-nav" },
 							_react2.default.createElement(
 								"li",
-								{ role: "presentation" },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: "/" },
-									"Home"
-								)
-							),
-							_react2.default.createElement(
-								"li",
 								{ className: "dropdown" },
 								_react2.default.createElement(
 									"a",
@@ -29612,7 +29715,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/findtrip" },
-											"Find Trip"
+											"Find Trip ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
 										)
 									),
 									_react2.default.createElement(
@@ -29621,7 +29725,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/trip" },
-											"Create Trip"
+											"Create Trip ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-plus" })
 										)
 									),
 									_react2.default.createElement(
@@ -29630,7 +29735,8 @@ var App = function (_React$Component) {
 										_react2.default.createElement(
 											_reactRouterDom.Link,
 											{ to: "/usertrips" },
-											"My Trips"
+											"My Trips ",
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-user" })
 										)
 									)
 								)
@@ -29675,7 +29781,7 @@ exports.default = App;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -30236,7 +30342,7 @@ exports.default = valueEqual;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -30472,7 +30578,7 @@ exports.default = createMemoryHistory;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -30558,7 +30664,7 @@ Prompt.contextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -31087,7 +31193,7 @@ module.exports = Array.isArray || function (arr) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
@@ -31261,7 +31367,7 @@ StaticRouter.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -31347,7 +31453,7 @@ Switch.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -31449,7 +31555,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -31847,7 +31953,7 @@ exports.default = createHashHistory;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -32004,7 +32110,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32044,11 +32150,11 @@ var _FindTrip = __webpack_require__(582);
 
 var _FindTrip2 = _interopRequireDefault(_FindTrip);
 
-var _UserTrips = __webpack_require__(584);
+var _UserTrips = __webpack_require__(586);
 
 var _UserTrips2 = _interopRequireDefault(_UserTrips);
 
-var _Authentication = __webpack_require__(586);
+var _Authentication = __webpack_require__(588);
 
 var _Authentication2 = _interopRequireDefault(_Authentication);
 
@@ -32102,7 +32208,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32151,12 +32257,12 @@ exports.default = App;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32171,490 +32277,552 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Homepage = function (_React$Component) {
-  _inherits(Homepage, _React$Component);
+	_inherits(Homepage, _React$Component);
 
-  function Homepage() {
-    _classCallCheck(this, Homepage);
+	function Homepage() {
+		_classCallCheck(this, Homepage);
 
-    return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).apply(this, arguments));
-  }
+		return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).apply(this, arguments));
+	}
 
-  _createClass(Homepage, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { id: 'homepage' },
-        _react2.default.createElement(
-          'div',
-          { id: 'home', className: 'home' },
-          _react2.default.createElement(
-            'div',
-            { className: 'text-vcenter' },
-            _react2.default.createElement(
-              'h1',
-              null,
-              'HUBZ'
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: 'btn btn-success btn-square' },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/findtrip' },
-                'Where\'s the Hub?'
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'about', className: 'pad-section' },
-          _react2.default.createElement(
-            'div',
-            { className: 'container' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-6' },
-                _react2.default.createElement('img', { src: 'img/lglogo.jpg', alt: '' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-6 text-center' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  'What is Hubz ?'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lead' },
-                  'Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting activities along the way. ',
-                  _react2.default.createElement('br', null),
-                  ' Save Hubz for future reference and share with friends!'
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'services', className: 'pad-section' },
-          _react2.default.createElement(
-            'div',
-            { className: 'container' },
-            _react2.default.createElement(
-              'h2',
-              { className: 'text-center' },
-              'How To'
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'div',
-              { className: 'row text-center' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-3 col-xs-6' },
-                _react2.default.createElement(
-                  'i',
-                  { className: 'glyphicon glyphicon-map-marker' },
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'First'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'What hubz are around you!'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-3 col-xs-6' },
-                _react2.default.createElement(
-                  'i',
-                  { className: 'glyphicon glyphicon-road' },
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'Second'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'How do we get there '
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-3 col-xs-6' },
-                _react2.default.createElement(
-                  'i',
-                  { className: 'glyphicon glyphicon-pushpin' },
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'Next'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Whats to do along the way '
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-3 col-xs-6' },
-                _react2.default.createElement(
-                  'i',
-                  { className: 'glyphicon glyphicon-tree-conifer' },
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'Lastly'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Arrive, Enjoy, Share, Move!'
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'h2',
-          { className: 'text-center' },
-          ' Our Partners '
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'div',
-          { className: 'container' },
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/airbnb.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/fb.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/tripadvisor.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/snap.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/mot.jpg' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/elal.gif' })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block align-middle', src: 'img/logos/rome.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/vespa.gif' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/sams.gif' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/car2.png' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/hbd.jpg' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-2 col-sm-4 col-xs-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'logowrap center-block' },
-                _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'img/logos/ea.jpeg' })
-              )
-            )
-          ),
-          _react2.default.createElement('hr', null)
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'information', className: 'pad-section' },
-          _react2.default.createElement(
-            'div',
-            { id: 'testimonials', className: 'container' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-sm-12' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'panel panel-default' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'container bootstrap snippet' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'row' },
-                      _react2.default.createElement(
-                        'h2',
-                        { className: 'text-center text-primary' },
-                        'What our clients said about us?'
-                      ),
-                      _react2.default.createElement('hr', null),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'col-md-10 col-md-offset-1' },
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'row testimonials' },
-                          _react2.default.createElement(
-                            'div',
-                            { className: 'col-sm-4' },
-                            _react2.default.createElement(
-                              'blockquote',
-                              null,
-                              _react2.default.createElement(
-                                'p',
-                                { className: 'clients-words' },
-                                'We were lost on our way to battle. HUBZ, couldn\'t have found us a better route!'
-                              ),
-                              _react2.default.createElement(
-                                'span',
-                                { className: 'clients-name text-primary' },
-                                '\u2014 Steven Winston',
-                                _react2.default.createElement('br', null),
-                                _react2.default.createElement(
-                                  'span',
-                                  null,
-                                  'Boy Genius'
-                                )
-                              ),
-                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/steven.jpg' })
-                            )
-                          ),
-                          _react2.default.createElement(
-                            'div',
-                            { className: 'col-sm-4' },
-                            _react2.default.createElement(
-                              'blockquote',
-                              null,
-                              _react2.default.createElement(
-                                'p',
-                                { className: 'clients-words' },
-                                'HUBZ is the best app of any cohort in our history and future!!'
-                              ),
-                              _react2.default.createElement(
-                                'span',
-                                { className: 'clients-name text-primary' },
-                                '\u2014 Avi Snir',
-                                _react2.default.createElement('br', null),
-                                _react2.default.createElement(
-                                  'span',
-                                  null,
-                                  'CEO Elevation Academy'
-                                )
-                              ),
-                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/avi.jpg' })
-                            )
-                          ),
-                          _react2.default.createElement(
-                            'div',
-                            { className: 'col-sm-4' },
-                            _react2.default.createElement(
-                              'blockquote',
-                              null,
-                              _react2.default.createElement(
-                                'p',
-                                { className: 'clients-words' },
-                                'The HUBZ app is a must for all Israelis travelling across the globe!'
-                              ),
-                              _react2.default.createElement(
-                                'span',
-                                { className: 'clients-name text-primary' },
-                                '\u2014 Yariv Levin',
-                                _react2.default.createElement('br', null),
-                                _react2.default.createElement(
-                                  'span',
-                                  null,
-                                  'Minister of Tourism'
-                                )
-                              ),
-                              _react2.default.createElement('img', { className: 'img-thumbnail img-circle', src: 'img/noscrub.jpg' })
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'footer',
-          null,
-          _react2.default.createElement(
-            'div',
-            { className: 'container' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-5 col-sm-6 footerleft ' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'logofooter' },
-                  _react2.default.createElement('img', { className: 'img-circle img-thumbnail', src: 'img/ani1.gif' })
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers. '
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement('i', { className: 'fa fa-map-pin' }),
-                  ' WeWork HaZerem 10 | Tel-Aviv | Israel '
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement('i', { className: 'fa fa-phone' }),
-                  ' 03-674-6999'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement('i', { className: 'fa fa-envelope' }),
-                  ' E-mail : contact@hubz.com'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-5 col-sm-6 paddingtop-bottom' },
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'Social Media Hubz'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: 'https://www.linkedin.com/in/eliranamar/', target: '_blank', className: 'sicons btn btn-block btn-social btn-linkedin' },
-                  _react2.default.createElement('span', { className: 'fa fa-linkedin' }),
-                  ' Hire through Linkedin'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: 'https://github.com/eliranamar/Routesss', target: '_blank', className: 'sicons btn btn-block btn-social btn-github' },
-                  _react2.default.createElement('span', { className: 'fa fa-github' }),
-                  ' Clone from github'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: 'https://twitter.com/realDonaldTrump', target: '_blank', className: 'sicons btn btn-block btn-social btn-twitter' },
-                  _react2.default.createElement('span', { className: 'fa fa-twitter' }),
-                  ' Follow us on Twitter'
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+	_createClass(Homepage, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ id: "homepage" },
+				_react2.default.createElement(
+					"div",
+					{ id: "home", className: "home" },
+					_react2.default.createElement(
+						"div",
+						{ className: "text-vcenter" },
+						_react2.default.createElement(
+							"h1",
+							null,
+							"HUBZ"
+						),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-success btn-square" },
+							_react2.default.createElement(
+								_reactRouterDom.Link,
+								{ to: "/findtrip" },
+								"Find Your Next Hub !"
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ id: "about", className: "pad-section" },
+					_react2.default.createElement(
+						"div",
+						{ className: "container" },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-6" },
+								_react2.default.createElement("img", { src: "img/lglogo.jpg", alt: "" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-6 text-center" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"What is Hubz ?"
+								),
+								_react2.default.createElement(
+									"p",
+									{ className: "lead" },
+									"Ever wanted to travel or find yourself in the middle of a trip and not know where to go next? This is where we step in with our simple-to-use app, helping you find Hubz, plan your route & method of transportation plus all interesting activities along the way. ",
+									_react2.default.createElement("br", null),
+									" Save Hubz for future reference and share with friends!"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ id: "services", className: "pad-section" },
+					_react2.default.createElement(
+						"div",
+						{ className: "container" },
+						_react2.default.createElement(
+							"h2",
+							{ className: "text-center" },
+							"How To"
+						),
+						_react2.default.createElement("hr", null),
+						_react2.default.createElement(
+							"div",
+							{ className: "row text-center" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-3 col-xs-6" },
+								_react2.default.createElement(
+									"i",
+									{ className: "glyphicon glyphicon-map-marker" },
+									" "
+								),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"First"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"What hubz are around you!"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-3 col-xs-6" },
+								_react2.default.createElement(
+									"i",
+									{ className: "glyphicon glyphicon-road" },
+									" "
+								),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Second"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"How do we get there "
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-3 col-xs-6" },
+								_react2.default.createElement(
+									"i",
+									{ className: "glyphicon glyphicon-pushpin" },
+									" "
+								),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Next"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Whats to do along the way "
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-3 col-xs-6" },
+								_react2.default.createElement(
+									"i",
+									{ className: "glyphicon glyphicon-tree-conifer" },
+									" "
+								),
+								_react2.default.createElement(
+									"h4",
+									null,
+									"Lastly"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Arrive, Enjoy, Share, Move!"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(
+					"h2",
+					{ className: "text-center" },
+					" Our (Future) Partners "
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(
+					"div",
+					{ className: "container" },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/airbnb.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/fb.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/tripadvisor.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/snap.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/mot.jpg"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/elal.gif"
+								})
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block align-middle",
+									src: "img/logos/rome.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/vespa.gif"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/sams.gif"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/car2.png"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/hbd.jpg"
+								})
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-2 col-sm-4 col-xs-6" },
+							_react2.default.createElement(
+								"div",
+								{ className: "logowrap center-block" },
+								_react2.default.createElement("img", {
+									className: "img-responsive center-block",
+									src: "img/logos/ea.jpeg"
+								})
+							)
+						)
+					),
+					_react2.default.createElement("hr", null)
+				),
+				_react2.default.createElement(
+					"div",
+					{ id: "information", className: "pad-section" },
+					_react2.default.createElement(
+						"div",
+						{ id: "testimonials", className: "container" },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-12" },
+								_react2.default.createElement(
+									"div",
+									{ className: "panel panel-default" },
+									_react2.default.createElement(
+										"div",
+										{ className: "container bootstrap snippet" },
+										_react2.default.createElement(
+											"div",
+											{ className: "row" },
+											_react2.default.createElement(
+												"h2",
+												{ className: "text-center text-primary" },
+												"What our clients said about us?"
+											),
+											_react2.default.createElement("hr", null),
+											_react2.default.createElement(
+												"div",
+												{ className: "col-md-10 col-md-offset-1" },
+												_react2.default.createElement(
+													"div",
+													{ className: "row testimonials" },
+													_react2.default.createElement(
+														"div",
+														{ className: "col-sm-4" },
+														_react2.default.createElement(
+															"blockquote",
+															null,
+															_react2.default.createElement(
+																"p",
+																{ className: "clients-words" },
+																"We were lost on our way to battle. HUBZ, couldn't have found us a better route!"
+															),
+															_react2.default.createElement(
+																"span",
+																{ className: "clients-name text-primary" },
+																"\u2014 Steven Winston",
+																_react2.default.createElement("br", null),
+																_react2.default.createElement(
+																	"span",
+																	null,
+																	"Boy Genius"
+																)
+															),
+															_react2.default.createElement("img", {
+																className: "img-thumbnail img-circle",
+																src: "img/steven.jpg"
+															})
+														)
+													),
+													_react2.default.createElement(
+														"div",
+														{ className: "col-sm-4" },
+														_react2.default.createElement(
+															"blockquote",
+															null,
+															_react2.default.createElement(
+																"p",
+																{ className: "clients-words" },
+																"HUBZ is the best app of any cohort in our history and future!!"
+															),
+															_react2.default.createElement(
+																"span",
+																{ className: "clients-name text-primary" },
+																"\u2014 Avi Snir",
+																_react2.default.createElement("br", null),
+																_react2.default.createElement(
+																	"span",
+																	null,
+																	"CEO Elevation Academy"
+																)
+															),
+															_react2.default.createElement("img", {
+																className: "img-thumbnail img-circle",
+																src: "img/avi.jpg"
+															})
+														)
+													),
+													_react2.default.createElement(
+														"div",
+														{ className: "col-sm-4" },
+														_react2.default.createElement(
+															"blockquote",
+															null,
+															_react2.default.createElement(
+																"p",
+																{ className: "clients-words" },
+																"The HUBZ app is a must for all Israelis travelling across the globe!"
+															),
+															_react2.default.createElement(
+																"span",
+																{ className: "clients-name text-primary" },
+																"\u2014 Yariv Levin",
+																_react2.default.createElement("br", null),
+																_react2.default.createElement(
+																	"span",
+																	null,
+																	"Minister of Tourism"
+																)
+															),
+															_react2.default.createElement("img", {
+																className: "img-thumbnail img-circle",
+																src: "img/noscrub.jpg"
+															})
+														)
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"footer",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "container" },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-5 col-sm-6 footerleft " },
+								_react2.default.createElement(
+									"div",
+									{ className: "logofooter" },
+									_react2.default.createElement("img", {
+										className: "img-circle img-thumbnail",
+										src: "img/ani1.gif"
+									})
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Hubz is a powerful trip planning service. We enable people to create, broaden and share routes with peers.",
+									" "
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-map-pin" }),
+									" WeWork HaZerem 10 | Tel-Aviv | Israel",
+									" "
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-phone" }),
+									" 03-674-6999"
+								),
+								_react2.default.createElement(
+									"p",
+									null,
+									_react2.default.createElement("i", { className: "fa fa-envelope" }),
+									" E-mail : contact@hubz.com"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-5 col-sm-6 paddingtop-bottom" },
+								_react2.default.createElement(
+									"h3",
+									null,
+									"Social Media Hubz"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://www.linkedin.com/in/eliranamar/",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-linkedin"
+									},
+									_react2.default.createElement("span", { className: "fa fa-linkedin" }),
+									" Hire through Linkedin"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://github.com/eliranamar/Routesss",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-github"
+									},
+									_react2.default.createElement("span", { className: "fa fa-github" }),
+									" Clone from github"
+								),
+								_react2.default.createElement(
+									"a",
+									{
+										href: "https://twitter.com/realDonaldTrump",
+										target: "_blank",
+										className: "sicons btn btn-block btn-social btn-twitter"
+									},
+									_react2.default.createElement("span", { className: "fa fa-twitter" }),
+									" Follow us on Twitter"
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return Homepage;
+	return Homepage;
 }(_react2.default.Component);
 
 exports.default = Homepage;
@@ -32672,7 +32840,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32722,7 +32890,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32788,12 +32956,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Tesla"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Full-Stack"
 								)
@@ -32808,12 +32976,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Einstein"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Team Leader"
 								)
@@ -32828,12 +32996,12 @@ var About = function (_React$Component) {
 									alt: ""
 								}),
 								_react2.default.createElement(
-									"h4",
+									"h3",
 									null,
 									"Musk"
 								),
 								_react2.default.createElement(
-									"h6",
+									"h4",
 									null,
 									"Designer"
 								)
@@ -32951,7 +33119,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -33022,7 +33190,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -33065,12 +33233,13 @@ var Contact = function (_React$Component) {
                 _react2.default.createElement(
                   "h3",
                   null,
-                  "Contact Us!"
+                  "Contact Us! ",
+                  _react2.default.createElement("i", { className: "glyphicon glyphicon-envelope" })
                 ),
                 _react2.default.createElement(
                   "h4",
                   null,
-                  "request for custom quote"
+                  "We would love to hear from you"
                 ),
                 _react2.default.createElement(
                   "fieldset",
@@ -33113,7 +33282,7 @@ var Contact = function (_React$Component) {
                   _react2.default.createElement(
                     "a",
                     { href: "https://github.com/eliranamar", target: "_blank", title: "Colorlib" },
-                    "Eliran"
+                    "Someone"
                   )
                 )
               )
@@ -33214,7 +33383,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -33242,13 +33411,13 @@ var Trip = function (_React$Component) {
 	function Trip(props) {
 		_classCallCheck(this, Trip);
 
-		var _this = _possibleConstructorReturn(this, (Trip.__proto__ || Object.getPrototypeOf(Trip)).call(this, props));
-
-		_this.state = {
-			trip: props.trip,
-			user: props.user
-		};
+		// this.state = {
+		// 	trip: props.trip,
+		// 	user: props.user
+		// };
 		// console.log(this.state.trip);
+
+		var _this = _possibleConstructorReturn(this, (Trip.__proto__ || Object.getPrototypeOf(Trip)).call(this, props));
 
 		_this.getTripData = _this.getTripData.bind(_this);
 		return _this;
@@ -33282,11 +33451,11 @@ var Trip = function (_React$Component) {
 	}, {
 		key: "render",
 		value: function render() {
-			if (this.state.trip.trip_id) {
+			if (this.props.trip.trip_id) {
 				// console.log(this.state.trip);
 				// console.log(this.state.trip.id);
 				// history.pushState(null, null, '/trip/'+"3"+'/addlocation');
-				return _react2.default.createElement(_Location2.default, { trip: this.state.trip });
+				return _react2.default.createElement(_Location2.default, { setTripState: this.props.setTripState, trip: this.props.trip });
 			} else {
 				return _react2.default.createElement(
 					"div",
@@ -33362,13 +33531,11 @@ var Trip = function (_React$Component) {
 								_react2.default.createElement(
 									"button",
 									{
-										name: "submit",
 										type: "submit",
 										className: "btn btn-primary btn-square",
-										id: "contact-submit",
 										"data-submit": "...Sending"
 									},
-									"Submit"
+									"Create Trip !"
 								)
 							)
 						)
@@ -33397,7 +33564,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -33543,7 +33710,7 @@ var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -34552,7 +34719,7 @@ var _createReactClass = __webpack_require__(13);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -39059,7 +39226,7 @@ var _createReactClass = __webpack_require__(13);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -40309,7 +40476,7 @@ var _createReactClass = __webpack_require__(13);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _reactDom = __webpack_require__(64);
 
@@ -40704,7 +40871,7 @@ var _invariant = __webpack_require__(30);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _reactDom = __webpack_require__(64);
 
@@ -41034,7 +41201,7 @@ var _createReactClass = __webpack_require__(13);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41241,7 +41408,7 @@ exports.createInputElement = createInputElement;
 exports.mountInputElementToControlPositionOnMap = mountInputElementToControlPositionOnMap;
 exports.unmountInputElementFromControlPositionOnMap = unmountInputElementFromControlPositionOnMap;
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41281,12 +41448,12 @@ function unmountInputElementFromControlPositionOnMap(index, controlPosition, map
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41300,7 +41467,7 @@ var _TripFindEngine2 = _interopRequireDefault(_TripFindEngine);
 
 var _reactRouterDom = __webpack_require__(22);
 
-var _ViewLocations = __webpack_require__(587);
+var _ViewLocations = __webpack_require__(584);
 
 var _ViewLocations2 = _interopRequireDefault(_ViewLocations);
 
@@ -41313,187 +41480,215 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FindTrip = function (_React$Component) {
-  _inherits(FindTrip, _React$Component);
+	_inherits(FindTrip, _React$Component);
 
-  function FindTrip(props) {
-    _classCallCheck(this, FindTrip);
+	function FindTrip(props) {
+		_classCallCheck(this, FindTrip);
 
-    var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (FindTrip.__proto__ || Object.getPrototypeOf(FindTrip)).call(this, props));
 
-    _this.state = {
-      trips: {},
-      currentHub: {
-        hub: null
-      },
-      results: [],
-      place: {}
-    };
-    // console.log(this.state.trip);
+		_this.state = {
+			trips: {},
+			currentHub: {
+				hub: null,
+				type: null
+			},
+			results: [],
+			place: {}
+		};
+		// console.log(this.state.trip);
 
-    _this.findTripFunc = _this.findTripFunc.bind(_this);
-    // this.redirectToMap = this.redirectToMap.bind(this);
-    return _this;
-  }
+		_this.findTripFunc = _this.findTripFunc.bind(_this);
+		// this.redirectToMap = this.redirectToMap.bind(this);
+		return _this;
+	}
 
-  // redirectToMap(e) {
-  //   debugger
-  //   e.preventDefault();
-  //   render(){
-  //     return (
-  //       <Redirect to="/findlocation" />
-  //     );
-  //   }
-  // }
+	// redirectToMap(e) {
+	//   debugger
+	//   e.preventDefault();
+	//   render(){
+	//     return (
+	//       <Redirect to="/findlocation" />
+	//     );
+	//   }
+	// }
 
-  _createClass(FindTrip, [{
-    key: "findTripFunc",
-    value: function findTripFunc() {
-      //! this func fetchs all trips that contains this location
-      var that = this;
-      var data = [];
-      // let listItems = this.props.trips.map(function (trip) {
-      //   return (
-      //     <li key={trip.name}>
-      //
-      //     </li>
-      //   );
-      // });
-      // console.log(typeof(this.state.currentHub.hub));
-      // data.name = document.getElementById("trip-name").value;
-      // data.type = document.querySelector('input[name = "trip-type"]:checked').value;
-      console.log(this.state.currentHub);
-      if (!this.state.currentHub.hub) {
-        alert("please choose valid hub");
-        return;
-      }
-      _axios2.default.post("/getnexthub", this.state.currentHub).then(function (response) {
-        that.setState({ trips: response.data });
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
+	_createClass(FindTrip, [{
+		key: "findTripFunc",
+		value: function findTripFunc() {
+			//! this func fetchs all trips that contains this location
+			var that = this;
+			var data = [];
+			var typeA = "";
+			if (document.querySelector('input[name = "trip-type"]:checked')) {
+				typeA = document.querySelector('input[name = "trip-type"]:checked').value;
+			}
+			// let listItems = this.props.trips.map(function (trip) {
+			//   return (
+			//     <li key={trip.name}>
+			//
+			//     </li>
+			//   );
+			// });
+			// console.log(typeof(this.state.currentHub.hub));
+			// data.name = document.getElementById("trip-name").value;
+			// data.type = document.querySelector('input[name = "trip-type"]:checked').value;
+			console.log(this.state.currentHub);
+			if (!this.state.currentHub.hub) {
+				alert("please choose valid hub");
+				return;
+			}
 
-      // after mount make input to auto complete
-      var that = this;
-      var input = document.getElementById("searchTripInput");
-      var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.addListener("place_changed", function () {
-        var place = autocomplete.getPlace();
-        _this2.setState({ place: place });
-        var hub = {};
-        console.log(place);
-        for (var i = 0; i < place.address_components.length; i++) {
-          if (place.address_components[i].types[0] == "locality") {
-            hub.hub = place.address_components[i].long_name;
-          }
-        }
-        if (place.address_components) {
-          that.setState({ currentHub: hub });
-        } else {
-          alert("please choose location from google list");
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "container", id: "find-trip-box", style: { height: "100%" } },
-        _react2.default.createElement(
-          "div",
-          { className: "row text-center" },
-          _react2.default.createElement(
-            "h1",
-            null,
-            "Find Your Next Hub!"
-          ),
-          _react2.default.createElement(
-            "h3",
-            { style: { color: "black" } },
-            "Add your current or future location and choose between thousends of trips made by other travellers"
-          ),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "p",
-              null,
-              "Who are you Travelling with?"
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", {
-                placeholder: "Trip Name``",
-                required: true,
-                type: "radio",
-                name: "trip-type",
-                value: "Couple"
-              }),
-              "Couple"
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Friends" }),
-              "Friends Group"
-            ),
-            _react2.default.createElement(
-              "label",
-              { className: "radio-inline" },
-              _react2.default.createElement("input", { type: "radio", name: "trip-type", value: "Solo" }),
-              "Solo Traveler"
-            ),
-            _react2.default.createElement("hr", null),
-            _react2.default.createElement("input", {
-              required: true,
-              id: "searchTripInput",
-              className: "controls form-control",
-              type: "text",
-              placeholder: "Enter Your Current Hub",
-              autoFocus: true
-            })
-          ),
-          _react2.default.createElement("hr", null),
-          _react2.default.createElement(
-            "fieldset",
-            null,
-            _react2.default.createElement(
-              "button",
-              {
-                onClick: this.findTripFunc,
-                className: "btn btn-warning btn-square btn-lg btn-block",
-                name: "submit",
-                type: "submit",
-                id: "contact-submit",
-                "data-submit": "...Sending"
-              },
-              "Submit"
-            )
-          )
-        ),
-        _react2.default.createElement("hr", null),
-        _react2.default.createElement(_TripFindEngine2.default, {
-          place: this.state.place,
-          trips: this.state.trips,
-          redirectToMap: this.redirectToMap,
-          currentHub: this.state.currentHub
-        }),
-        _react2.default.createElement(_ViewLocations2.default, {
-          place: this.state.place,
-          trips: this.state.trips,
-          currentHub: this.state.currentHub
-        })
-      );
-    }
-  }]);
+			var obj = {
+				type: typeA,
+				currentHub: this.state.currentHub
+			};
 
-  return FindTrip;
+			_axios2.default.post("/getnexthub", obj).then(function (response) {
+				that.setState({ trips: response.data });
+			}).catch(function (error) {
+				console.log(error);
+			});
+		}
+	}, {
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			// after mount make input to auto complete
+			var that = this;
+			var input = document.getElementById("searchTripInput");
+			var autocomplete = new google.maps.places.Autocomplete(input);
+
+			autocomplete.addListener("place_changed", function () {
+				var place = autocomplete.getPlace();
+				_this2.setState({ place: place });
+				var hub = {};
+				console.log(place);
+				for (var i = 0; i < place.address_components.length; i++) {
+					if (place.address_components[i].types[0] == "locality" || place.address_components[i].types[0] == "administrative_area_level_2") {
+						hub.hub = place.address_components[i].long_name;
+						break;
+					}
+				}
+				if (place.address_components) {
+					that.setState({ currentHub: hub });
+				} else {
+					alert("please choose location from google list");
+				}
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "container", id: "find-trip-box", style: { height: "100%" } },
+				_react2.default.createElement(
+					"div",
+					{ className: "row text-center" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						"Find Your Next Hub!"
+					),
+					_react2.default.createElement(
+						"h3",
+						{ style: { color: "black" } },
+						"Add your current or future location and choose between thousends of trips made by other travellers"
+					),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"p",
+							null,
+							"Who are you Travelling with?"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								placeholder: "Trip Name``",
+								required: true,
+								id: "type-couple",
+								type: "radio",
+								name: "trip-type",
+								value: "Couple"
+							}),
+							"Couple |",
+							_react2.default.createElement("i", { className: "fa fa-user" }),
+							_react2.default.createElement("i", { className: "fa fa-user" })
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								type: "radio",
+								id: "type-friends",
+								name: "trip-type",
+								value: "FRIENDS"
+							}),
+							"Friends Group | ",
+							_react2.default.createElement("i", { className: "fa fa-users" })
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", {
+								id: "type-solo",
+								type: "radio",
+								name: "trip-type",
+								value: "Solo"
+							}),
+							"Solo Traveler |",
+							_react2.default.createElement("i", { className: "fa fa-user" })
+						),
+						_react2.default.createElement("hr", null),
+						_react2.default.createElement("input", {
+							required: true,
+							id: "searchTripInput",
+							className: "controls form-control",
+							type: "text",
+							placeholder: "Enter Your Current Hub",
+							autoFocus: true
+						})
+					),
+					_react2.default.createElement("hr", null),
+					_react2.default.createElement(
+						"fieldset",
+						null,
+						_react2.default.createElement(
+							"button",
+							{
+								onClick: this.findTripFunc,
+								className: "btn btn-warning btn-square btn-lg btn-block",
+								name: "submit",
+								type: "submit",
+								id: "contact-submit",
+								"data-submit": "...Sending"
+							},
+							"Submit"
+						)
+					)
+				),
+				_react2.default.createElement("hr", null),
+				_react2.default.createElement(_TripFindEngine2.default, {
+					place: this.state.place,
+					trips: this.state.trips,
+					redirectToMap: this.redirectToMap,
+					currentHub: this.state.currentHub
+				}),
+				_react2.default.createElement(_ViewLocations2.default, {
+					place: this.state.place,
+					trips: this.state.trips,
+					currentHub: this.state.currentHub
+				})
+			);
+		}
+	}]);
+
+	return FindTrip;
 }(_react2.default.Component);
 
 exports.default = FindTrip;
@@ -41511,7 +41706,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41578,12 +41773,205 @@ exports.default = TripFindEngine;
 
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TripBox = __webpack_require__(585);
+
+var _TripBox2 = _interopRequireDefault(_TripBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ViewLocations = function (_React$Component) {
+  _inherits(ViewLocations, _React$Component);
+
+  function ViewLocations() {
+    _classCallCheck(this, ViewLocations);
+
+    return _possibleConstructorReturn(this, (ViewLocations.__proto__ || Object.getPrototypeOf(ViewLocations)).apply(this, arguments));
+  }
+
+  _createClass(ViewLocations, [{
+    key: "listTrips",
+    value: function listTrips() {
+      if (this.props.trips.length > 0) {
+        return this.props.trips.map(function (item, id) {
+          return _react2.default.createElement(_TripBox2.default, { key: id, item: item });
+        });
+      } else return _react2.default.createElement(
+        "p",
+        null,
+        "Select your location"
+      );
+    }
+  }, {
+    key: "totalTrips",
+    value: function totalTrips() {
+      if (this.props.trips.length > 0) {
+        return _react2.default.createElement(
+          "h4",
+          { style: { textAlign: "center" } },
+          "Found",
+          " ",
+          _react2.default.createElement(
+            "span",
+            { style: { color: "red" } },
+            " ",
+            this.props.trips.length,
+            " "
+          ),
+          " ",
+          "Trips that include ",
+          this.props.currentHub.hub
+        );
+      } else return _react2.default.createElement("p", null);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "conatiner" },
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement("hr", null),
+          this.totalTrips(),
+          _react2.default.createElement(
+            "h2",
+            { style: { textAlign: "center" } },
+            "Hubz and Routes by Other Travellers"
+          ),
+          this.listTrips()
+        )
+      );
+    }
+  }]);
+
+  return ViewLocations;
+}(_react2.default.Component);
+
+exports.default = ViewLocations;
+
+/***/ }),
+/* 585 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TripBox = function (_React$Component) {
+	_inherits(TripBox, _React$Component);
+
+	function TripBox(props) {
+		_classCallCheck(this, TripBox);
+
+		return _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
+		//bind this to functions
+		// this.findThisTrip = this.findThisTrip.bind(this);
+	}
+
+	_createClass(TripBox, [{
+		key: "theLocations",
+		value: function theLocations(dataItem) {
+			return dataItem.locations.map(function (item, id) {
+				return _react2.default.createElement(
+					"p",
+					{ key: id },
+					" ",
+					item.name
+				);
+			});
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			console.log(this.props);
+			var dataItem = this.props.item;
+			return _react2.default.createElement(
+				"div",
+				{
+					className: "col-sm-6 col-md-4 float-left",
+					style: { height: "555px", overflow: "auto", marginTop: "10px" }
+				},
+				_react2.default.createElement(
+					"div",
+					{ className: "thumbnail" },
+					_react2.default.createElement("img", {
+						src: "http://res.cloudinary.com/drjrwr4ao/image/upload/v1502271313/bkgrd1-min_s4rjee.jpg",
+						alt: "..."
+					}),
+					_react2.default.createElement(
+						"div",
+						{ className: "caption" },
+						_react2.default.createElement(
+							"h2",
+							{ className: "media-heading", style: { color: "#ff5733" } },
+							dataItem.name,
+							"  "
+						),
+						_react2.default.createElement(
+							"h3",
+							null,
+							dataItem.type,
+							" Trip"
+						),
+						this.theLocations(dataItem)
+					)
+				)
+			);
+		}
+	}]);
+
+	return TripBox;
+}(_react2.default.Component);
+
+exports.default = TripBox;
+
+/***/ }),
+/* 586 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41591,7 +41979,7 @@ var _axios = __webpack_require__(54);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _UserTripBox = __webpack_require__(585);
+var _UserTripBox = __webpack_require__(587);
 
 var _UserTripBox2 = _interopRequireDefault(_UserTripBox);
 
@@ -41637,7 +42025,7 @@ var UserTrips = function (_React$Component) {
 	}, {
 		key: "componentDidMount",
 		value: function componentDidMount() {
-			console.log(this.props.user);
+			// console.log(this.props.user);
 			this.findUserTrips();
 		}
 	}, {
@@ -41646,7 +42034,7 @@ var UserTrips = function (_React$Component) {
 			var that = this;
 			_axios2.default.get("/trip/usertrips/" + this.props.user.id).then(function (response) {
 				// console.log('testttt');
-				console.log(response.data);
+				// console.log(response.data);
 				that.setState({ userTrips: response.data });
 			}).catch(function (error) {
 				console.log(error);
@@ -41662,7 +42050,8 @@ var UserTrips = function (_React$Component) {
 				_react2.default.createElement(
 					"h2",
 					null,
-					"My Trips"
+					"My Trips ",
+					_react2.default.createElement("i", { className: "glyphicon glyphicon-map-marker" })
 				),
 				_react2.default.createElement("hr", null),
 				_react2.default.createElement(
@@ -41680,7 +42069,7 @@ var UserTrips = function (_React$Component) {
 exports.default = UserTrips;
 
 /***/ }),
-/* 585 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41692,7 +42081,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41718,7 +42107,7 @@ var UserTripBox = function (_React$Component) {
 		value: function theLocations(dataItem) {
 			return dataItem.locations.map(function (item, id) {
 				return _react2.default.createElement(
-					"div",
+					"h5",
 					{ key: id },
 					" ",
 					item.name
@@ -41732,23 +42121,42 @@ var UserTripBox = function (_React$Component) {
 			var dataItem = this.props.item;
 			return _react2.default.createElement(
 				"div",
-				{ className: "col-sm-5 col-md-4 user-trip-box" },
+				{ style: { padding: "10px" }, className: "col-sm-6 col-md-4" },
 				_react2.default.createElement(
-					"h4",
-					{ className: "media-heading" },
-					"Trip Name: ",
-					dataItem.name
-				),
-				_react2.default.createElement("hr", null),
-				_react2.default.createElement(
-					"h5",
-					{ className: "media-heading" },
-					this.theLocations(dataItem)
-				),
-				_react2.default.createElement(
-					"button",
-					{ className: "btn btn-square" },
-					"Add location"
+					"div",
+					{
+						className: "user-trip-box",
+						style: { height: "250px", overflow: "auto", marginTop: "10px" }
+					},
+					_react2.default.createElement(
+						"div",
+						null,
+						_react2.default.createElement(
+							"h3",
+							null,
+							dataItem.name
+						),
+						_react2.default.createElement("hr", null),
+						this.theLocations(dataItem),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-success btn-square" },
+							"Add location"
+						),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-primary btn-square" },
+							_react2.default.createElement("i", { className: "fa fa-facebook-square", "aria-hidden": "true" }),
+							" Share"
+						),
+						_react2.default.createElement("hr", null),
+						_react2.default.createElement(
+							"button",
+							{ className: "btn btn-danger btn-square" },
+							"Delete Trip",
+							_react2.default.createElement("i", { className: "glyphicon glyphicon-trash", "aria-hidden": "true" })
+						)
+					)
 				)
 			);
 		}
@@ -41760,7 +42168,7 @@ var UserTripBox = function (_React$Component) {
 exports.default = UserTripBox;
 
 /***/ }),
-/* 586 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41772,7 +42180,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -41814,6 +42222,7 @@ var Authentication = function (_React$Component) {
 			console.log('from connected()');
 			// console.log(this.props);
 			var user = this.state;
+			console.log(user);
 			this.props.setUserState(user);
 			localStorage.setItem("user", JSON.stringify(user));
 		}
@@ -41833,158 +42242,6 @@ var Authentication = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Authentication;
-
-/***/ }),
-/* 587 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TripBox = __webpack_require__(588);
-
-var _TripBox2 = _interopRequireDefault(_TripBox);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ViewLocations = function (_React$Component) {
-  _inherits(ViewLocations, _React$Component);
-
-  function ViewLocations() {
-    _classCallCheck(this, ViewLocations);
-
-    return _possibleConstructorReturn(this, (ViewLocations.__proto__ || Object.getPrototypeOf(ViewLocations)).apply(this, arguments));
-  }
-
-  _createClass(ViewLocations, [{
-    key: "listTrips",
-    value: function listTrips() {
-      if (this.props.trips.length > 0) {
-        return this.props.trips.map(function (item, id) {
-          return _react2.default.createElement(_TripBox2.default, { key: id, item: item });
-        });
-      } else return _react2.default.createElement(
-        "p",
-        null,
-        "Select something"
-      );
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "row" },
-        _react2.default.createElement("hr", null),
-        _react2.default.createElement(
-          "h2",
-          null,
-          "Hubz and Routes by Other Travellers"
-        ),
-        this.listTrips()
-      );
-    }
-  }]);
-
-  return ViewLocations;
-}(_react2.default.Component);
-
-exports.default = ViewLocations;
-
-/***/ }),
-/* 588 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TripBox = function (_React$Component) {
-  _inherits(TripBox, _React$Component);
-
-  function TripBox(props) {
-    _classCallCheck(this, TripBox);
-
-    return _possibleConstructorReturn(this, (TripBox.__proto__ || Object.getPrototypeOf(TripBox)).call(this, props));
-    //bind this to functions
-    // this.findThisTrip = this.findThisTrip.bind(this);
-  }
-
-  _createClass(TripBox, [{
-    key: "theLocations",
-    value: function theLocations(dataItem) {
-      return dataItem.locations.map(function (item, id) {
-        return _react2.default.createElement(
-          "div",
-          { key: id },
-          " ",
-          item.name
-        );
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      console.log(this.props);
-      var dataItem = this.props.item;
-      return _react2.default.createElement(
-        "div",
-        { className: "col-md-4" },
-        _react2.default.createElement(
-          "div",
-          { style: { padding: "5px" } },
-          _react2.default.createElement(
-            "h3",
-            { className: "media-heading", style: { color: "#ff5733" } },
-            dataItem.name
-          ),
-          _react2.default.createElement(
-            "h4",
-            { className: "media-heading" },
-            this.theLocations(dataItem)
-          )
-        )
-      );
-    }
-  }]);
-
-  return TripBox;
-}(_react2.default.Component);
-
-exports.default = TripBox;
 
 /***/ })
 /******/ ]);

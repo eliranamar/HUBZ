@@ -63,7 +63,7 @@ html {
 #contact h4 {
 	margin: 5px 0 15px;
 	display: block;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 400;
 }
 
@@ -152,17 +152,8 @@ fieldset {
 	color: #888;
 }
 
-.navbar-inverse .navbar-nav > li > a:focus,
-.navbar-inverse .navbar-nav > li > a:hover {
-	color: #fff;
-	background-color: gray;
-}
 .btn.btn-square {
 	border-radius: 0;
-}
-
-.navbar {
-	margin-bottom: 0px !important;
 }
 
 #about-footer {
@@ -175,20 +166,51 @@ button.btn.btn-square > a {
 
 div.user-trip-box {
 	border: 1px solid lightgray;
-	margin: 10px;
+	padding: 10px;
+	/* margin: 10px; */
+	background-color: #eaeaea;
+	box-sizing: border-box;
 }
 
-div.user-trip-box > hr {
+div.user-trip-box > div > hr {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 div.user-trip-box > h4 {
 	margin-top: 3px;
 	margin-bottom: 3px;
-  font-size: 20px;
-  font-weight: 200;
+	font-size: 20px;
+	font-weight: 200;
 }
-div.user-trip-box > h5 {
+div.user-trip-box > div > h5 {
 	color: grey;
 	font-size: 18px;
+}
+
+a {
+	color: #ffa200;
+	font-size: 16px;
+}
+
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:hover {
+	color: slategray;
+	background-color: #ff5733;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+	color: slategray;
+	background-color: #ff5733;
+}
+
+.navbar {
+	margin-bottom: 0px !important;
+	border-radius: 0px;
+	background-color: #000;
+	color: #ff5733;
+}
+
+span.icon-bar {
+	background-color: #ffa200;
 }

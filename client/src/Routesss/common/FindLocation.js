@@ -30,9 +30,14 @@ const GettingStartedGoogleMap = withGoogleMap(props =>
     {/*<Polyline path={props.polyline} />*/}
     {props.polyline.map((path, index) =>
       <Polyline
-        options={{ strokeColor: path.color, strokeWeight: path.strokeWeight, geodesic: true }}
+        options={{
+          strokeColor: path.color,
+          strokeWeight: path.strokeWeight,
+          geodesic: true
+        }}
         key={index}
         path={path.polyline}
+        onClick={() => props.onPolyClik(path.polyline)}
       />
     )}
   </GoogleMap>
@@ -51,41 +56,41 @@ class FindLocation extends React.Component {
       // ,
 
       paths: [
-        {
-          polyline: [
-            { lat: -27.363882, lng: 137.044922 },
-            { lat: -23.363882, lng: 129.044922 },
-            { lat: -20.5107991, lng: 131.9081663 }
-          ]
-        },
-        {
-          polyline: [
-            { lat: 8.5088733, lng: 76.909832 },
-            { lat: 12.5100829, lng: 90.9087966 },
-            { lat: 14.5107991, lng: 76.9081663 }
-          ]
-        }
+        // {
+        //   polyline: [
+        //     { lat: -27.363882, lng: 137.044922 },
+        //     { lat: -23.363882, lng: 129.044922 },
+        //     { lat: -20.5107991, lng: 131.9081663 }
+        //   ]
+        // },
+        // {
+        //   polyline: [
+        //     { lat: 8.5088733, lng: 76.909832 },
+        //     { lat: 12.5100829, lng: 90.9087966 },
+        //     { lat: 14.5107991, lng: 76.9081663 }
+        //   ]
+        // }
       ],
 
       markers: [
-        {
-          position: new google.maps.LatLng(-27.363882, 137.044922),
-          showInfo: false,
-          infoContent: <p>hey hey</p>
-        },
-        {
-          position: new google.maps.LatLng(-23.363882, 129.044922),
-          showInfo: false,
-          infoContent: (
-            <svg
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-            />
-          )
-        }
+        // {
+        //   position: new google.maps.LatLng(-27.363882, 137.044922),
+        //   showInfo: false,
+        //   infoContent: <p>hey hey</p>
+        // },
+        // {
+        //   position: new google.maps.LatLng(-23.363882, 129.044922),
+        //   showInfo: false,
+        //   infoContent: (
+        //     <svg
+        //       id="Layer_1"
+        //       xmlns="http://www.w3.org/2000/svg"
+        //       width="16"
+        //       height="16"
+        //       viewBox="0 0 16 16"
+        //     />
+        //   )
+        // }
       ]
     };
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
@@ -99,7 +104,7 @@ class FindLocation extends React.Component {
   }
 
   getRandomColor() {
-    var letters = "123456789ABCDE";
+    var letters = "123456789ABCDEF";
     var color = "#";
     for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
@@ -117,9 +122,16 @@ class FindLocation extends React.Component {
       let allLocations = nextprops.paths;
       let fullpoly = [];
       for (var i = 0; i < allLocations.length; i++) {
-        let tempPoly = { polyline: [], color: this.getRandomColor(), strokeWeight: ((Math.random()+0.5)*2) };
+        let tempPoly = {
+          polyline: [],
+          color: this.getRandomColor(),
+          strokeWeight: 4
+        };
         for (var z = 0; z < allLocations[i].locations.length; z++) {
-          let c = { lat: allLocations[i].locations[z].lat, lng: allLocations[i].locations[z].lng };
+          let c = {
+            lat: allLocations[i].locations[z].lat,
+            lng: allLocations[i].locations[z].lng
+          };
           tempPoly.polyline.push(c);
         }
         fullpoly.push(tempPoly);
@@ -136,10 +148,25 @@ class FindLocation extends React.Component {
         for (var r = 0; r < allLocations[t].locations.length; r++) {
           let lng = allLocations[t].locations[r].lat;
           let lat = allLocations[t].locations[r].lng;
+
+          let showLogin = (
+            <div>
+              <p>go to</p>
+              <a
+                target="_self"
+                target="_blank"
+                href={`https://www.rome2rio.com/s/${nextprops.currentHub
+                  .hub}/${allLocations[t].locations[r].name}`}
+              >
+                {allLocations[t].locations[r].name}
+              </a>
+            </div>
+          );
+
           let tempMarker = {
             position: new google.maps.LatLng(lng, lat),
             showInfo: false,
-            infoContent: allLocations[t].locations[r].name + " https://www.tripadvisor.com/"
+            infoContent: showLogin
           };
           fullMarker.push(tempMarker);
         }
@@ -149,6 +176,19 @@ class FindLocation extends React.Component {
         markers: fullMarker
       });
     }
+  }
+
+  onPolyClik(targetPoly) {
+    targetPoly[0];
+    // let blabla = "Hanoi"
+    // let showLoginA = (
+    //         <div>
+    //             <a target="_self" target="_blank" href={`https://www.rome2rio.com/s/${blabla}`} >
+    //                 click me
+    //             </a>
+    //             </div>
+    //     );
+    alert(targetPoly);
   }
 
   handleMarkerClick(targetMarker) {
@@ -214,6 +254,7 @@ class FindLocation extends React.Component {
             onMarkerClick={this.handleMarkerClick}
             onMarkerClose={this.handleMarkerClose}
             getRandomColor={this.getRandomColor}
+            onPolyClik={this.onPolyClik}
           />
         </div>
       </div>

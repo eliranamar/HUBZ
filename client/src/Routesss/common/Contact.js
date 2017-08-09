@@ -9,8 +9,8 @@ class Contact extends React.Component {
             <div className="col-md-4 col-lg-4 col-xl-4"></div>
             <div className="col-md-4 col-lg-4 col-xl-4">
               <form id="contact" action="" method="post">
-                <h3>Contact Us!</h3>
-                <h4>request for custom quote</h4>
+                <h3>Contact Us! <i className="glyphicon glyphicon-envelope"></i></h3>
+                <h4>We would love to hear from you</h4>
                 <fieldset>
                   <input placeholder="Your name" type="text" tabIndex="1" required autoFocus />
                 </fieldset>
@@ -29,7 +29,7 @@ class Contact extends React.Component {
                 <fieldset>
                   <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                 </fieldset>
-                <p className="copyright">Designed by <a href="https://github.com/eliranamar" target="_blank" title="Colorlib">Eliran</a></p>
+                <p className="copyright">Designed by <a href="https://github.com/eliranamar" target="_blank" title="Colorlib">Someone</a></p>
               </form>
             </div>
             <div className="col-md-4 col-lg-4 col-xl-4"></div>

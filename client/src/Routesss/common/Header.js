@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log(props);
+		// console.log(props);
 		this.state = {
 			trip: props.trip,
 			user: props.user
 		};
 	}
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
+		// console.log(nextProps);
 		this.setState({ trip: nextProps.trip });
 		this.setState({ user: nextProps.user });
 	}
@@ -52,18 +52,18 @@ class App extends React.Component {
 					</div>
 					<div className="collapse navbar-collapse" id="myNavbar">
 						<ul className="nav navbar-nav">
-							<li role="presentation">
-								<Link to="/">Home</Link>
-							</li>
 							{/* <li role="presentation">
-								<Link to="/findtrip">Find Trip</Link>
-							</li>
-							<li role="presentation">
-								<Link to="/trip">Create Trip</Link>
-							</li>
-							<li role="presentation">
-								<Link to="/usertrips">My Trips</Link>
-							</li> */}
+                                <Link to="/">Home</Link>
+                            </li> */}
+							{/* <li role="presentation">
+                                <Link to="/findtrip">Find Trip</Link>
+                            </li>
+                            <li role="presentation">
+                                <Link to="/trip">Create Trip</Link>
+                            </li>
+                            <li role="presentation">
+                                <Link to="/usertrips">My Trips</Link>
+                            </li> */}
 
 							<li className="dropdown">
 								<a className="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -72,13 +72,13 @@ class App extends React.Component {
 								</a>
 								<ul className="dropdown-menu">
 									<li role="presentation">
-										<Link to="/findtrip">Find Trip</Link>
+										<Link to="/findtrip">Find Trip <i className="glyphicon glyphicon-search"></i></Link>
 									</li>
 									<li role="presentation">
-										<Link to="/trip">Create Trip</Link>
+										<Link to="/trip">Create Trip <i className="glyphicon glyphicon-plus"></i></Link>
 									</li>
 									<li role="presentation">
-										<Link to="/usertrips">My Trips</Link>
+										<Link to="/usertrips">My Trips <i className="glyphicon glyphicon-user"></i></Link>
 									</li>
 								</ul>
 							</li>

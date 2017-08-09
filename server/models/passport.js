@@ -21,7 +21,7 @@ passport.use(
 		},
 		function(accessToken, refreshToken, profile, done) {
 			console.log("RESPONSE FROM PASSPORT.JS");
-			console.log(JSON.stringify(profile));
+			console.log(profile);
 			console.log("FACEBOOK");
 			//code to check database goes here
 			let response = {};
@@ -46,28 +46,30 @@ passport.use(
 						err,
 						result
 					) {
+						console.log('hello');
 						if (err) throw err;
 						console.log(result);
 						let tokenid = jwt.sign(
 							{
-								id: result[0].id,
-								name: result[0].name
+								id: user.id,
+								name: user.name
 							},
 							"Elirans$uperC0mpl3xKey1337",
 							{ expiresIn: "14d" }
 						);
 						return done(null, {
 							token: tokenid,
-							name: result[0].name,
-							id: result[0].id
+							name: user.name,
+							id: user.id
 						});
 					});
 				} else {
-					console.log("found user:");
-					console.log(result[0]);
-					console.log(result[0].name);
-					console.log(result[0].id);
-					console.log("user exists already");
+					// console.log("found user:");
+					// console.log(result[0]);
+					// console.log(result[0].name);
+					// console.log(result[0].id);
+					// console.log(result[0].profile_pic);
+					// console.log("user already exists...");
 					let tokenid = jwt.sign(
 						{
 							id: result[0].id,

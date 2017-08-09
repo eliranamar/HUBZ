@@ -19,6 +19,9 @@ class App extends React.Component {
 				name: null,
 				token: null,
 				id: null
+			},
+			userProfilePic : {
+				url : null
 			}
 		};
 		// console.log(this.state.user);

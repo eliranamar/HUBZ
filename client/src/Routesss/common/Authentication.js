@@ -19,6 +19,7 @@ class Authentication extends React.Component {
 		console.log('from connected()');
 		// console.log(this.props);
 		let user = this.state;
+		console.log(user);
 		this.props.setUserState(user);
 		localStorage.setItem("user", JSON.stringify(user));
 	}
