@@ -9,6 +9,8 @@ import Location from './Routesss/common/Location';
 import FindLocation from './Routesss/common/FindLocation';
 import FindTrip from './Routesss/common/FindTrip';
 import UserTrips from './Routesss/common/UserTrips';
+import InstafeedComponent from './Routesss/common/InstafeedComponent';
+
 import Authentication from './Routesss/common/Authentication';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
@@ -26,6 +28,8 @@ const Routes = (props) => (
            <Route name="trip" exact path='/trip' render={() => <Trip user={props.user} trip={props.trip} setTripState={props.setTripState} />} />
            <Route name="authentication"  path='/authorization/:token/:name/:id'  render={(prop) => <Authentication {...prop} setUserState={props.setUserState} />} /> 
            <Route path="*" component={Page404}/>
+            <Route name="instafeedcomponent" exact path='/instafeedcomponent' component={InstafeedComponent} />
+
         </Switch>
     </div>
 )
